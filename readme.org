@@ -3,4 +3,5 @@ This is the repo we will be hosting all the information for the ZSE manuscript i
 
 * Navigation
 Outline [[./outline/outline.pdf][PDF]] [[./outline/outline.org][org]]
+
 [[./figures/][Figure]]
