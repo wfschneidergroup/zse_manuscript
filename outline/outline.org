@@ -70,8 +70,8 @@
 - Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut cite:goetzke-properties-1991.
 - A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle. 
 - See Cref:fig:cha-labeled for example of rings
-  - The blue highlighted cycle is a 6-membered ring (6-MR)
-  - The green highlighted cycle is a 4-MR
+  - The blue highlighted cycle (8-3-4-5-6-7) is a 6-membered ring (6-MR)
+  - The green highlighted cycle (1-2-3-8) is a 4-MR
   - The cycle following 1-2-3-4-5-6-7-8 is not an 8-MR because there is a shortcut connecting nodes 3 and 8. 
 
 #+attr_latex: :float :width 0.60\textwidth
