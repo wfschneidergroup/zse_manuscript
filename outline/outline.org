@@ -1,0 +1,129 @@
+#+BEGIN_OPTIONS
+#+LATEX_CLASS_OPTIONS: [11pt]
+#+LATEX_HEADER:\usepackage{geometry}
+#+LATEX_HEADER:\geometry{margin=1.0in,top=.75in,bottom=.75in}
+#+LATEX_HEADER:\usepackage{graphicx}
+#+LATEX_HEADER:\usepackage{color}
+#+LATEX_HEADER:\usepackage[numbers,super,sort&compress]{natbib}
+#+LATEX_HEADER:\usepackage{caption}
+#+LATEX_HEADER:\usepackage{subcaption}
+#+LATEX_HEADER:\captionsetup{font=footnotesize}
+#+LATEX_HEADER:\usepackage[version=3]{mhchem}
+#+LATEX_HEADER:\usepackage{siunitx}
+#+LATEX_HEADER:\usepackage{fancyhdr}
+#+LATEX_HEADER:\usepackage{paralist}
+#+LATEX_HEADER:\usepackage{amsmath}
+#+LATEX_HEADER:\usepackage{enumitem}
+#+LATEX_HEADER:\usepackage{mdwlist}
+#+LATEX_HEADER:\usepackage{hyperref}
+#+LATEX_HEADER:\pagestyle{fancy}
+#+LATEX_HEADER:\usepackage{wrapfig}
+#+LATEX_HEADER:\usepackage{nopageno}
+#+LATEX_HEADER:\fancyhf{}
+#+LATEX_HEADER:\fancyhead[LE,RO]{\scriptsize Jerry Crum}
+#+LATEX_HEADER:\fancyhead[RE,LO]{\scriptsize ZSE Outline}
+#+LATEX_HEADER:%\fancyfoot[CE,CO]{\leftmark}
+#+LATEX_HEADER:\fancyfoot[LE,RO]{\thepage}
+#+LATEX_HEADER:%\usepackage{subfig}
+#+LATEX_HEADER:\usepackage{comment}
+#+LATEX_HEADER:\usepackage{titlesec}
+#+LATEX_HEADER:\titlespacing*{\section}
+#+LATEX_HEADER:{0pt}{0.6\baselineskip}{0.2\baselineskip}
+#+LATEX_HEADER:\titlespacing*{\subsection}
+#+LATEX_HEADER:{0pt}{0.6\baselineskip}{0.2\baselineskip}
+#+LATEX_HEADER:\titlespacing*{\subsubsection}
+#+LATEX_HEADER:{0pt}{0.4\baselineskip}{0.1\baselineskip}
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \usepackage[section]{placeins}
+#+LATEX_HEADER: \usepackage{siunitx}
+
+#+LATEX_HEADER:\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+#+LATEX_HEADER:\newcommand{\red}[1]{\textcolor{red}{#1}}
+#+LATEX_HEADER:\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+#+LATEX_HEADER:\newcommand{\green}[1]{\textcolor{green}{#1}}
+#+LATEX_HEADER:\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+#+latex_header: \usepackage[capitalise]{cleveref}
+
+\def\udesoftecoverride#1\mainmatter{%
+  \AfterEndPreamble{#1\mainmatter}
+
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+#+OPTIONS: H:3 num:nil
+#+OPTIONS: ':t
+#+END_OPTIONS
+
+#+Title: ZSE Manuscript Outline
+
+#+author:Jerry T. Crum^{a}, Justin R. Crum^{b}, William F. Schneider^{a,c}
+\maketitle
+
+\begin{asparaenum}[\expandafter\textsuperscript a ]
+\item  Department of Chemical and Biolmolecular Engineering, University of Notre Dame, 250 Nieuwland Science Hall, Notre Dame, IN 46556, USA \\
+\item Justin's info \\
+\item Department of Chemistry and Biochmeistry, University of Notre Dame, 251 Nieuwland Science Hall, Notre Dame, IN 46556, USA
+\end{asparaenum}
+
+\newpage
+* Introduction
+- Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
+- Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut cite:goetzke-properties-1991.
+- A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle. 
+- See Cref:fig:cha-labeled for example of rings
+  - The blue highlighted cycle is a 6-membered ring (6-MR)
+  - The green highlighted cycle is a 4-MR
+  - The cycle following 1-2-3-4-5-6-7-8 is not an 8-MR because there is a shortcut connecting nodes 3 and 8. 
+
+#+attr_latex: :float :width 0.60\textwidth
+#+caption: Cutout of the Chabazite framework showing a 6-MR in blue and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
+file:../figures/cha-labeled.pdf
+
+- Rings have been used to identify feasible zeolite topologies cite:li-why-2014, to descirbe the similarity and differences between zeolites cite:curtis-statistical-2003, to identify sites or voids of catalytic relevance cite:li-first-principles-2018,kester-effects-2021, and as machine learning finger prints [will get citations for this]
+
+- Different methods exist to count rings present in a zeolite
+- These methods return different sets of rings
+- Vertex symbols are the set of shortest paths connecting the 6 oxygen-oxygen pairs around a T-site cite:okeeffe-vertex-1997
+- Shortest path rings count all the vertex symbol rings that pass through a T-site or an oxygen atom cite:sastre-topological-2009
+- Or we can count all the rings that do not have a short cut cite:goetzke-properties-1991
+- Differences in ring counts leads to differences in how we describe the topology of zeolites. Therefore, when discussing the rings in a zeolite it is important to also state which method of ring counting is used.
+- Here we report an analysis of rings and T-sites in a large number of zeolite frameworks using Zeolite Simulation Environment, a Python package that implements an efficient algorithm presented by Goetzke and Klein cite:goetzke-properties-1991 for finding rings in arbitrary frameworks.
+- We compare the results of a number of common and new ring definitions applied to a large number of common zeolite frameworks.cite:li-first-principles-2018
+
+* Software Description
+
+- All of the frameworks listed on the IZA Database of zeolite structures cite:IZA are included in a database with ZSE
+- These structures are Atomic Simulation Environment Atoms objects cite:larsen-atomic-2017, and can be used with any of the functions in ZSE
+- ZSE also includes CIF tools to read structure files for frameworks not listed in the IZA website, such as hypothetical zeolites, and return an Atoms object that can be used with ZSE
+- ZSE has 3 previously published rules for ring finding implemented
+  - All cycles with out a shortcut cite:goetzke-properties-1991
+  - All shortest path cycles cite:sastre-topological-2009
+  - Cycles that compose the vertex symbol for a T-site cite:okeeffe-vertex-1997
+- We have also implemented a new rule that finds all rings with out a shortcut, but excludes rings that are made by traversing a stacked set of rings.
+  - Figure showing example of 8-MR in the d6r of CHA and 14-MR in AFI
+- Each of the rules: shortest path, vertex symbols, and our new rule are a subset of the no shortcuts rule
+Process to find rings:
+1. To find rings in a zeolite, ZSE makes a custom connectivity matrix for the Si and O atoms in the framework
+2. We use NetworkX cite:SciPyProceedings-11 to build a shortest path matrix for every atom pair in the zeolite framework
+3. We then find all the rings up to some cutoff size base on the algorithm presented by Goetzke and Klein cite:goetzke-properties-1991
+4. Depending on the rule chosen by the user, ZSE then removes rings from this list that don't meet the qualifications of the rule
+5. ZSE returns a list of the rings found, a list of the atom indicies that compose each ring, Atoms objects for each ring that can be further analyzed or visualized by the user
+
+
+* Results
+
+- Reproduce the results from Sastre paper, show ring counts with the other rules
+- Show the cage belts results for CHA, AFT, etc... and discuss how those rings don't show up in previous literature
+- Show the pentasil 6-membered cycle (MFI) and discuss how that is often considered a ring by catalysis researchers, but not a ring by the Goetzke definition
+
+
+* Conclusions
+
+- The method used to find rings in a zeolite will provide different ring counts
+- When discussing rings in a zeolite it is import to disclose by which method those rings were found
+- Using ZSE we can find rings based on various methods
+- This provides a foundation for using ring fingerprints in machine learning models to correlate chemical properties and topology
+
+
+bibliographystyle:unsrtnat
+bibliography:ref.bib
+

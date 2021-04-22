@@ -1,0 +1,97 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Goetzke and Klein(1991)]{goetzke-properties-1991}
+Goetzke, K. and Klein, H.-J.
+\newblock Properties and efficient algorithmic determination of different
+  classes of rings in finite and infinite polyhedral networks.
+\newblock \emph{Journal of Non-Crystalline Solids}, 127\penalty0 (2):\penalty0
+  215--220, February 1991.
+\newblock ISSN 00223093.
+\newblock \doi{10.1016/0022-3093(91)90145-V}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939190145V}.
+
+\bibitem[Li and Deem(2014)]{li-why-2014}
+Li, X. and Deem, M.~W.
+\newblock Why {Zeolites} {Have} {So} {Few} {Seven}-{Membered} {Rings}.
+\newblock \emph{The Journal of Physical Chemistry C}, 118\penalty0
+  (29):\penalty0 15835--15839, July 2014.
+\newblock ISSN 1932-7447, 1932-7455.
+\newblock \doi{10.1021/jp504143r}.
+\newblock URL \url{https://pubs.acs.org/doi/10.1021/jp504143r}.
+
+\bibitem[Curtis and Deem(2003)]{curtis-statistical-2003}
+Curtis, R.~A. and Deem, M.~W.
+\newblock A {Statistical} {Mechanics} {Study} of {Ring} {Size}, {Ring} {Shape},
+  and the {Relation} to {Pores} {Found} in {Zeolites}.
+\newblock \emph{Journal of Physical Chemistry B}, 107:\penalty0 8612--8620,
+  2003.
+
+\bibitem[Li et~al.(2018)Li, Li, Gounder, Debellis, Müller, Prasad, Moini, and
+  Schneider]{li-first-principles-2018}
+Li, S., Li, H., Gounder, R., Debellis, A., Müller, I.~B., Prasad, S., Moini,
+  A., and Schneider, W.~F.
+\newblock First-{Principles} {Comparison} of {Proton} and {Divalent} {Copper}
+  {Cation} {Exchange} {Energy} {Landscapes} in {SSZ}-13 {Zeolite}.
+\newblock \emph{The Journal of Physical Chemistry C}, 122\penalty0
+  (41):\penalty0 23564--23573, October 2018.
+\newblock ISSN 1932-7447, 1932-7455.
+\newblock \doi{10.1021/acs.jpcc.8b07213}.
+\newblock URL \url{https://pubs.acs.org/doi/10.1021/acs.jpcc.8b07213}.
+
+\bibitem[Kester et~al.(2021)Kester, Crum, Li, Schneider, and
+  Gounder]{kester-effects-2021}
+Kester, P.~M., Crum, J.~T., Li, S., Schneider, W.~F., and Gounder, R.
+\newblock Effects of {Brønsted} acid site proximity in chabazite zeolites on
+  {OH} infrared spectra and protolytic propane cracking kinetics.
+\newblock \emph{Journal of Catalysis}, 395:\penalty0 210--226, March 2021.
+\newblock ISSN 00219517.
+\newblock \doi{10.1016/j.jcat.2020.12.038}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0021951721000191}.
+
+\bibitem[O'Keeffe and Hyde(1997)]{okeeffe-vertex-1997}
+O'Keeffe, M. and Hyde, S.
+\newblock Vertex symbols for zeolite nets.
+\newblock \emph{Zeolites}, 19\penalty0 (5-6):\penalty0 370--374, November 1997.
+\newblock ISSN 01442449.
+\newblock \doi{10.1016/S0144-2449(97)00133-4}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0144244997001334}.
+
+\bibitem[Sastre and Corma(2009)]{sastre-topological-2009}
+Sastre, G. and Corma, A.
+\newblock Topological {Descriptor} for {Oxygens} in {Zeolites}. {Analysis} of
+  {Ring} {Counting} in {Tetracoordinated} {Nets}.
+\newblock \emph{The Journal of Physical Chemistry C}, 113\penalty0
+  (16):\penalty0 6398--6405, April 2009.
+\newblock ISSN 1932-7447, 1932-7455.
+\newblock \doi{10.1021/jp8100128}.
+\newblock URL \url{https://pubs.acs.org/doi/10.1021/jp8100128}.
+
+\bibitem[Larsen et~al.(2017)Larsen, Castelli, Christensen, Du, Groves,
+  Jennings, Jensen, Kermode, Kitchin, Kolsbjerg, Kubal, Kaasbjerg, Lysgaard,
+  Maxson, Olsen, Pastewka, Peterson, Rostgaard, Schi, Thygesen, Vegge,
+  Vilhelmsen, Walter, Zeng, and Jacobsen]{larsen-atomic-2017}
+Larsen, A.~H., Castelli, I.~E., Christensen, R., Du, M., Groves, M.~N.,
+  Jennings, P.~C., Jensen, P.~B., Kermode, J., Kitchin, J.~R., Kolsbjerg,
+  E.~L., Kubal, J., Kaasbjerg, K., Lysgaard, S., Maxson, T., Olsen, T.,
+  Pastewka, L., Peterson, A., Rostgaard, C., Schi, J., Thygesen, K.~S., Vegge,
+  T., Vilhelmsen, L., Walter, M., Zeng, Z., and Jacobsen, K.~W.
+\newblock The atomic simulation environment—a {Python} library for working
+  with atoms.
+\newblock \emph{J. Phys.}, page~31, 2017.
+
+\bibitem[Hagberg et~al.(2008)Hagberg, Schult, and Swart]{SciPyProceedings-11}
+Hagberg, A.~A., Schult, D.~A., and Swart, P.~J.
+\newblock Exploring network structure, dynamics, and function using networkx.
+\newblock In Varoquaux, G., Vaught, T., and Millman, J., editors,
+  \emph{Proceedings of the 7th Python in Science Conference}, pages 11 -- 15,
+  Pasadena, CA USA, 2008.
+
+\end{thebibliography}
