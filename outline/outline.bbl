@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -73,6 +73,11 @@ Sastre, G. and Corma, A.
 \newblock ISSN 1932-7447, 1932-7455.
 \newblock \doi{10.1021/jp8100128}.
 \newblock URL \url{https://pubs.acs.org/doi/10.1021/jp8100128}.
+
+\bibitem[Baerlocher and McCusker()]{IZA}
+Baerlocher, C. and McCusker, L.~B.
+\newblock \emph{Database of Zeolite Structures}.
+\newblock URL \url{http://www.iza-structure.org/databases/}.
 
 \bibitem[Larsen et~al.(2017)Larsen, Castelli, Christensen, Du, Groves,
   Jennings, Jensen, Kermode, Kitchin, Kolsbjerg, Kubal, Kaasbjerg, Lysgaard,

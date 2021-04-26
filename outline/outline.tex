@@ -1,4 +1,4 @@
-% Created 2021-04-22 Thu 10:45
+% Created 2021-04-26 Mon 08:56
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,15 +89,15 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section*{Introduction}
-\label{sec:org9460a91}
+\label{sec:orgd9d2283}
 \begin{itemize}
 \item Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
 \item Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991}.
 \item A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle.
 \item See \Cref{fig:cha-labeled} for example of rings
 \begin{itemize}
-\item The blue highlighted cycle is a 6-membered ring (6-MR)
-\item The green highlighted cycle is a 4-MR
+\item The blue highlighted cycle (8-3-4-5-6-7) is a 6-membered ring (6-MR)
+\item The green highlighted cycle (1-2-3-8) is a 4-MR
 \item The cycle following 1-2-3-4-5-6-7-8 is not an 8-MR because there is a shortcut connecting nodes 3 and 8.
 \end{itemize}
 \end{itemize}
@@ -121,7 +121,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{itemize}
 
 \section*{Software Description}
-\label{sec:org9ec0fdb}
+\label{sec:orgfc05f55}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{IZA} are included in a database with ZSE
@@ -150,7 +150,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:org51ff3f9}
+\label{sec:orgded8dc4}
 
 \begin{itemize}
 \item Reproduce the results from Sastre paper, show ring counts with the other rules
@@ -158,9 +158,30 @@ Process to find rings:
 \item Show the pentasil 6-membered cycle (MFI) and discuss how that is often considered a ring by catalysis researchers, but not a ring by the Goetzke definition
 \end{itemize}
 
+\subsection*{Comparison of rings found for the T-site in various uninodal zeolite frameworks}
+\label{sec:orgd5ed0c9}
+
+\begin{center}
+\begin{tabular}{llll}
+Framework & Goetzke & Crum & Sastre \cite{sastre-topological-2009}\\
+\hline
+ABW & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
+ACO & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}10\(_{\text{15}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\)\\
+AFI & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\textbullet{}12\(_{\text{1}}\)\textbullet{}14\(_{\text{7}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\\
+ANA & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\)\\
+ATO & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\textbullet{}8\(_{\text{8}}\)\textbullet{}12\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\textbullet{}12\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\\
+BCT & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{12}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\\
+DFT & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\)\textbullet{}10\(_{\text{10}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\)\\
+GIS & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
+MER & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\textbullet{}10\(_{\text{10}}\)\textbullet{}14\(_{\text{14}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
+MON & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\)\\
+NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}\) & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}\) & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\\
+\end{tabular}
+\end{center}
+
 
 \section*{Conclusions}
-\label{sec:orga1f2e62}
+\label{sec:orgbd83cd3}
 
 \begin{itemize}
 \item The method used to find rings in a zeolite will provide different ring counts

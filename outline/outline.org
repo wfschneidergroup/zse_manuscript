@@ -115,6 +115,22 @@ Process to find rings:
 - Show the cage belts results for CHA, AFT, etc... and discuss how those rings don't show up in previous literature
 - Show the pentasil 6-membered cycle (MFI) and discuss how that is often considered a ring by catalysis researchers, but not a ring by the Goetzke definition
 
+** Comparison of rings found for the T-site in various uninodal zeolite frameworks
+
+| Framework | Goetzke                                       | Crum                            | Sastre cite:sastre-topological-2009 |
+|-----------+-----------------------------------------------+---------------------------------+-------------------------------------|
+| ABW       | 4_{2}\bullet6_{3}\bullet8_{4}                 | 4_{2}\bullet6_{3}\bullet8_{4}   | 4_{2}\bullet6_{3}\bullet8_{4}       |
+| ACO       | 4_{3}\bullet6_{3}\bullet8_{6}\bullet10_{15}   | 4_{3}\bullet8_{6}               | 4_{3}\bullet8_{6}                   |
+| AFI       | 4_{1}\bullet6_{13}\bullet12_{1}\bullet14_{7}  | 4_{1}\bullet6_{13}\bullet12_{1} | 4_{1}\bullet6_{13}                  |
+| ANA       | 4_{2}\bullet6_{2}\bullet8_{16}                | 4_{2}\bullet6_{2}\bullet8_{16}  | 4_{2}\bullet6_{2}\bullet8_{16}      |
+| ATO       | 4_{1}\bullet6_{9}\bullet8_{8}\bullet12_{20}   | 4_{1}\bullet6_{9}\bullet12_{20} | 4_{1}\bullet6_{9}                   |
+| BCT       | 4_{1}\bullet6_{6}\bullet8_{20}                | 4_{1}\bullet6_{6}\bullet8_{12}  | 4_{1}\bullet6_{6}                   |
+| DFT       | 4_{2}\bullet6_{6}\bullet8_{10}\bullet10_{10}  | 4_{2}\bullet6_{6}\bullet8_{10}  | 4_{2}\bullet6_{6}\bullet8_{10}      |
+| GIS       | 4_{3}\bullet8_{4}                             | 4_{3}\bullet8_{4}               | 4_{3}\bullet8_{4}                   |
+| MER       | 4_{3}\bullet8_{4}\bullet10_{10}\bullet14_{14} | 4_{3}\bullet8_{4}               | 4_{3}\bullet8_{4}                   |
+| MON       | 4_{1}\bullet5_{5}\bullet8_{6}                 | 4_{1}\bullet5_{5}\bullet8_{6}   | 4_{1}\bullet5_{5}\bullet8_{6}       |
+| NPO       | 3_{1}\bullet6_{6}\bullet12_{40}               | 3_{1}\bullet6_{6}\bullet12_{40} | 3_{1}\bullet6_{6}                   |
+
 
 * Conclusions
 
