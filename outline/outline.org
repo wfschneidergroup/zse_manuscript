@@ -76,7 +76,7 @@
 
 #+attr_latex: :float :width 0.60\textwidth
 #+caption: Cutout of the Chabazite framework showing a 6-MR in blue and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
-file:../figures/cha-labeled.pdf
+file:../figures/completed-figures/cha-labeled.pdf
 
 - Rings have been used to identify feasible zeolite topologies cite:li-why-2014, to descirbe the similarity and differences between zeolites cite:curtis-statistical-2003, to identify sites or voids of catalytic relevance cite:li-first-principles-2018,kester-effects-2021, and as machine learning finger prints [will get citations for this]
 
@@ -111,26 +111,36 @@ Process to find rings:
 
 * Results
 
-- Reproduce the results from Sastre paper, show ring counts with the other rules
-- Show the cage belts results for CHA, AFT, etc... and discuss how those rings don't show up in previous literature
+- Reproduce the results from Sastre paper, show ring counts with the other rules, Cref:tab:ring-counts
+  - Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma cite:sastre-topological-2009
+
+#+CAPTION: Comparison of Ring Indices for the T-sites in Various Uninodal Zeolite Frameworks label:tab:ring-counts
+| Framework | Goetzke                                       | Crum                                       | Sastre cite:sastre-topological-2009 |
+|-----------+-----------------------------------------------+--------------------------------------------+-------------------------------------|
+| ABW       | 4_{2}\bullet6_{3}\bullet8_{4}                 | 4_{2}\bullet6_{3}\bullet8_{4}              | 4_{2}\bullet6_{3}\bullet8_{4}       |
+| ACO       | 4_{3}\bullet6_{3}\bullet8_{6}\bullet10_{15}   | 4_{3}\bullet8_{6}                          | 4_{3}\bullet8_{6}                   |
+| AFI       | 4_{1}\bullet6_{13}\bullet12_{1}\bullet14_{7}  | 4_{1}\bullet6_{13}\bullet12_{1}            | 4_{1}\bullet6_{13}                  |
+| ANA       | 4_{2}\bullet6_{2}\bullet8_{16}                | 4_{2}\bullet6_{2}\bullet8_{16}             | 4_{2}\bullet6_{2}\bullet8_{16}      |
+| ATO       | 4_{1}\bullet6_{9}\bullet8_{8}\bullet12_{20}   | 4_{1}\bullet6_{9}\bullet12_{20}            | 4_{1}\bullet6_{9}                   |
+| BCT       | 4_{1}\bullet6_{6}\bullet8_{20}                | 4_{1}\bullet6_{6}\bullet8_{12}             | 4_{1}\bullet6_{6}                   |
+| CHA       | 4_{3}\bullet6_{1}\bullet8_{6}\bullet12_{1}    | 4_{3}\bullet6_{1}\bullet8_{2}\bullet12_{1} | 4_{3}\bullet6_{1}\bullet8_{2}       |
+| DFT       | 4_{2}\bullet6_{6}\bullet8_{10}\bullet10_{10}  | 4_{2}\bullet6_{6}\bullet8_{10}             | 4_{2}\bullet6_{6}\bullet8_{10}      |
+| GIS       | 4_{3}\bullet8_{4}                             | 4_{3}\bullet8_{4}                          | 4_{3}\bullet8_{4}                   |
+| GME       | 4_{3}\bullet6_{1}\bullet8_{6}\bullet12_{7}    | 4_{3}\bullet6_{1}\bullet8_{2}\bullet12_{1} | 4_{3}\bullet6_{1}\bullet8_{2}       |
+| MER       | 4_{3}\bullet8_{4}\bullet10_{10}\bullet14_{14} | 4_{3}\bullet8_{4}                          | 4_{3}\bullet8_{4}                   |
+| MON       | 4_{1}\bullet5_{5}\bullet8_{6}                 | 4_{1}\bullet5_{5}\bullet8_{6}              | 4_{1}\bullet5_{5}\bullet8_{6}       |
+| NPO       | 3_{1}\bullet6_{6}\bullet12_{40}               | 3_{1}\bullet6_{6}\bullet12_{40}            | 3_{1}\bullet6_{6}                   |
+
+- Show the cage belts results for CHA, AFT, etc... and discuss how those rings don't show up in previous literature, Cref:fig:cha-rings
+  - Looking at results from CHA we see the Goetzke method finds 4_{3}\bullet6_{1}\bullet8_{6}\bullet12_{1}
+  - This is different from the results in the Sastre paper cite:sastre-topological-2009, in that they only show 2 8-MRs and no 12-MRs
+  - The extra 8-MRs result from cycles traversing nodes in both 6-MRs of the d6r
+  - The 12-MR is a cycle that circumferences the CHA cage
+#+attr_latex: :float :width 0.45\textwidth :placement {c}{0.5\textwidth}
+#+caption: Chabazite framework with highlighted rings: 4-MR in green, 6-MR in blue, 8-MR in pink, 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature. This is a placeholder figure, I want to show the rings in CHA for discussion. Hoping to get your input on how best to do that. label:fig:cha-rings
+file:../figures/completed-figures/cha-all-rings.pdf
+
 - Show the pentasil 6-membered cycle (MFI) and discuss how that is often considered a ring by catalysis researchers, but not a ring by the Goetzke definition
-
-** Comparison of rings found for the T-site in various uninodal zeolite frameworks
-
-| Framework | Goetzke                                       | Crum                            | Sastre cite:sastre-topological-2009 |
-|-----------+-----------------------------------------------+---------------------------------+-------------------------------------|
-| ABW       | 4_{2}\bullet6_{3}\bullet8_{4}                 | 4_{2}\bullet6_{3}\bullet8_{4}   | 4_{2}\bullet6_{3}\bullet8_{4}       |
-| ACO       | 4_{3}\bullet6_{3}\bullet8_{6}\bullet10_{15}   | 4_{3}\bullet8_{6}               | 4_{3}\bullet8_{6}                   |
-| AFI       | 4_{1}\bullet6_{13}\bullet12_{1}\bullet14_{7}  | 4_{1}\bullet6_{13}\bullet12_{1} | 4_{1}\bullet6_{13}                  |
-| ANA       | 4_{2}\bullet6_{2}\bullet8_{16}                | 4_{2}\bullet6_{2}\bullet8_{16}  | 4_{2}\bullet6_{2}\bullet8_{16}      |
-| ATO       | 4_{1}\bullet6_{9}\bullet8_{8}\bullet12_{20}   | 4_{1}\bullet6_{9}\bullet12_{20} | 4_{1}\bullet6_{9}                   |
-| BCT       | 4_{1}\bullet6_{6}\bullet8_{20}                | 4_{1}\bullet6_{6}\bullet8_{12}  | 4_{1}\bullet6_{6}                   |
-| DFT       | 4_{2}\bullet6_{6}\bullet8_{10}\bullet10_{10}  | 4_{2}\bullet6_{6}\bullet8_{10}  | 4_{2}\bullet6_{6}\bullet8_{10}      |
-| GIS       | 4_{3}\bullet8_{4}                             | 4_{3}\bullet8_{4}               | 4_{3}\bullet8_{4}                   |
-| MER       | 4_{3}\bullet8_{4}\bullet10_{10}\bullet14_{14} | 4_{3}\bullet8_{4}               | 4_{3}\bullet8_{4}                   |
-| MON       | 4_{1}\bullet5_{5}\bullet8_{6}                 | 4_{1}\bullet5_{5}\bullet8_{6}   | 4_{1}\bullet5_{5}\bullet8_{6}       |
-| NPO       | 3_{1}\bullet6_{6}\bullet12_{40}               | 3_{1}\bullet6_{6}\bullet12_{40} | 3_{1}\bullet6_{6}                   |
-
 
 * Conclusions
 
