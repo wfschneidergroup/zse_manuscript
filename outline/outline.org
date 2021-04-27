@@ -110,9 +110,18 @@ Process to find rings:
 
 
 * Results
+- Ring counts frequency plots
+  - Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
+  - This highlights the differences in the ring rules, and shows that results will vary depending on rule.
+#+attr_latex: :float :width .6\textwidth
+#+caption: Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website] label:fig:ring-counts
+file:../figures/completed-figures/ring-counts.pdf
+
 
 - Reproduce the results from Sastre paper, show ring counts with the other rules, Cref:tab:ring-counts
   - Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma cite:sastre-topological-2009
+  - This provides an in depth look at some of the frameworks and the differences in rings found by each rule.
+  - Leads into the next section discussing the specific rings of CHA and pentasil that do or don't get counted by each rule.
 
 #+CAPTION: Comparison of Ring Indices for the T-sites in Various Uninodal Zeolite Frameworks label:tab:ring-counts
 | Framework | Goetzke                                       | Crum                                       | Sastre cite:sastre-topological-2009 |

@@ -1,4 +1,4 @@
-% Created 2021-04-26 Mon 14:20
+% Created 2021-04-27 Tue 08:48
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,7 +89,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section*{Introduction}
-\label{sec:orgd1ecbe6}
+\label{sec:org7019896}
 \begin{itemize}
 \item Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
 \item Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991}.
@@ -121,7 +121,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{itemize}
 
 \section*{Software Description}
-\label{sec:orgef01691}
+\label{sec:org37b98dd}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{IZA} are included in a database with ZSE
@@ -150,12 +150,26 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:org031b217}
+\label{sec:org0ab2fb0}
+\begin{itemize}
+\item Ring counts frequency plots
+\begin{itemize}
+\item Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
+\item This highlights the differences in the ring rules, and shows that results will vary depending on rule.
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/ring-counts.pdf}
+\captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website] \label{fig:ring-counts}}
+\end{center}
+
 
 \begin{itemize}
 \item Reproduce the results from Sastre paper, show ring counts with the other rules, \Cref{tab:ring-counts}
 \begin{itemize}
 \item Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma \cite{sastre-topological-2009}
+\item This provides an in depth look at some of the frameworks and the differences in rings found by each rule.
+\item Leads into the next section discussing the specific rings of CHA and pentasil that do or don't get counted by each rule.
 \end{itemize}
 \end{itemize}
 
@@ -200,7 +214,7 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \end{itemize}
 
 \section*{Conclusions}
-\label{sec:orgd0b0537}
+\label{sec:org567b455}
 
 \begin{itemize}
 \item The method used to find rings in a zeolite will provide different ring counts
