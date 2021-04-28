@@ -59,8 +59,8 @@
 \maketitle
 
 \begin{asparaenum}[\expandafter\textsuperscript a ]
-\item  Department of Chemical and Biolmolecular Engineering, University of Notre Dame, 250 Nieuwland Science Hall, Notre Dame, IN 46556, USA \\
-\item Justin's info \\
+\item Department of Chemical and Biolmolecular Engineering, University of Notre Dame, 250 Nieuwland Science Hall, Notre Dame, IN 46556, USA \\
+\item Department of Applied Mathematics, University of Arizona, 617 N Santa Rita Ave, Tucson, AZ 85721, USA\\
 \item Department of Chemistry and Biochmeistry, University of Notre Dame, 251 Nieuwland Science Hall, Notre Dame, IN 46556, USA
 \end{asparaenum}
 
@@ -117,6 +117,24 @@ Process to find rings:
 #+caption: Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website] label:fig:ring-counts
 file:../figures/completed-figures/ring-counts.pdf
 
+- Number of unique T-sites
+  - There are 1460 T-sites through all the frameworks listed on the IZA website.
+  - We can characterize those T-sites by the rings that pass through them
+  - Sastre did this, and called the list of rings, the ring index
+  - If we do this using different rules for ring finding how do the results change?
+    - See Cref:fig:unique-ts
+  - Most common T-site ring index using Goetzke method is: 5_{6}\bullet10_{4} showing up 23 times through the IZA frameworks.
+  - Most common T-site ring index using Crum method is: 4_{3}\bullet8_{4} showing up 31 times through the IZA frameworks.
+    - Next most common T-site with Crum method is 5_{6}\bullet10_{4} showing up 25 times
+  - This raises the question, if you want to use machine learning to correlate T-site rings to chemical properties, which ring method should you use? 
+#+attr_latex: :float :width .6\textwidth
+#+caption: Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. [Sastre and Vertex method to be updated, still collecting data] label:fig:unique-ts
+file:../figures/completed-figures/unique-ts.pdf
+
+- Number of unique oxygen sites
+  - We can repeat this method for the oxygen atoms in all the frameworks
+  - There are 3219 oxygen atoms through all the frameworks listed on the IZA website
+  - Figure here showing counts based on ring finding rules
 
 - Reproduce the results from Sastre paper, show ring counts with the other rules, Cref:tab:ring-counts
   - Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma cite:sastre-topological-2009

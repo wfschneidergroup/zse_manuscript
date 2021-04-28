@@ -1,4 +1,4 @@
-% Created 2021-04-27 Tue 08:48
+% Created 2021-04-27 Tue 16:07
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -82,14 +82,14 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \maketitle
 
 \begin{asparaenum}[\expandafter\textsuperscript a ]
-\item  Department of Chemical and Biolmolecular Engineering, University of Notre Dame, 250 Nieuwland Science Hall, Notre Dame, IN 46556, USA \\
-\item Justin's info \\
+\item Department of Chemical and Biolmolecular Engineering, University of Notre Dame, 250 Nieuwland Science Hall, Notre Dame, IN 46556, USA \\
+\item Department of Applied Mathematics, University of Arizona, 617 N Santa Rita Ave, Tucson, AZ 85721, USA\\
 \item Department of Chemistry and Biochmeistry, University of Notre Dame, 251 Nieuwland Science Hall, Notre Dame, IN 46556, USA
 \end{asparaenum}
 
 \newpage
 \section*{Introduction}
-\label{sec:org7019896}
+\label{sec:org18dc73e}
 \begin{itemize}
 \item Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
 \item Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991}.
@@ -121,7 +121,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{itemize}
 
 \section*{Software Description}
-\label{sec:org37b98dd}
+\label{sec:orgcf7753e}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{IZA} are included in a database with ZSE
@@ -150,7 +150,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:org0ab2fb0}
+\label{sec:orgcb7d5e9}
 \begin{itemize}
 \item Ring counts frequency plots
 \begin{itemize}
@@ -163,8 +163,37 @@ Process to find rings:
 \captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website] \label{fig:ring-counts}}
 \end{center}
 
+\begin{itemize}
+\item Number of unique T-sites
+\begin{itemize}
+\item There are 1460 T-sites through all the frameworks listed on the IZA website.
+\item We can characterize those T-sites by the rings that pass through them
+\item Sastre did this, and called the list of rings, the ring index
+\item If we do this using different rules for ring finding how do the results change?
+\begin{itemize}
+\item See \Cref{fig:unique-ts}
+\end{itemize}
+\item Most common T-site ring index using Goetzke method is: 5\(_{\text{6}}\)\textbullet{}10\(_{\text{4}}\) showing up 23 times through the IZA frameworks.
+\item Most common T-site ring index using Crum method is: 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) showing up 31 times through the IZA frameworks.
+\begin{itemize}
+\item Next most common T-site with Crum method is 5\(_{\text{6}}\)\textbullet{}10\(_{\text{4}}\) showing up 25 times
+\end{itemize}
+\item This raises the question, if you want to use machine learning to correlate T-site rings to chemical properties, which ring method should you use?
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/unique-ts.pdf}
+\captionof{figure}{Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. [Sastre and Vertex method to be updated, still collecting data] \label{fig:unique-ts}}
+\end{center}
 
 \begin{itemize}
+\item Number of unique oxygen sites
+\begin{itemize}
+\item We can repeat this method for the oxygen atoms in all the frameworks
+\item There are 3219 oxygen atoms through all the frameworks listed on the IZA website
+\item Figure here showing counts based on ring finding rules
+\end{itemize}
+
 \item Reproduce the results from Sastre paper, show ring counts with the other rules, \Cref{tab:ring-counts}
 \begin{itemize}
 \item Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma \cite{sastre-topological-2009}
@@ -214,7 +243,7 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \end{itemize}
 
 \section*{Conclusions}
-\label{sec:org567b455}
+\label{sec:org0fcf21a}
 
 \begin{itemize}
 \item The method used to find rings in a zeolite will provide different ring counts
