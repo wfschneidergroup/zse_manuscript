@@ -1,4 +1,4 @@
-% Created 2021-04-28 Wed 14:53
+% Created 2021-05-03 Mon 09:24
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,7 +89,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section*{Introduction}
-\label{sec:org7d53b26}
+\label{sec:org4471833}
 \begin{itemize}
 \item Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
 \item Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991}.
@@ -121,7 +121,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{itemize}
 
 \section*{Software Description}
-\label{sec:orgc1532f6}
+\label{sec:orgb60a0df}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{IZA} are included in a database with ZSE
@@ -150,7 +150,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:org3b46639}
+\label{sec:org9070503}
 \begin{itemize}
 \item Ring counts frequency plots
 \begin{itemize}
@@ -160,7 +160,7 @@ Process to find rings:
 \end{itemize}
 \begin{center}
 \includegraphics[width=.6\textwidth]{../figures/completed-figures/ring-counts.pdf}
-\captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website] \label{fig:ring-counts}}
+\captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website. Currently the IZA does not show any ring data for the SVY framework, providing one less framework to count.  \label{fig:ring-counts}}
 \end{center}
 
 \begin{itemize}
@@ -183,17 +183,26 @@ Process to find rings:
 \end{itemize}
 \begin{center}
 \includegraphics[width=.6\textwidth]{../figures/completed-figures/unique-ts.pdf}
-\captionof{figure}{Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. [Sastre and Vertex method to be updated, still collecting data] \label{fig:unique-ts}}
+\captionof{figure}{Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. \label{fig:unique-ts}}
 \end{center}
 
 \begin{itemize}
 \item Number of unique oxygen sites
 \begin{itemize}
 \item We can repeat this method for the oxygen atoms in all the frameworks
-\item There are 3219 oxygen atoms through all the frameworks listed on the IZA website
-\item Figure here showing counts based on ring finding rules
+\item Counting the symmetry distinct oxygen atoms in each framework on the IZA database leads to a total count of 3219
+\item We can classify those oxygen atoms based on the rings that pass through them, using the various ring counting rules
+\item \Cref{fig:unique-os} shows counts based on ring finding rules
+\item The percentage of unique oxygen sites is much lower than the percentage of unique T-sites for every ring finding method
+\end{itemize}
 \end{itemize}
 
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/unique-os.pdf}
+\captionof{figure}{Number of unique oxygen sites when classified by the rings passing through them using varrious ring finding rules. Vertex method not included, since that is a way to classify T-sites only. \label{fig:unique-os}}
+\end{center}
+
+\begin{itemize}
 \item Reproduce the results from Sastre paper, show ring counts with the other rules, \Cref{tab:ring-counts}
 \begin{itemize}
 \item Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma \cite{sastre-topological-2009}
@@ -243,7 +252,7 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \end{itemize}
 
 \section*{Conclusions}
-\label{sec:orgf5eecc3}
+\label{sec:org67648fd}
 
 \begin{itemize}
 \item The method used to find rings in a zeolite will provide different ring counts
