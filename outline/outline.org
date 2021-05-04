@@ -77,6 +77,19 @@
 #+attr_latex: :float :width 0.60\textwidth
 #+caption: Cutout of the Chabazite framework showing a 6-MR in blue and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
 file:../figures/completed-figures/cha-labeled.pdf
+\newpage
+
+#+CAPTION: Matrix showing relationship between frameoworks, nodes, paths, cycles, and various ring types. label:tab:ring-def
+#+ATTR_LATEX: :environment longtable :align l p{2.7cm} p{2.7cm} p{2.7cm} p{2.7cm}
+|                     | Description                                                                                                               | Framework                                                                   | Node (T-Sites)                                   | Node (Oxygen)                                         |
+|---------------------+---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------------------------------------+-------------------------------------------------------|
+| Nodes               | T-sites and oxygen atoms                                                                                                  | Contains some set of symmetry distinct T-sites and oxygen atoms             |                                                  |                                                       |
+| Paths               | Collection of connected nodes from source to target                                                                       | Periodic cell contains an infinite number of paths                          |                                                  |                                                       |
+| Cycles              | Path that starts and ends at the same node                                                                                | Periodic cell Contains an infinite number of cycles                         |                                                  |                                                       |
+| Rings               | Cycle that contains no shortcuts                                                                                          | Contains a finite number of unique rings                                    | All rings that pass through particular T-site    | All rings that pass through particular oxygen atom    |
+| Unstacked Rings     | Ring that does not traverse two stacked rings                                                                             | A subset of the Rings above                                                 | All unstacked rings that pass through T-site     | All unstacked rings that pass through oxygen atom     |
+| Shortest Path Rings | Ring that is the shortest ring from at least one set of O-T-O on the cycle                                                | A smaller subset of the rings above                                         | All shortest path rings that pass through T-site | All shortest path rings that pass through oxygen atom |
+| Vertex Symbol       | Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site       | Collection of vertex symbols for all symmetry distinct T-sites in framework | Vertex symbol for particular T-site              |                                                       |
 
 - Rings have been used to identify feasible zeolite topologies cite:li-why-2014, to descirbe the similarity and differences between zeolites cite:curtis-statistical-2003, to identify sites or voids of catalytic relevance cite:li-first-principles-2018,kester-effects-2021, and as machine learning finger prints [will get citations for this]
 

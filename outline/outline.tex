@@ -1,4 +1,4 @@
-% Created 2021-05-03 Mon 09:24
+% Created 2021-05-04 Tue 08:36
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,7 +89,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section*{Introduction}
-\label{sec:org4471833}
+\label{sec:orgb2744a9}
 \begin{itemize}
 \item Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
 \item Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991}.
@@ -106,6 +106,33 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \includegraphics[width=0.60\textwidth]{../figures/completed-figures/cha-labeled.pdf}
 \captionof{figure}{Cutout of the Chabazite framework showing a 6-MR in blue and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. \label{fig:cha-labeled}}
 \end{center}
+\newpage
+
+\begin{longtable}{l p{2.7cm} p{2.7cm} p{2.7cm} p{2.7cm}}
+\caption{Matrix showing relationship between frameoworks, nodes, paths, cycles, and various ring types. \label{tab:ring-def}}
+\\
+ & Description & Framework & Node (T-Sites) & Node (Oxygen)\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{Continued from previous page} \\
+\hline
+
+ & Description & Framework & Node (T-Sites) & Node (Oxygen) \\
+
+\hline
+\endhead
+\hline\multicolumn{5}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+Nodes & T-sites and oxygen atoms & Contains some set of symmetry distinct T-sites and oxygen atoms &  & \\
+Paths & Collection of connected nodes from source to target & Periodic cell contains an infinite number of paths &  & \\
+Cycles & Path that starts and ends at the same node & Periodic cell Contains an infinite number of cycles &  & \\
+Rings & Cycle that contains no shortcuts & Contains a finite number of unique rings & All rings that pass through particular T-site & All rings that pass through particular oxygen atom\\
+Unstacked Rings & Ring that does not traverse two stacked rings & A subset of the Rings above & All unstacked rings that pass through T-site & All unstacked rings that pass through oxygen atom\\
+Shortest Path Rings & Ring that is the shortest ring from at least one set of O-T-O on the cycle & A smaller subset of the rings above & All shortest path rings that pass through T-site & All shortest path rings that pass through oxygen atom\\
+Vertex Symbol & Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site & Collection of vertex symbols for all symmetry distinct T-sites in framework & Vertex symbol for particular T-site & \\
+\end{longtable}
 
 \begin{itemize}
 \item Rings have been used to identify feasible zeolite topologies \cite{li-why-2014}, to descirbe the similarity and differences between zeolites \cite{curtis-statistical-2003}, to identify sites or voids of catalytic relevance \cite{li-first-principles-2018,kester-effects-2021}, and as machine learning finger prints [will get citations for this]
@@ -121,7 +148,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{itemize}
 
 \section*{Software Description}
-\label{sec:orgb60a0df}
+\label{sec:org5d41ccb}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{IZA} are included in a database with ZSE
@@ -150,7 +177,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:org9070503}
+\label{sec:orgf798bf0}
 \begin{itemize}
 \item Ring counts frequency plots
 \begin{itemize}
@@ -252,7 +279,7 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \end{itemize}
 
 \section*{Conclusions}
-\label{sec:org67648fd}
+\label{sec:orgf3f754a}
 
 \begin{itemize}
 \item The method used to find rings in a zeolite will provide different ring counts
