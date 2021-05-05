@@ -1,4 +1,4 @@
-% Created 2021-05-04 Tue 08:36
+% Created 2021-05-05 Wed 14:54
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,22 +89,23 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section*{Introduction}
-\label{sec:orgb2744a9}
+\label{sec:org8d16b16}
 \begin{itemize}
 \item Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
 \item Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991}.
 \item A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle.
 \item See \Cref{fig:cha-labeled} for example of rings
 \begin{itemize}
-\item The blue highlighted cycle (8-3-4-5-6-7) is a 6-membered ring (6-MR)
-\item The green highlighted cycle (1-2-3-8) is a 4-MR
-\item The cycle following 1-2-3-4-5-6-7-8 is not an 8-MR because there is a shortcut connecting nodes 3 and 8.
+\item The pink highlighted cycle (1-2-3-17-20-14-15-16) is a 8-membered ring (8-MR)
+\item The green highlighted cycle (14-20-12-13) is a 4-MR
+\item The red outlined cycle following 3-4-18-19-20-17 is not an 6-MR because there is a shortcut connecting nodes 17 and 18.
+\item Nodes 5-6-7-8-9 outlined in teal represent a path through the framework.
 \end{itemize}
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=0.60\textwidth]{../figures/completed-figures/cha-labeled.pdf}
-\captionof{figure}{Cutout of the Chabazite framework showing a 6-MR in blue and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. \label{fig:cha-labeled}}
+\includegraphics[width=0.60\textwidth]{../figures/completed-figures/ring-examples.pdf}
+\captionof{figure}{Cutout of the Chabazite framework showing a path from node 3 to node 9 outlined in teal, a cycle (3-4-18-19-20-17) outlined in red, an 8-MR in pink, and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. \label{fig:cha-labeled}}
 \end{center}
 \newpage
 
@@ -148,7 +149,7 @@ Vertex Symbol & Way to classify the rings around a T-site, shortest ring (and it
 \end{itemize}
 
 \section*{Software Description}
-\label{sec:org5d41ccb}
+\label{sec:org31f0468}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{IZA} are included in a database with ZSE
@@ -177,7 +178,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:orgf798bf0}
+\label{sec:orgc227a60}
 \begin{itemize}
 \item Ring counts frequency plots
 \begin{itemize}
@@ -279,7 +280,7 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \end{itemize}
 
 \section*{Conclusions}
-\label{sec:orgf3f754a}
+\label{sec:org6e9315d}
 
 \begin{itemize}
 \item The method used to find rings in a zeolite will provide different ring counts

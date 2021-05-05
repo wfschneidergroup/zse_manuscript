@@ -66,30 +66,33 @@
 
 \newpage
 * Introduction
+- Zeolites can naturally be represented using graph theory, where atoms are nodes, and bonds are edges.
+  - Sometimes in the literature, oxygen atoms are used as bridges instead of nodes, since they only connect to two T-sites
 - Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
 - Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut cite:goetzke-properties-1991.
 - A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle. 
 - See Cref:fig:cha-labeled for example of rings
-  - The blue highlighted cycle (8-3-4-5-6-7) is a 6-membered ring (6-MR)
-  - The green highlighted cycle (1-2-3-8) is a 4-MR
-  - The cycle following 1-2-3-4-5-6-7-8 is not an 8-MR because there is a shortcut connecting nodes 3 and 8. 
+  - The pink highlighted cycle (1-2-3-17-20-14-15-16) is a 8-membered ring (8-MR)
+  - The green highlighted cycle (14-20-12-13) is a 4-MR
+  - The red outlined cycle following 3-4-18-19-20-17 is not an 6-MR because there is a shortcut connecting nodes 17 and 18.
+  - Nodes 5-6-7-8-9 outlined in teal represent a path through the framework. 
 
 #+attr_latex: :float :width 0.60\textwidth
-#+caption: Cutout of the Chabazite framework showing a 6-MR in blue and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
-file:../figures/completed-figures/cha-labeled.pdf
+#+caption: Cutout of the Chabazite framework showing a path from node 3 to node 9 outlined in teal, a cycle (3-4-18-19-20-17) outlined in red, an 8-MR in pink, and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
+file:../figures/completed-figures/ring-examples.pdf
 \newpage
 
 #+CAPTION: Matrix showing relationship between frameoworks, nodes, paths, cycles, and various ring types. label:tab:ring-def
 #+ATTR_LATEX: :environment longtable :align l p{2.7cm} p{2.7cm} p{2.7cm} p{2.7cm}
-|                     | Description                                                                                                               | Framework                                                                   | Node (T-Sites)                                   | Node (Oxygen)                                         |
-|---------------------+---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------------------------------------+-------------------------------------------------------|
-| Nodes               | T-sites and oxygen atoms                                                                                                  | Contains some set of symmetry distinct T-sites and oxygen atoms             |                                                  |                                                       |
-| Paths               | Collection of connected nodes from source to target                                                                       | Periodic cell contains an infinite number of paths                          |                                                  |                                                       |
-| Cycles              | Path that starts and ends at the same node                                                                                | Periodic cell Contains an infinite number of cycles                         |                                                  |                                                       |
-| Rings               | Cycle that contains no shortcuts                                                                                          | Contains a finite number of unique rings                                    | All rings that pass through particular T-site    | All rings that pass through particular oxygen atom    |
-| Unstacked Rings     | Ring that does not traverse two stacked rings                                                                             | A subset of the Rings above                                                 | All unstacked rings that pass through T-site     | All unstacked rings that pass through oxygen atom     |
-| Shortest Path Rings | Ring that is the shortest ring from at least one set of O-T-O on the cycle                                                | A smaller subset of the rings above                                         | All shortest path rings that pass through T-site | All shortest path rings that pass through oxygen atom |
-| Vertex Symbol       | Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site       | Collection of vertex symbols for all symmetry distinct T-sites in framework | Vertex symbol for particular T-site              |                                                       |
+|                     | Description                                                                                                       | Framework                                                                   | Node (T-Sites)                                   | Node (Oxygen)                                         |
+|---------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------------------------------------------+-------------------------------------------------------|
+| Nodes               | T-sites and oxygen atoms                                                                                          | Contains some set of symmetry distinct T-sites and oxygen atoms             |                                                  |                                                       |
+| Paths               | Collection of connected nodes from source to target                                                               | Periodic cell contains an infinite number of paths                          |                                                  |                                                       |
+| Cycles              | Path that starts and ends at the same node                                                                        | Periodic cell Contains an infinite number of cycles                         |                                                  |                                                       |
+| Rings               | Cycle that contains no shortcuts                                                                                  | Contains a finite number of unique rings                                    | All rings that pass through particular T-site    | All rings that pass through particular oxygen atom    |
+| Unstacked Rings     | Ring that does not traverse two stacked rings                                                                     | A subset of the Rings above                                                 | All unstacked rings that pass through T-site     | All unstacked rings that pass through oxygen atom     |
+| Shortest Path Rings | Ring that is the shortest ring from at least one set of O-T-O on the cycle                                        | A smaller subset of the rings above                                         | All shortest path rings that pass through T-site | All shortest path rings that pass through oxygen atom |
+| Vertex Symbol       | Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site | Collection of vertex symbols for all symmetry distinct T-sites in framework | Vertex symbol for particular T-site              |                                                       |
 
 - Rings have been used to identify feasible zeolite topologies cite:li-why-2014, to descirbe the similarity and differences between zeolites cite:curtis-statistical-2003, to identify sites or voids of catalytic relevance cite:li-first-principles-2018,kester-effects-2021, and as machine learning finger prints [will get citations for this]
 
