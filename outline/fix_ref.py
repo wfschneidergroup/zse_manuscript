@@ -2,7 +2,7 @@ file = open('ref.bib',"r")
 lines = file.readlines()
 file.close()
 for i,line in enumerate(lines):
-    if 'article' in line:
+    if '@' in line:
         if '_' in line:
             line = line.replace('_','-')
             print(line)

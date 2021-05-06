@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -74,9 +74,9 @@ Sastre, G. and Corma, A.
 \newblock \doi{10.1021/jp8100128}.
 \newblock URL \url{https://pubs.acs.org/doi/10.1021/jp8100128}.
 
-\bibitem[Baerlocher and McCusker()]{IZA}
-Baerlocher, C. and McCusker, L.~B.
-\newblock \emph{Database of Zeolite Structures}.
+\bibitem[Baerlocher and McCusker()]{baerlocher-database-nodate}
+Baerlocher, C. and McCusker, L.
+\newblock Database of {Zeolite} {Structures}.
 \newblock URL \url{http://www.iza-structure.org/databases/}.
 
 \bibitem[Larsen et~al.(2017)Larsen, Castelli, Christensen, Du, Groves,
@@ -92,11 +92,35 @@ Larsen, A.~H., Castelli, I.~E., Christensen, R., Du, M., Groves, M.~N.,
   with atoms.
 \newblock \emph{J. Phys.}, page~31, 2017.
 
-\bibitem[Hagberg et~al.(2008)Hagberg, Schult, and Swart]{SciPyProceedings-11}
+\bibitem[Hagberg et~al.(2008)Hagberg, Schult, and
+  Swart]{hagberg-exploring-2008}
 Hagberg, A.~A., Schult, D.~A., and Swart, P.~J.
-\newblock Exploring network structure, dynamics, and function using networkx.
-\newblock In Varoquaux, G., Vaught, T., and Millman, J., editors,
-  \emph{Proceedings of the 7th Python in Science Conference}, pages 11 -- 15,
-  Pasadena, CA USA, 2008.
+\newblock Exploring network structure, dynamics, and function using {NetworkX}.
+\newblock In \emph{Proceedings of the 7th {Python} in {Science} {Conference}},
+  pages 11--15, Pasadena, CA USA, August 2008.
+
+\bibitem[Dědeček et~al.(2012)Dědeček, Sobalík, and
+  Wichterlová]{dedecek-siting-2012}
+Dědeček, J., Sobalík, Z., and Wichterlová, B.
+\newblock Siting and {Distribution} of {Framework} {Aluminium} {Atoms} in
+  {Silicon}-{Rich} {Zeolites} and {Impact} on {Catalysis}.
+\newblock \emph{Catalysis Reviews}, 54\penalty0 (2):\penalty0 135--223, April
+  2012.
+\newblock ISSN 0161-4940, 1520-5703.
+\newblock \doi{10.1080/01614940.2012.632662}.
+\newblock URL
+  \url{http://www.tandfonline.com/doi/abs/10.1080/01614940.2012.632662}.
+
+\bibitem[Bernauer et~al.(2016)Bernauer, Tabor, Pashkova, Kaucký, Sobalík,
+  Wichterlová, and Dedecek]{bernauer-proton-2016}
+Bernauer, M., Tabor, E., Pashkova, V., Kaucký, D., Sobalík, Z., Wichterlová,
+  B., and Dedecek, J.
+\newblock Proton proximity – {New} key parameter controlling adsorption,
+  desorption and activity in propene oligomerization over {H}-{ZSM}-5 zeolites.
+\newblock \emph{Journal of Catalysis}, 344:\penalty0 157--172, December 2016.
+\newblock ISSN 00219517.
+\newblock \doi{10.1016/j.jcat.2016.09.025}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S002195171630197X}.
 
 \end{thebibliography}

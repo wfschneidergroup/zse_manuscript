@@ -107,7 +107,7 @@ file:../figures/completed-figures/ring-examples.pdf
 
 * Software Description
 
-- All of the frameworks listed on the IZA Database of zeolite structures cite:IZA are included in a database with ZSE
+- All of the frameworks listed on the IZA Database of zeolite structures cite:baerlocher-database-nodate are included in a database with ZSE
 - These structures are Atomic Simulation Environment Atoms objects cite:larsen-atomic-2017, and can be used with any of the functions in ZSE
 - ZSE also includes CIF tools to read structure files for frameworks not listed in the IZA website, such as hypothetical zeolites, and return an Atoms object that can be used with ZSE
 - ZSE has 3 previously published rules for ring finding implemented
@@ -119,7 +119,7 @@ file:../figures/completed-figures/ring-examples.pdf
 - Each of the rules: shortest path, vertex symbols, and our new rule are a subset of the no shortcuts rule
 Process to find rings:
 1. To find rings in a zeolite, ZSE makes a custom connectivity matrix for the Si and O atoms in the framework
-2. We use NetworkX cite:SciPyProceedings-11 to build a shortest path matrix for every atom pair in the zeolite framework
+2. We use NetworkX cite:hagberg-exploring-2008 to build a shortest path matrix for every atom pair in the zeolite framework
 3. We then find all the rings up to some cutoff size base on the algorithm presented by Goetzke and Klein cite:goetzke-properties-1991
 4. Depending on the rule chosen by the user, ZSE then removes rings from this list that don't meet the qualifications of the rule
 5. ZSE returns a list of the rings found, a list of the atom indicies that compose each ring, Atoms objects for each ring that can be further analyzed or visualized by the user
@@ -180,16 +180,30 @@ file:../figures/completed-figures/unique-os.pdf
 | MON       | 4_{1}\bullet5_{5}\bullet8_{6}                 | 4_{1}\bullet5_{5}\bullet8_{6}              | 4_{1}\bullet5_{5}\bullet8_{6}       |
 | NPO       | 3_{1}\bullet6_{6}\bullet12_{40}               | 3_{1}\bullet6_{6}\bullet12_{40}            | 3_{1}\bullet6_{6}                   |
 
+- This ring finding rules often find rings that are not discussed in literature, and are not listed by the IZA
+- These are classified as untabulated rings by Curtis and Deem cite:curtis-statistical-2003
+- However it is possible that these rings are relevant for describing chemical, catalytic, or topological properties of zeolites
+- Here we show an example of untabulated rings in the Chabazite framework
 - Show the cage belts results for CHA, AFT, etc... and discuss how those rings don't show up in previous literature, Cref:fig:cha-rings
   - Looking at results from CHA we see the Goetzke method finds 4_{3}\bullet6_{1}\bullet8_{6}\bullet12_{1}
   - This is different from the results in the Sastre paper cite:sastre-topological-2009, in that they only show 2 8-MRs and no 12-MRs
   - The extra 8-MRs result from cycles traversing nodes in both 6-MRs of the d6r
+    - Crum rule removes these 8-MRs while still finding the 12-MR
+    - Sastre rule does not find the 8-MRs in the d6r or the 12-MR
   - The 12-MR is a cycle that circumferences the CHA cage
 #+attr_latex: :float :width 0.45\textwidth :placement {c}{0.5\textwidth}
-#+caption: Chabazite framework with highlighted rings: 4-MR in green, 6-MR in blue, 8-MR in pink, 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature. This is a placeholder figure, I want to show the rings in CHA for discussion. Hoping to get your input on how best to do that. label:fig:cha-rings
+#+caption: Chabazite framework with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature, Si atoms have been replaced with Al atoms to help identify those rings in the overall cage structure.. label:fig:cha-rings
 file:../figures/completed-figures/cha-all-rings.pdf
 
-- Show the pentasil 6-membered cycle (MFI) and discuss how that is often considered a ring by catalysis researchers, but not a ring by the Goetzke definition
+- On the other end of the spectrum, there are cycles that would not be classified as a rings by the connectivity rules previously outlined that display properties similar to rings
+- These shortcut containing cycles can display chemical and/or geometric properties consistent with rings, and are of interest to catalysis researchers even though they are not considered rings by connectivity rules
+- One example is the 6-membered cycle referred to as the \alpha-6-MR in literature (Cref:fig:mfi-6) and is present in a number of frameworks including but not limited to  MOR, FER, MFI, and BEA cite:dedecek-siting-2012,bernauer-proton-2016, which is a potential location for Co^{2+} uptake when two Al atoms are 3rd nearest neighbor in the cycle. Similar to Co^{2+} uptake in 3NN Al atoms in 6-MRs in other frameworks such as CHA and AEI.
+- This 6-membered cycle would not be considered a ring by any of the connectivity rules outlined here due to the shortcut splitting the cycle into two 5-MRs
+
+#+attr_latex: :float :width .4\textwidth
+#+caption: Cutout of MFI framework showing the structure referred to as an \alpha-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found as a ring by any of the connectivity ring rules (Goetzke, Crum, Sastre, or vertex symbol). label:fig:mfi-6
+file:../figures/completed-figures/MFI-6MC.pdf
+
 
 * Conclusions
 
