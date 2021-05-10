@@ -1,4 +1,4 @@
-% Created 2021-05-06 Thu 16:34
+% Created 2021-05-10 Mon 09:54
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,7 +89,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section*{Introduction}
-\label{sec:org061dd26}
+\label{sec:orgb4f7112}
 \begin{itemize}
 \item Zeolites can naturally be represented using graph theory, where atoms are nodes, and bonds are edges.
 \begin{itemize}
@@ -153,7 +153,7 @@ Vertex Symbol & Way to classify the rings around a T-site, shortest ring (and it
 \end{itemize}
 
 \section*{Software Description}
-\label{sec:org71ffeda}
+\label{sec:orgb3bb5f3}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{baerlocher-database-nodate} are included in a database with ZSE
@@ -182,7 +182,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:orge495b06}
+\label{sec:org2d4602a}
 \begin{itemize}
 \item Ring counts frequency plots
 \begin{itemize}
@@ -265,14 +265,120 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \end{tabular}
 \end{table}
 
+
 \begin{itemize}
-\item This ring finding rules often find rings that are not discussed in literature, and are not listed by the IZA
+\item Here we show the most common ring indices for T-sites in the IZA database using each of the ring finding rules
+\item \Cref{tab:goetzke-ts} shows the five most common ring indices for T-sites using the Goetzke  rule
+\end{itemize}
+\begin{table}[htbp]
+\caption{Most Common Ring Indices Using the Goetzke Rule \label{tab:goetzke-ts}}
+\centering
+\begin{tabular}{lrl}
+Ring Index & Count & Frameworks Containing Index\\
+\hline
+5\(_{\text{6}}\)\textbullet{}10\(_{\text{4}}\) & 23 & IMF(2), MEL(1), MFI(2), PRO(1),\\
+ &  & SVR(2), TUN(2), SFV(13)\\
+4\(_{\text{1}}\)\textbullet{}5\(_{\text{3}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}10\(_{\text{3}}\)\textbullet{}12\(_{\text{4}}\) & 14 & MEL(1), SFV(13)\\
+4\(_{\text{1}}\)\textbullet{}5\(_{\text{3}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{5}}\)\textbullet{}10\(_{\text{1}}\) & 14 & MEL(1), SFV(13)\\
+5\(_{\text{5}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}10\(_{\text{1}}\)\textbullet{}12\(_{\text{1}}\) & 14 & MEL(1), SFV(13)\\
+5\(_{\text{4}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}10\(_{\text{3}}\) & 14 & MEL(1), SFV(13)\\
+\end{tabular}
+\end{table}
+
+\newpage
+\begin{itemize}
+\item \Cref{tab:crum-ts} shows the five most common ring indices for T-sites using the Crum rule
+\end{itemize}
+\begin{table}[htbp]
+\caption{Five Most Common Ring Indices Using the Crum Rule \label{tab:crum-ts}}
+\centering
+\begin{tabular}{lrl}
+Ring Index & Count & Frameworks Containing Index\\
+\hline
+4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 31 & APC(1), GIS(1), MER(1), MWF(13),\\
+ &  & PAU(6), PHI(2), PWN(2), SIV(4)\\
+5\(_{\text{6}}\)\textbullet{}10\(_{\text{4}}\) & 25 & IMF(3), MEL(1), MFI(2), RRO(1),\\
+ &  & SVR(2), TUN(3), SFV(13)\\
+4\(_{\text{2}}\)\textbullet{}6\(_{\text{4}}\) & 17 & FAR(1), FRA(6), GIU(1), LIO(1),\\
+ &  & LOS(2), LTN(2), MAR(1), SOD(1),\\
+ &  & TOL(2)\\
+5\(_{\text{5}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}10\(_{\text{1}}\) & 17 & IMF(1), MEL(1), MFI(1), TUN(1),\\
+ &  & SFV(13)\\
+4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}12\(_{\text{1}}\) & 16 & AFS(1), AFT(3), AFV(1), AFX(2),\\
+ &  & AVL(2), BPH(1), CHA(1), GME(1),\\
+ &  & SBE(1), SFW(3)\\
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\item \Cref{tab:sastre-ts} shows the five most common ring indices for T-sites using the Sastre rule
+\end{itemize}
+\begin{table}[htbp]
+\caption{Five Most Common Ring Indices Using the Sastre Rule \label{tab:sastre-ts}}
+\centering
+\begin{tabular}{lrl}
+Ring Index & Count & Frameworks Containing Index\\
+\hline
+4\(_{\text{2}}\)\textbullet{}6\(_{\text{4}}\) & 39 & AFG(3), CAN(1), FAR(4), FRA(6),\\
+ &  & GIU(5), LIO(4), LOS(2), LTN(2)\\
+ &  & MAR(4), SOD(1), TOL(7)\\
+5\(_{\text{6}}\)\textbullet{}10\(_{\text{4}}\) & 33 & IMF(3), MEL(2), MFI(2), RRO(1),\\
+ &  & SVR(2), TUN(2), SFV(21)\\
+4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 30 & GIS(1), MER(1), MWF(14), PAU(6),\\
+ &  & PHI(2), PWN(2), SIV(4)\\
+4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\) & 28 & AEI(3), AFT(3), AFV(1), AFX(2),\\
+ &  & AVL(2), CHA(1), GME(1), KFI(1),\\
+ &  & LTF(1), MWF(2), PAU(2), PWN(1),\\
+ &  & RHO(1), SAV(3), SFW(3), TSC(1)\\
+4\(_{\text{3}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{1}}\) & 24 & AFV(1), AVE(2), AVL(1), CLO(2),\\
+ &  & EAB(1), ERI(1), IFY(1), IRN(1),\\
+ &  & LEV(1), LTA(1), LTN(1), MOZ(1),\\
+ &  & OFF(1), SAT(1), SWY(2), TSC(1),\\
+ &  & UFI(1), PTT(1), SYT(3)\\
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\item \Cref{tab:vertex-ts} shows the five most common ring indices for T-sites using vertex symbols
+\end{itemize}
+\begin{table}[htbp]
+\caption{Five Most Common Ring Indices Using Vertex Symbolscite:bernauer-proton-2016 \label{tab:vertex-ts}}
+\centering
+\begin{tabular}{lrl}
+Vertex Symbol & Count & Frameworks Containing Index\\
+\hline
+4\textbullet{}4\textbullet{}6\textbullet{}6\textbullet{}6\textbullet{}6 & 40 & AFG(3), CAN(1), FAR(4), FRA(6),\\
+ &  & GIU(5), LIO(4), LOS(2), LTN(2),\\
+ &  & MAR(4), RON(1), SOD(1), TOL(7)\\
+4\textbullet{}4\textbullet{}4\textbullet{}6\textbullet{}8\textbullet{}8 & 32 & AEI(3), AFT(3), AFV(1), AFX(2),\\
+ &  & ATT(1), AVL(2), CHA(1), ETV(1),\\
+ &  & GME(1), KFI(1), LTF(1), MRT(2),\\
+ &  & MWF(2), PAU(2), PWN(1), RHO(1),\\
+ &  & SAV(3), SFW(3), TSC(1)\\
+4\textbullet{}4\textbullet{}4\textbullet{}6\textbullet{}6\textbullet{}8 & 30 & AFV(1), AVE(2), AVL(1), CGS(1),\\
+ &  & CLO(2), EAB(1), ERI(1), ETR(1),\\
+ &  & IFY(1), IRN(1), JSW(1), LEV(1),\\
+ &  & LTA(1), LTL(1), LTN(1), MOZ(3),\\
+ &  & OFF(1), PTT(1), SAT(1), SWY(2),\\
+ &  & SYT(3), TSC(1), UFI(1)\\
+4\textbullet{}4\textbullet{}4\textbullet{}8\textbullet{}8\textbullet{}8\(_{\text{2}}\) & 30 & GIS(1), MER(1), MWF(14), PAU(6),\\
+ &  & PHI(2), PWN(2), SIV(4)\\
+5\textbullet{}5\textbullet{}5\textbullet{}5\textbullet{}5\textbullet{}6 & 26 & DDR(1), DOH(2), IHW(1), IMF(1),\\
+ &  & MEL(1), MEP(1), MFI(1), MTN(1),\\
+ &  & SFS(1), SFV(15), TUN(1)\\
+\end{tabular}
+\end{table}
+
+\newpage
+
+\begin{itemize}
+\item These ring finding rules often find rings that are not commonly discussed in literature, and are not listed by the IZA
 \item These are classified as untabulated rings by Curtis and Deem \cite{curtis-statistical-2003}
 \item However it is possible that these rings are relevant for describing chemical, catalytic, or topological properties of zeolites
 \item Here we show an example of untabulated rings in the Chabazite framework
 \item Show the cage belts results for CHA, AFT, etc\ldots{} and discuss how those rings don't show up in previous literature, \Cref{fig:cha-rings}
 \begin{itemize}
-\item Looking at results from CHA we see the Goetzke method finds 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{1}}\)
+\item Looking at results for CHA in \Cref{tab:ring-counts} we see the Goetzke method finds 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{1}}\)
 \item This is different from the results in the Sastre paper \cite{sastre-topological-2009}, in that they only show 2 8-MRs and no 12-MRs
 \item The extra 8-MRs result from cycles traversing nodes in both 6-MRs of the d6r
 \begin{itemize}
@@ -301,7 +407,7 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 
 
 \section*{Conclusions}
-\label{sec:orgfbe47d4}
+\label{sec:org5a1fa60}
 
 \begin{itemize}
 \item The method used to find rings in a zeolite will provide different ring counts
