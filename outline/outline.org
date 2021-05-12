@@ -68,6 +68,12 @@
 * Highlights
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
+1. Zeolite framework creates rings, defined as closed paths with no shortcuts. We enumerate all rings up to XX across all known Fws.
+   1. Would be very cool to classify Fws according to these rings....
+   2. Compare to other classifications, eg cage-window vs channel
+2. Various conventions for associating some subsets of these rings with either a framework or with the T-sites of a framework. Compute and compare conventions across all known frameworks.
+3. Some features treated by convention as rings are not rings in a topological sense but are rather defined by the void space they create. 
+
 * Introduction
 Introduction needs more structure.  Start with background, identify the problem you want to address.
 
