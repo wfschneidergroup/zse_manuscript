@@ -77,13 +77,13 @@
 * Highlights
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
-1. Zeolite framework creates rings, defined as closed paths with no shortcuts. 
-2. We provide a Python package that has the ability to find these rings based on previously published and new conventions
-3. We enumerate all rings up to 18 T-sites across all known Fws using each of these conventions
+1. Zeolite framework and nodes commonly classified in terms of rings
+2. We provide a Python package that has the ability to identify and classify these rings based on previously published and new conventions. Node-based search procedure taking advantage of algorithms developed for general nets.
+3. We enumerate all rings, defined as paths with no short-cut, up to 18 T-sites across all known Fws
    1. Would be very cool to classify Fws according to these rings....
       1. Not sure what approach to use for that, but it is a good idea
    2. Compare to other classifications, eg cage-window vs channel
-4. Various conventions for associating some subsets of these rings with either a framework or with the T-sites of a framework. Compute and compare conventions across all known frameworks.
+4. Various conventions for associating some subsets of closed-path with no shortcut rings with either a framework or with the T-sites of a framework. We compute and compare conventions across all known frameworks.
 5. Some features treated by convention as rings are not rings in a topological sense but are rather defined by the void space they create. 
 
 * Introduction
@@ -113,17 +113,17 @@ file:../figures/completed-figures/ring-examples.pdf
 
 #+CAPTION: Matrix showing relationship between frameoworks, nodes, paths, cycles, and various ring types. \red{Vertex symbol doesn't belong in the first column. It isn't a topological feature.} label:tab:ring-def
 #+ATTR_LATEX: :environment longtable :align l p{2.7cm} p{2.7cm} p{2.7cm} p{2.7cm}
-|                     | <40>                                     | <30>                           | <30>                           |                                                           |
-|                     | Description                              | Framework                      | Node (T-Sites)                 | Node (Oxygen)                                             |
-|---------------------+------------------------------------------+--------------------------------+--------------------------------+-----------------------------------------------------------|
-| Nodes               | T-sites and oxygen atoms                 | Contains some set of symmetry distinct T-sites and oxygen atoms |                                |                                                           |
-| Paths               | Collection of connected nodes from source to target | Periodic cell contains an infinite number of paths |                                |                                                           |
-| Cycles              | Path that starts and ends at the same node | Periodic cell Contains an infinite number of cycles |                                |                                                           |
-| Rings               | Cycle that contains no shortcuts         | Contains a finite number of unique rings | All rings that pass through particular T-site | All rings that pass through particular oxygen atom        |
-| Unstacked Rings     | Ring that does not traverse two stacked rings | A subset of the Rings above    | All unstacked rings that pass through T-site | All unstacked rings that pass through oxygen atom         |
-| Shortest Path Rings | Ring that is the shortest ring for at least one set of O-T-O on the cycle | A smaller subset of the rings above | All shortest path rings that pass through T-site | All shortest path rings that pass through oxygen atom     |
-| \red{Vertex Symbol} | Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site | Collection of vertex symbols for all symmetry distinct T-sites in framework | Vertex symbol for particular T-site |                                                           |
-| Geometric rings     | A cycle that may contain a shortcut, but has similar geometric/chemical properties to a ring without a shortcut | Contains a finite number of geometric rings | Can be described by the geometric rings that pass through | Can be described by the geometric rings that pass through |
+|                     | <40>                                                                                                              | <30>                                                                        | <30>                                                      |                                                           |
+|                     | Description                                                                                                       | Framework                                                                   | Node (T-Sites)                                            | Node (Oxygen)                                             |
+|---------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------+-----------------------------------------------------------|
+| Nodes               | T-sites and oxygen atoms                                                                                          | Contains some set of symmetry distinct T-sites and oxygen atoms             |                                                           |                                                           |
+| Paths               | Collection of connected nodes from source to target                                                               | Periodic cell contains an infinite number of paths                          |                                                           |                                                           |
+| Cycles              | Path that starts and ends at the same node                                                                        | Periodic cell contains an infinite number of cycles                         |                                                           |                                                           |
+| Rings               | Cycle that contains no shortcuts                                                                                  | Contains a finite number of unique rings                                    | All rings that pass through particular T-site             | All rings that pass through particular oxygen atom        |
+| Unstacked Rings     | Ring that does not traverse two stacked rings                                                                     | A subset of the Rings above                                                 | All unstacked rings that pass through T-site              | All unstacked rings that pass through oxygen atom         |
+| Shortest Path Rings | Ring that is the shortest ring for at least one set of O-T-O on the cycle                                         | A smaller subset of the rings above                                         | All shortest path rings starting from a T-site (Vertex)   | All shortest path rings that pass through oxygen atom     |
+| \red{Vertex Symbol} | Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site | Collection of vertex symbols for all symmetry distinct T-sites in framework | Vertex symbol for particular T-site                       |                                                           |
+| Geometric rings     | A cycle that may contain a shortcut, but has similar geometric/chemical properties to a ring without a shortcut   | Contains a finite number of geometric rings                                 | Can be described by the geometric rings that pass through | Can be described by the geometric rings that pass through |
 
 
 - Different conventions exist that can reduce the set of rings to more strictly defined properties 
