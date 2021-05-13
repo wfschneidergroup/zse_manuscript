@@ -1,4 +1,4 @@
-% Created 2021-05-10 Mon 09:54
+% Created 2021-05-13 Thu 12:16
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -88,16 +88,57 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \end{asparaenum}
 
 \newpage
+\section*{Questions to settle with Bill:}
+\label{sec:org41438e4}
+\begin{enumerate}
+\item Where should vertex symbol go?
+\item Discuss the table and make sure we are in agreement on everything
+\item Naming the ring conventions:
+\begin{enumerate}
+\item Goetzke: ring, primitive ring, fundamental ring \cite{marians-network-1990,guttman-ring-1990,goetzke-properties-1991}
+\item Sastre: Shortest path ring, something else?
+\item Crum: Unstacked rings, something else?
+\end{enumerate}
+\item There are other ring definitions that I have not included in this study: strong ring, and very strong ring. Should we at least introduce those in the intro?
+\end{enumerate}
+
+\section*{Highlights}
+\label{sec:org6acb588}
+What is the main point of the paper? What problem is it addressing? What are the main insights?
+
+\begin{enumerate}
+\item Zeolite framework creates rings, defined as closed paths with no shortcuts.
+\item We provide a Python package that has the ability to find these rings based on previously published and new conventions
+\item We enumerate all rings up to 18 T-sites across all known Fws using each of these conventions
+\begin{enumerate}
+\item Would be very cool to classify Fws according to these rings\ldots{}.
+\begin{enumerate}
+\item Not sure what approach to use for that, but it is a good idea
+\end{enumerate}
+\item Compare to other classifications, eg cage-window vs channel
+\end{enumerate}
+\item Various conventions for associating some subsets of these rings with either a framework or with the T-sites of a framework. Compute and compare conventions across all known frameworks.
+\item Some features treated by convention as rings are not rings in a topological sense but are rather defined by the void space they create.
+\end{enumerate}
+
 \section*{Introduction}
-\label{sec:orgb4f7112}
+\label{sec:orge351f77}
+Introduction needs more structure.  Start with background, identify the problem you want to address.
+
+Zeolites are microporous and crystalline, natural to characterize by the sizes of the features present in the crystal.  Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites of the zeolite.  Provide some historical perspective here\ldots{}.
 \begin{itemize}
-\item Zeolites can naturally be represented using graph theory, where atoms are nodes, and bonds are edges.
+\item Rings have been used to identify feasible zeolite topologies \cite{li-why-2014}, to descirbe the similarity and differences between zeolites \cite{curtis-statistical-2003}, to identify sites or voids of catalytic relevance \cite{li-first-principles-2018,kester-effects-2021}, and as machine learning finger prints [will get citations for this] \red{need more thorough citing}
+
+\item Zeolites can naturally be represented using graph theory, where atoms are nodes, and bonds are edges. \red{REFS}
 \begin{itemize}
 \item Sometimes in the literature, oxygen atoms are used as bridges instead of nodes, since they only connect to two T-sites
 \end{itemize}
-\item Topology of zeolite frameworks and associated tetrahedral sites (T-sites) are commonly characterized by their associated rings
-\item Rings are defined as a close cycle traversing the T-site and oxygen atoms of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991}.
-\item A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle.
+\item \red{Refer to/use table below} \Cref{tab:ring-def} summarizes the various topological features based on connectivity that can be used to describe a framework, T-site, or oxygen atom
+\item A path is a series of connected nodes from some source node to some target node
+\item A cycle is a path that starts and ends at the same node, and doesn't repeat any other nodes
+\item Rings in zeolites are defined as a cycle traversing the T-site and oxygen atoms (nodes) of the framework, and cannot be decomposed into smaller cycles by a shortcut \cite{goetzke-properties-1991,guttman-ring-1990}.
+\item A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle \cite{goetzke-properties-1991,guttman-ring-1990}
+\item Shortest path ring is a ring that is the shortest ring for at least one set of O-T-O on the cycle \cite{sastre-topological-2009}, this ring will be contained in the vertex symbol for at least one of the T-sites within the framework
 \item See \Cref{fig:cha-labeled} for example of rings
 \begin{itemize}
 \item The pink highlighted cycle (1-2-3-17-20-14-15-16) is a 8-membered ring (8-MR)
@@ -114,7 +155,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \newpage
 
 \begin{longtable}{l p{2.7cm} p{2.7cm} p{2.7cm} p{2.7cm}}
-\caption{Matrix showing relationship between frameoworks, nodes, paths, cycles, and various ring types. \label{tab:ring-def}}
+\caption{Matrix showing relationship between frameoworks, nodes, paths, cycles, and various ring types. \red{Vertex symbol doesn't belong in the first column. It isn't a topological feature.} \label{tab:ring-def}}
 \\
  & Description & Framework & Node (T-Sites) & Node (Oxygen)\\
 \hline
@@ -135,25 +176,42 @@ Paths & Collection of connected nodes from source to target & Periodic cell cont
 Cycles & Path that starts and ends at the same node & Periodic cell Contains an infinite number of cycles &  & \\
 Rings & Cycle that contains no shortcuts & Contains a finite number of unique rings & All rings that pass through particular T-site & All rings that pass through particular oxygen atom\\
 Unstacked Rings & Ring that does not traverse two stacked rings & A subset of the Rings above & All unstacked rings that pass through T-site & All unstacked rings that pass through oxygen atom\\
-Shortest Path Rings & Ring that is the shortest ring from at least one set of O-T-O on the cycle & A smaller subset of the rings above & All shortest path rings that pass through T-site & All shortest path rings that pass through oxygen atom\\
-Vertex Symbol & Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site & Collection of vertex symbols for all symmetry distinct T-sites in framework & Vertex symbol for particular T-site & \\
+Shortest Path Rings & Ring that is the shortest ring for at least one set of O-T-O on the cycle & A smaller subset of the rings above & All shortest path rings that pass through T-site & All shortest path rings that pass through oxygen atom\\
+\red{Vertex Symbol} & Way to classify the rings around a T-site, shortest ring (and its multiplicity) for each O-O pair around a T-site & Collection of vertex symbols for all symmetry distinct T-sites in framework & Vertex symbol for particular T-site & \\
+Geometric rings & A cycle that may contain a shortcut, but has similar geometric/chemical properties to a ring without a shortcut & Contains a finite number of geometric rings & Can be described by the geometric rings that pass through & Can be described by the geometric rings that pass through\\
 \end{longtable}
 
-\begin{itemize}
-\item Rings have been used to identify feasible zeolite topologies \cite{li-why-2014}, to descirbe the similarity and differences between zeolites \cite{curtis-statistical-2003}, to identify sites or voids of catalytic relevance \cite{li-first-principles-2018,kester-effects-2021}, and as machine learning finger prints [will get citations for this]
 
-\item Different methods exist to count rings present in a zeolite
+\begin{itemize}
+\item Different conventions exist that can reduce the set of rings to more strictly defined properties
 \item These methods return different sets of rings
+\item We can use rings to characterize oxygen atoms, T-sites, and entire frameworks
+\item T-sites:
+\begin{itemize}
 \item Vertex symbols are the set of shortest paths connecting the 6 oxygen-oxygen pairs around a T-site \cite{okeeffe-vertex-1997}
 \item Shortest path rings count all the vertex symbol rings that pass through a T-site or an oxygen atom \cite{sastre-topological-2009}
 \item Or we can count all the rings that do not have a short cut \cite{goetzke-properties-1991}
+\end{itemize}
+\item Oxygen atoms:
+\begin{itemize}
+\item Shortest path rings
+\item All rings with out a shortcut
+\end{itemize}
+\item Framework
+\begin{itemize}
+\item Vertex symbol rings
+\item Shortest path rings
+\item All rings with out a shortcut
+\end{itemize}
 \item Differences in ring counts leads to differences in how we describe the topology of zeolites. Therefore, when discussing the rings in a zeolite it is important to also state which method of ring counting is used.
-\item Here we report an analysis of rings and T-sites in a large number of zeolite frameworks using Zeolite Simulation Environment, a Python package that implements an efficient algorithm presented by Goetzke and Klein \cite{goetzke-properties-1991} for finding rings in arbitrary frameworks.
-\item We compare the results of a number of common and new ring definitions applied to a large number of common zeolite frameworks.\cite{li-first-principles-2018}
+\item Here we present Zeolite Simulation Environment (ZSE), a Python package that implements the ring finding algorithm presented by Goetzke and Klein \cite{goetzke-properties-1991} to find rings up to a user defined cutoff size, and can implement the previously published ring set reduction conventions.
+\item We use ZSE to provide an analysis of rings using each of these conventions on the entire set of IZA zeolite frameworks to compare how they result in different characterizations
 \end{itemize}
 
+
+\red{Introduction needs to foreshadow the important insights. We captured those in your abstract. They need to appear here too.}
 \section*{Software Description}
-\label{sec:orgb3bb5f3}
+\label{sec:org97556f3}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{baerlocher-database-nodate} are included in a database with ZSE
@@ -161,11 +219,11 @@ Vertex Symbol & Way to classify the rings around a T-site, shortest ring (and it
 \item ZSE also includes CIF tools to read structure files for frameworks not listed in the IZA website, such as hypothetical zeolites, and return an Atoms object that can be used with ZSE
 \item ZSE has 3 previously published rules for ring finding implemented
 \begin{itemize}
-\item All cycles with out a shortcut \cite{goetzke-properties-1991}
+\item All cycles without a shortcut \cite{goetzke-properties-1991}
 \item All shortest path cycles \cite{sastre-topological-2009}
 \item Cycles that compose the vertex symbol for a T-site \cite{okeeffe-vertex-1997}
 \end{itemize}
-\item We have also implemented a new rule that finds all rings with out a shortcut, but excludes rings that are made by traversing a stacked set of rings.
+\item We have also implemented a new rule that finds all rings with out a shortcut, but excludes rings that are made by traversing a stacked set of rings. \red{Have to define stacked ring.}
 \begin{itemize}
 \item Figure showing example of 8-MR in the d6r of CHA and 14-MR in AFI
 \end{itemize}
@@ -182,7 +240,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:org2d4602a}
+\label{sec:orgbf8efd2}
 \begin{itemize}
 \item Ring counts frequency plots
 \begin{itemize}
@@ -237,6 +295,9 @@ Process to find rings:
 \begin{itemize}
 \item Reproduce the results from Sastre paper, show ring counts with the other rules, \Cref{tab:ring-counts}
 \begin{itemize}
+\item Ring index was presented by Sastre and Corma as a way to list the rings that pass through a node in a zeolite \cite{sastre-topological-2009}
+\item List rings from smallest to largest, and any multiplicities are shown by a subscript
+\item This is a convenient way to characterize the atoms of a zeolite by the rings they are associated with
 \item Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma \cite{sastre-topological-2009}
 \item This provides an in depth look at some of the frameworks and the differences in rings found by each rule.
 \item Leads into the next section discussing the specific rings of CHA and pentasil that do or don't get counted by each rule.
@@ -390,7 +451,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \end{itemize}
 \begin{center}
 \includegraphics[width=0.45\textwidth]{../figures/completed-figures/cha-all-rings.pdf}
-\captionof{figure}{Chabazite framework with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature, Si atoms have been replaced with Al atoms to help identify those rings in the overall cage structure.. \label{fig:cha-rings}}
+\captionof{figure}{Chabazite cage and d6r with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature, Si atoms have been replaced with Al atoms to help identify those rings in the overall cage structure.. \label{fig:cha-rings}}
 \end{center}
 
 \begin{itemize}
@@ -407,10 +468,14 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 
 
 \section*{Conclusions}
-\label{sec:org5a1fa60}
+\label{sec:orgd035302}
+\begin{itemize}
+\item \red{Rings of graph are well defined; here identify all rings up to XXX in YYY frameworks. Find that commonly reported (IZA) ring sizes miss certain rings.}
+\end{itemize}
+
 
 \begin{itemize}
-\item The method used to find rings in a zeolite will provide different ring counts
+\item The method used to find rings in a zeolite will provide different ring counts \red{unclear}
 \item When discussing rings in a zeolite it is import to disclose by which method those rings were found
 \item Using ZSE we can find rings based on various methods
 \item This provides a foundation for using ring fingerprints in machine learning models to correlate chemical properties and topology
@@ -419,4 +484,26 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 
 \bibliographystyle{unsrtnat}
 \bibliography{ref}
+
+\section*{Acknowledgments}
+\label{sec:orgc0a6c6b}
+\begin{itemize}
+\item Funding
+\begin{itemize}
+\item CISTAR
+\item Schmitt Fellowship
+\end{itemize}
+\item Discussions
+\begin{itemize}
+\item Christian Baerlocher
+\end{itemize}
+\item Software:
+\begin{itemize}
+\item German Sastre: zeoTsites
+\end{itemize}
+\item Compute Resources
+\begin{itemize}
+\item CRC
+\end{itemize}
+\end{itemize}
 \end{document}

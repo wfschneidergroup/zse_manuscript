@@ -1,9 +1,30 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Marians and Hobbs(1990)]{marians-network-1990}
+Marians, C.~S. and Hobbs, L.~W.
+\newblock Network properties of crystalline polymorphs of silica.
+\newblock \emph{Journal of Non-Crystalline Solids}, 124\penalty0
+  (2-3):\penalty0 242--253, October 1990.
+\newblock ISSN 00223093.
+\newblock \doi{10.1016/0022-3093(90)90269-R}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939090269R}.
+
+\bibitem[Guttman(1990)]{guttman-ring-1990}
+Guttman, L.
+\newblock Ring structure of the crystalline and amorphous forms of silicon
+  dioxide.
+\newblock \emph{Journal of Non-Crystalline Solids}, 116\penalty0
+  (2-3):\penalty0 145--147, February 1990.
+\newblock ISSN 00223093.
+\newblock \doi{10.1016/0022-3093(90)90686-G}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939090686G}.
 
 \bibitem[Goetzke and Klein(1991)]{goetzke-properties-1991}
 Goetzke, K. and Klein, H.-J.
@@ -55,15 +76,6 @@ Kester, P.~M., Crum, J.~T., Li, S., Schneider, W.~F., and Gounder, R.
 \newblock URL
   \url{https://linkinghub.elsevier.com/retrieve/pii/S0021951721000191}.
 
-\bibitem[O'Keeffe and Hyde(1997)]{okeeffe-vertex-1997}
-O'Keeffe, M. and Hyde, S.
-\newblock Vertex symbols for zeolite nets.
-\newblock \emph{Zeolites}, 19\penalty0 (5-6):\penalty0 370--374, November 1997.
-\newblock ISSN 01442449.
-\newblock \doi{10.1016/S0144-2449(97)00133-4}.
-\newblock URL
-  \url{https://linkinghub.elsevier.com/retrieve/pii/S0144244997001334}.
-
 \bibitem[Sastre and Corma(2009)]{sastre-topological-2009}
 Sastre, G. and Corma, A.
 \newblock Topological {Descriptor} for {Oxygens} in {Zeolites}. {Analysis} of
@@ -73,6 +85,15 @@ Sastre, G. and Corma, A.
 \newblock ISSN 1932-7447, 1932-7455.
 \newblock \doi{10.1021/jp8100128}.
 \newblock URL \url{https://pubs.acs.org/doi/10.1021/jp8100128}.
+
+\bibitem[O'Keeffe and Hyde(1997)]{okeeffe-vertex-1997}
+O'Keeffe, M. and Hyde, S.
+\newblock Vertex symbols for zeolite nets.
+\newblock \emph{Zeolites}, 19\penalty0 (5-6):\penalty0 370--374, November 1997.
+\newblock ISSN 01442449.
+\newblock \doi{10.1016/S0144-2449(97)00133-4}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0144244997001334}.
 
 \bibitem[Baerlocher and McCusker()]{baerlocher-database-nodate}
 Baerlocher, C. and McCusker, L.
