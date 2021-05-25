@@ -66,30 +66,32 @@
 
 \newpage
 * Questions to settle with Bill:
-1. Where should vertex symbol go?
-2. Discuss the table and make sure we are in agreement on everything
-3. Naming the ring conventions:
+1. Discuss the table and make sure we are in agreement on everything
+2. Naming the ring conventions:
    1. Goetzke: ring, primitive ring, fundamental ring cite:marians-network-1990,guttman-ring-1990,goetzke-properties-1991
    2. Sastre: Shortest path ring, something else?
    3. Crum: Unstacked rings, something else?
-4. There are other ring definitions that I have not included in this study: strong ring, and very strong ring. Should we at least introduce those in the intro? 
    
 * Highlights
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
 1. Zeolite framework and nodes commonly classified in terms of rings
-2. We provide a Python package that has the ability to identify and classify these rings based on previously published and new conventions. Node-based search procedure taking advantage of algorithms developed for general nets.
-3. We enumerate all rings, defined as paths with no short-cut, up to 18 T-sites across all known Fws
+2. Various conventions for associating some subsets of rings with either a framework, the T-sites of a framework, or the oxygens of a framework.
+3. PROBLEM TO ADDRESS: The convention used will provide different ring counts
+4. SOLUTION: We provide a Python package that has the ability to identify and classify these rings based on previously published and new conventions
+5. This software tool uses a node-based search procedure that takes advantage of algorithms developed for general nets
+6. We compute and compare conventions across all known frameworks
+7. Some features treated by convention as rings are not rings in a topological sense but are rather defined by the void space they create.
+8. We enumerate all rings, defined as paths with no short-cut, up to 18 T-sites across all known Fws
    1. Would be very cool to classify Fws according to these rings....
       1. Not sure what approach to use for that, but it is a good idea
    2. Compare to other classifications, eg cage-window vs channel
-4. Various conventions for associating some subsets of closed-path with no shortcut rings with either a framework or with the T-sites of a framework. We compute and compare conventions across all known frameworks.
-5. Some features treated by convention as rings are not rings in a topological sense but are rather defined by the void space they create. 
 
 * Introduction
 Introduction needs more structure.  Start with background, identify the problem you want to address.
 
 Zeolites are microporous and crystalline, natural to characterize by the sizes of the features present in the crystal.  Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites of the zeolite.  Provide some historical perspective here....
+
 - Rings have been used to identify feasible zeolite topologies cite:li-why-2014, to descirbe the similarity and differences between zeolites cite:curtis-statistical-2003, to identify sites or voids of catalytic relevance cite:li-first-principles-2018,kester-effects-2021, and as machine learning finger prints [will get citations for this] \red{need more thorough citing}
 
 - Zeolites can naturally be represented using graph theory, where atoms are nodes, and bonds are edges. \red{REFS}
@@ -109,6 +111,7 @@ Zeolites are microporous and crystalline, natural to characterize by the sizes o
 #+attr_latex: :float :width 0.60\textwidth
 #+caption: Cutout of the Chabazite framework showing a path from node 3 to node 9 outlined in teal, a cycle (3-4-18-19-20-17) outlined in red, an 8-MR in pink, and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
 file:../figures/completed-figures/ring-examples.pdf
+
 \newpage
 
 #+CAPTION: Matrix showing relationship between frameoworks, nodes, paths, cycles, and various ring types. \red{Vertex symbol doesn't belong in the first column. It isn't a topological feature.} label:tab:ring-def
@@ -126,7 +129,8 @@ file:../figures/completed-figures/ring-examples.pdf
 | Geometric rings     | A cycle that may contain a shortcut, but has similar geometric/chemical properties to a ring without a shortcut   | Contains a finite number of geometric rings                                 | Can be described by the geometric rings that pass through | Can be described by the geometric rings that pass through |
 
 
-- Different conventions exist that can reduce the set of rings to more strictly defined properties 
+**Problem to address**
+- Different conventions exist that can reduce the set of rings to more strictly defined properties
 - These methods return different sets of rings
 - We can use rings to characterize oxygen atoms, T-sites, and entire frameworks
 - T-sites:
@@ -141,11 +145,16 @@ file:../figures/completed-figures/ring-examples.pdf
   - Shortest path rings
   - All rings with out a shortcut
 - Differences in ring counts leads to differences in how we describe the topology of zeolites. Therefore, when discussing the rings in a zeolite it is important to also state which method of ring counting is used.
+
+**Solution to problem**
 - Here we present Zeolite Simulation Environment (ZSE), a Python package that implements the ring finding algorithm presented by Goetzke and Klein cite:goetzke-properties-1991 to find rings up to a user defined cutoff size, and can implement the previously published ring set reduction conventions.
 - We use ZSE to provide an analysis of rings using each of these conventions on the entire set of IZA zeolite frameworks to compare how they result in different characterizations 
 
-
 \red{Introduction needs to foreshadow the important insights. We captured those in your abstract. They need to appear here too.}
+
+Using ZSE we show the differences in framework, T-site, and oxygen ring descriptors when using the various ring counting conventions. We highlight rings that are found by these conventions but not typically discussed for a number of frameworks. We also show that the vertex symbol, a common approach used to characterize T-sites misses important parts of the stereochemistry around a T-site. 
+
+
 * Software Description
 
 - All of the frameworks listed on the IZA Database of zeolite structures cite:baerlocher-database-nodate are included in a database with ZSE
