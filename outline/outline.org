@@ -65,12 +65,15 @@
 \end{asparaenum}
 
 \newpage
-* Questions to settle with Bill:
-1. Discuss the table and make sure we are in agreement on everything
+* Discussion With Bill:
+1. Go through table again to make sure we agree
+   1. Will move vertex symbol outside of table
 2. Naming the ring conventions:
    1. Goetzke: ring, primitive ring, fundamental ring cite:marians-network-1990,guttman-ring-1990,goetzke-properties-1991
    2. Sastre: Shortest path ring, something else?
    3. Crum: Unstacked rings, something else?
+3. Look at updated highlights
+4. Look at intro again
    
 * Highlights
 What is the main point of the paper? What problem is it addressing? What are the main insights?
