@@ -1,6 +1,8 @@
 * ZSE Manuscript
 This is the repo we will be hosting all the information for the ZSE manuscript in. 
 
+Test
+
 * Navigation
 Outline [[./outline/outline.pdf][PDF]] [[./outline/outline.org][org]]
 
