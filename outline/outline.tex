@@ -1,4 +1,4 @@
-% Created 2021-08-19 Thu 09:06
+% Created 2021-08-19 Thu 09:12
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -69,7 +69,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \newcommand{\green}[1]{\textcolor{green}{#1}}
 \newcommand{\orange}[1]{\textcolor{orange}{#1}}
 \usepackage[capitalise]{cleveref}
-\author{Jerry T. Crum\(^{\text{a}}\), Justin R. Crum\(^{\text{b}}\), William F. Schneider\(^{\text{a,c}}\)}
+\author{Jerry T. Crum\(^{\text{a}}\), Justin R. Crum\(^{\text{b}}\), Cameron Taylor\(^{\text{a}}\), William F. Schneider\(^{\text{a,c}}\)}
 \date{}
 \title{ZSE Manuscript Outline}
 \begin{document}
@@ -89,12 +89,12 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section*{Abstract}
-\label{sec:org05df739}
+\label{sec:orgfa1e0c6}
 The topology of zeolite frameworks and of associated tetrahedral sites (T-sites) are commonly characterized by their associated rings, typically defined as some set of closed paths or cycles through a framework that cannot be decomposed into shorter cycles. These ring descriptors have been used to identify feasible zeolite topologies, to describe the similarity and differences between zeolites, to identify sites or voids of catalytic relevance, and as machine learning fingerprints. Numerous definitions and algorithms for finding zeolite rings have been proposed and applied throughout the literature. Here we report an analysis of rings and T-sites in a large number of zeolite frameworks using Zeolite Simulation Environment, a Python package that implements an efficient algorithm presented by Goetzke and Klein for finding rings in arbitrary frameworks. We compare the result of a number of common and new ring definitions applied to a large number of common zeolite frameworks. We discover previously unrecognized rings in a number of frameworks. We show that the vertex symbol, a common approach used to characterize T-sites, misses important parts of the stereochemistry around a T-site, and propose an alternative definition. This tool provides an effective platform for characterizing zeolite and T-site structures useful for building models and doing machine learning. 
 
 
 \section*{Discussion With Bill:}
-\label{sec:org9bd16bb}
+\label{sec:org3c6ab20}
 \begin{enumerate}
 \item Go through table again to make sure we agree
 \begin{enumerate}
@@ -111,7 +111,7 @@ The topology of zeolite frameworks and of associated tetrahedral sites (T-sites)
 \end{enumerate}
 
 \section*{Highlights}
-\label{sec:org61c4a30}
+\label{sec:org0b8f319}
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
 \begin{enumerate}
@@ -133,7 +133,7 @@ What is the main point of the paper? What problem is it addressing? What are the
 \end{enumerate}
 
 \section*{Introduction}
-\label{sec:org566a252}
+\label{sec:orgfd15178}
 Introduction needs more structure.  Start with background, identify the problem you want to address.
 
 Zeolites are microporous and crystalline, natural to characterize by the sizes of the features present in the crystal.  Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites of the zeolite.  Provide some historical perspective here\ldots{}.
@@ -232,7 +232,7 @@ Using ZSE we show the differences in framework, T-site, and oxygen ring descript
 
 
 \section*{Software Description}
-\label{sec:orgb3ae4e5}
+\label{sec:org22fbc9a}
 
 \begin{itemize}
 \item All of the frameworks listed on the IZA Database of zeolite structures \cite{baerlocher-database-nodate} are included in a database with ZSE
@@ -261,7 +261,7 @@ Process to find rings:
 
 
 \section*{Results}
-\label{sec:orgc51c807}
+\label{sec:org7944fc3}
 \begin{itemize}
 \item Ring counts frequency plots
 \begin{itemize}
@@ -489,7 +489,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 
 
 \section*{Conclusions}
-\label{sec:org8668819}
+\label{sec:orga80270e}
 \begin{itemize}
 \item \red{Rings of graph are well defined; here identify all rings up to XXX in YYY frameworks. Find that commonly reported (IZA) ring sizes miss certain rings.}
 \end{itemize}
@@ -507,7 +507,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \bibliography{ref}
 
 \section*{Acknowledgments}
-\label{sec:orgf0794ce}
+\label{sec:org6a03fc5}
 \begin{itemize}
 \item Funding
 \begin{itemize}

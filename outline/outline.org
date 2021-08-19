@@ -55,7 +55,7 @@
 
 #+Title: ZSE Manuscript Outline
 
-#+author:Jerry T. Crum^{a}, Justin R. Crum^{b}, William F. Schneider^{a,c}
+#+author:Jerry T. Crum^{a}, Justin R. Crum^{b}, Cameron Taylor^{a}, William F. Schneider^{a,c}
 \maketitle
 
 \begin{asparaenum}[\expandafter\textsuperscript a ]
