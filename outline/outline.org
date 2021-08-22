@@ -1,3 +1,4 @@
+
 #+BEGIN_OPTIONS
 #+LATEX_CLASS_OPTIONS: [11pt]
 #+LATEX_HEADER:\usepackage{geometry}
@@ -49,7 +50,7 @@
 
 #+OPTIONS: toc:nil
 #+OPTIONS: date:nil
-#+OPTIONS: H:3 num:nil
+
 #+OPTIONS: ':t
 #+END_OPTIONS
 
@@ -95,17 +96,20 @@ What is the main point of the paper? What problem is it addressing? What are the
    2. Compare to other classifications, eg cage-window vs channel
 
 * Introduction
-Introduction needs more structure.  Start with background, identify the problem you want to address.
 
-Zeolites are microporous and crystalline, natural to characterize by the sizes of the features present in the crystal.  Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites of the zeolite.  Provide some historical perspective here....
+**Paragraph 1: background on uses for zeolite rings**
+- Zeolites are microporous and crystalline, natural to characterize by the sizes of the features present in the crystal.  Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites of the zeolite. 
 
-- Rings have been used to identify feasible zeolite topologies cite:li-why-2014, to descirbe the similarity and differences between zeolites cite:curtis-statistical-2003, to identify sites or voids of catalytic relevance cite:li-first-principles-2018,kester-effects-2021, and as machine learning finger prints [will get citations for this] \red{need more thorough citing}
+- Rings have been used to identify feasible zeolite topologies cite:li-why-2014, to describe the similarity and differences between zeolites cite:curtis-statistical-2003, to identify sites or voids of catalytic relevance cite:li-first-principles-2018,kester-effects-2021, and as machine learning finger prints [will get citations for this]
 
+**Paragraph 2: Explain features of graph representing zeolites**
 - Zeolites can naturally be represented using graph theory, where atoms are nodes, and bonds are edges. \red{REFS}
   - Sometimes in the literature, oxygen atoms are used as bridges instead of nodes, since they only connect to two T-sites
-- \red{Refer to/use table below} Cref:tab:ring-def summarizes the various topological features based on connectivity that can be used to describe a framework, T-site, or oxygen atom
+- Cref:tab:ring-def summarizes the various topological features based on connectivity that can be used to describe a framework, T-site, or oxygen atom
 - A path is a series of connected nodes from some source node to some target node
 - A cycle is a path that starts and ends at the same node, and doesn't repeat any other nodes
+
+**Paragraph 3: Explain the various ring counting methodologies we intend to cover**
 - Rings in zeolites are defined as a cycle traversing the T-site and oxygen atoms (nodes) of the framework, and cannot be decomposed into smaller cycles by a shortcut cite:goetzke-properties-1991,guttman-ring-1990.
 - A shortcut is defined as a path connecting two nodes of a cycle that is shorter than both the paths connecting those nodes along the cycle cite:goetzke-properties-1991,guttman-ring-1990
 - Shortest path ring is a ring that is the shortest ring for at least one set of O-T-O on the cycle cite:sastre-topological-2009, this ring will be contained in the vertex symbol for at least one of the T-sites within the framework 
@@ -136,7 +140,7 @@ file:../figures/completed-figures/ring-examples.pdf
 | Geometric rings     | A cycle that may contain a shortcut, but has similar geometric/chemical properties to a ring without a shortcut   | Contains a finite number of geometric rings                                 | Can be described by the geometric rings that pass through | Can be described by the geometric rings that pass through |
 
 
-**Problem to address**
+**Paragraph 4: Problem to address**
 - Different conventions exist that can reduce the set of rings to more strictly defined properties
 - These methods return different sets of rings
 - We can use rings to characterize oxygen atoms, T-sites, and entire frameworks
@@ -153,20 +157,21 @@ file:../figures/completed-figures/ring-examples.pdf
   - All rings with out a shortcut
 - Differences in ring counts leads to differences in how we describe the topology of zeolites. Therefore, when discussing the rings in a zeolite it is important to also state which method of ring counting is used.
 
-**Solution to problem**
+**Paragraph 5: Our solution to the problem**
 - Here we present Zeolite Simulation Environment (ZSE), a Python package that implements the ring finding algorithm presented by Goetzke and Klein cite:goetzke-properties-1991 to find rings up to a user defined cutoff size, and can implement the previously published ring set reduction conventions.
 - We use ZSE to provide an analysis of rings using each of these conventions on the entire set of IZA zeolite frameworks to compare how they result in different characterizations 
-
-\red{Introduction needs to foreshadow the important insights. We captured those in your abstract. They need to appear here too.}
 
 Using ZSE we show the differences in framework, T-site, and oxygen ring descriptors when using the various ring counting conventions. We highlight rings that are found by these conventions but not typically discussed for a number of frameworks. We also show that the vertex symbol, a common approach used to characterize T-sites misses important parts of the stereochemistry around a T-site. 
 
 
 * Software Description
 
+**Paragraph 1: Basics of ZSE tootls**
 - All of the frameworks listed on the IZA Database of zeolite structures cite:baerlocher-database-nodate are included in a database with ZSE
 - These structures are Atomic Simulation Environment Atoms objects cite:larsen-atomic-2017, and can be used with any of the functions in ZSE
 - ZSE also includes CIF tools to read structure files for frameworks not listed in the IZA website, such as hypothetical zeolites, and return an Atoms object that can be used with ZSE
+
+**Paragraph 2: Implementation of ring counting methodologies**
 - ZSE has 3 previously published rules for ring finding implemented
   - All cycles without a shortcut cite:goetzke-properties-1991
   - All shortest path cycles cite:sastre-topological-2009
@@ -174,6 +179,9 @@ Using ZSE we show the differences in framework, T-site, and oxygen ring descript
 - We have also implemented a new rule that finds all rings with out a shortcut, but excludes rings that are made by traversing a stacked set of rings. \red{Have to define stacked ring.}
   - Figure showing example of 8-MR in the d6r of CHA and 14-MR in AFI
 - Each of the rules: shortest path, vertex symbols, and our new rule are a subset of the no shortcuts rule
+
+**Paragraph 3: Process to find rings**
+
 Process to find rings:
 1. To find rings in a zeolite, ZSE makes a custom connectivity matrix for the Si and O atoms in the framework
 2. We use NetworkX cite:hagberg-exploring-2008 to build a shortest path matrix for every atom pair in the zeolite framework
@@ -183,6 +191,7 @@ Process to find rings:
 
 
 * Results
+**Paragraph 1: Differences in frameworks**
 - Ring counts frequency plots
   - Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
   - This highlights the differences in the ring rules, and shows that results will vary depending on rule.
@@ -190,6 +199,8 @@ Process to find rings:
 #+caption: Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website. Currently the IZA does not show any ring data for the SVY framework, providing one less framework to count.  label:fig:ring-counts
 file:../figures/completed-figures/ring-counts.pdf
 
+
+**Paragraph 2: Differences in T-sites**
 - Number of unique T-sites
   - There are 1460 T-sites through all the frameworks listed on the IZA website.
   - We can characterize those T-sites by the rings that pass through them
@@ -204,6 +215,9 @@ file:../figures/completed-figures/ring-counts.pdf
 #+caption: Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. label:fig:unique-ts
 file:../figures/completed-figures/unique-ts.pdf
 
+- Include a heat map based on Cameron's results showing the coefficient of similarity that he defined
+
+**Paragraph 3: Differences in O-sites**
 - Number of unique oxygen sites
   - We can repeat this method for the oxygen atoms in all the frameworks
   - Counting the symmetry distinct oxygen atoms in each framework on the IZA database leads to a total count of 3219
@@ -215,6 +229,7 @@ file:../figures/completed-figures/unique-ts.pdf
 #+caption: Number of unique oxygen sites when classified by the rings passing through them using varrious ring finding rules. Vertex method not included, since that is a way to classify T-sites only. label:fig:unique-os
 file:../figures/completed-figures/unique-os.pdf
 
+**Paragraph 4: Comparison to previously published results by Sastre**
 - Reproduce the results from Sastre paper, show ring counts with the other rules, Cref:tab:ring-counts
   - Ring index was presented by Sastre and Corma as a way to list the rings that pass through a node in a zeolite cite:sastre-topological-2009
   - List rings from smallest to largest, and any multiplicities are shown by a subscript
@@ -240,7 +255,40 @@ file:../figures/completed-figures/unique-os.pdf
 | MON       | 4_{1}\bullet5_{5}\bullet8_{6}                 | 4_{1}\bullet5_{5}\bullet8_{6}              | 4_{1}\bullet5_{5}\bullet8_{6}       |
 | NPO       | 3_{1}\bullet6_{6}\bullet12_{40}               | 3_{1}\bullet6_{6}\bullet12_{40}            | 3_{1}\bullet6_{6}                   |
 
+**Paragraph 5: Rings that are found using Goetzke method, but not discussed in most literature**
+- These ring finding rules often find rings that are not commonly discussed in literature, and are not listed by the IZA
+- These are classified as untabulated rings by Curtis and Deem cite:curtis-statistical-2003
+- However it is possible that these rings are relevant for describing chemical, catalytic, or topological properties of zeolites
+- Here we show an example of untabulated rings in the Chabazite framework
+- Show the cage belts results for CHA, AFT, etc... and discuss how those rings don't show up in previous literature, Cref:fig:cha-rings
+  - Looking at results for CHA in Cref:tab:ring-counts we see the Goetzke method finds 4_{3}\bullet6_{1}\bullet8_{6}\bullet12_{1}
+  - This is different from the results in the Sastre paper cite:sastre-topological-2009, in that they only show 2 8-MRs and no 12-MRs
+  - The extra 8-MRs result from cycles traversing nodes in both 6-MRs of the d6r
+    - Crum rule removes these 8-MRs while still finding the 12-MR
+    - Sastre rule does not find the 8-MRs in the d6r or the 12-MR
+  - The 12-MR is a cycle that circumferences the CHA cage
+#+attr_latex: :float :width 0.45\textwidth :placement {c}{0.5\textwidth}
+#+caption: Chabazite cage and d6r with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature, Si atoms have been replaced with Al atoms to help identify those rings in the overall cage structure.. label:fig:cha-rings
+file:../figures/completed-figures/cha-all-rings.pdf
 
+**Paragraph 6: Geometric rings**
+- On the other end of the spectrum, there are cycles that would not be classified as a rings by the connectivity rules previously outlined that display properties similar to rings
+- These shortcut containing cycles can display chemical and/or geometric properties consistent with rings, and are of interest to catalysis researchers even though they are not considered rings by connectivity rules
+- One example is the 6-membered cycle referred to as the \alpha-6-MR in literature (Cref:fig:mfi-6) and is present in a number of frameworks including but not limited to  MOR, FER, MFI, and BEA cite:dedecek-siting-2012,bernauer-proton-2016, which is a potential location for Co^{2+} uptake when two Al atoms are 3rd nearest neighbor in the cycle. Similar to Co^{2+} uptake in 3NN Al atoms in 6-MRs in other frameworks such as CHA and AEI.
+- This 6-membered cycle would not be considered a ring by any of the connectivity rules outlined here due to the shortcut splitting the cycle into two 5-MRs
+
+#+attr_latex: :float :width .4\textwidth
+#+caption: Cutout of MFI framework showing the structure referred to as an \alpha-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found as a ring by any of the connectivity ring rules (Goetzke, Crum, Sastre, or vertex symbol). label:fig:mfi-6
+file:../figures/completed-figures/MFI-6MC.pdf
+
+**Paragraph 7: Stereochemistry concerns when using Ring Index**
+- The ring index for a T-site or O-site only list the size and counts of rings, but does not include any useful information about the orientation of those rings in space
+- Because of this, multiple T-sites could have the same ring index, but with very different stereochemisty of those rings
+- Stereochemistry could influence the chemical properties we care about, such as deprotonation energy, T-site substitution energy, or catalytic properties
+- This would indicate that a ring index is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation.
+- **Here we insert a figure of two T-sites with the same ring index, but very different orientations**
+
+**Not sure if this is relevant to include or not, but it provides some context for us too discuss**
 - Here we show the most common ring indices for T-sites in the IZA database using each of the ring finding rules
 - Cref:tab:goetzke-ts shows the five most common ring indices for T-sites using the Goetzke  rule
 #+CAPTION: Most Common Ring Indices Using the Goetzke Rule label:tab:goetzke-ts
@@ -318,29 +366,6 @@ file:../figures/completed-figures/unique-os.pdf
 
 \newpage
 
-- These ring finding rules often find rings that are not commonly discussed in literature, and are not listed by the IZA
-- These are classified as untabulated rings by Curtis and Deem cite:curtis-statistical-2003
-- However it is possible that these rings are relevant for describing chemical, catalytic, or topological properties of zeolites
-- Here we show an example of untabulated rings in the Chabazite framework
-- Show the cage belts results for CHA, AFT, etc... and discuss how those rings don't show up in previous literature, Cref:fig:cha-rings
-  - Looking at results for CHA in Cref:tab:ring-counts we see the Goetzke method finds 4_{3}\bullet6_{1}\bullet8_{6}\bullet12_{1}
-  - This is different from the results in the Sastre paper cite:sastre-topological-2009, in that they only show 2 8-MRs and no 12-MRs
-  - The extra 8-MRs result from cycles traversing nodes in both 6-MRs of the d6r
-    - Crum rule removes these 8-MRs while still finding the 12-MR
-    - Sastre rule does not find the 8-MRs in the d6r or the 12-MR
-  - The 12-MR is a cycle that circumferences the CHA cage
-#+attr_latex: :float :width 0.45\textwidth :placement {c}{0.5\textwidth}
-#+caption: Chabazite cage and d6r with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature, Si atoms have been replaced with Al atoms to help identify those rings in the overall cage structure.. label:fig:cha-rings
-file:../figures/completed-figures/cha-all-rings.pdf
-
-- On the other end of the spectrum, there are cycles that would not be classified as a rings by the connectivity rules previously outlined that display properties similar to rings
-- These shortcut containing cycles can display chemical and/or geometric properties consistent with rings, and are of interest to catalysis researchers even though they are not considered rings by connectivity rules
-- One example is the 6-membered cycle referred to as the \alpha-6-MR in literature (Cref:fig:mfi-6) and is present in a number of frameworks including but not limited to  MOR, FER, MFI, and BEA cite:dedecek-siting-2012,bernauer-proton-2016, which is a potential location for Co^{2+} uptake when two Al atoms are 3rd nearest neighbor in the cycle. Similar to Co^{2+} uptake in 3NN Al atoms in 6-MRs in other frameworks such as CHA and AEI.
-- This 6-membered cycle would not be considered a ring by any of the connectivity rules outlined here due to the shortcut splitting the cycle into two 5-MRs
-
-#+attr_latex: :float :width .4\textwidth
-#+caption: Cutout of MFI framework showing the structure referred to as an \alpha-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found as a ring by any of the connectivity ring rules (Goetzke, Crum, Sastre, or vertex symbol). label:fig:mfi-6
-file:../figures/completed-figures/MFI-6MC.pdf
 
 
 * Conclusions
