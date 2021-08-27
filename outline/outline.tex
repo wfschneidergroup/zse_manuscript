@@ -1,4 +1,4 @@
-% Created 2021-08-22 Sun 13:26
+% Created 2021-08-27 Fri 09:55
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,12 +89,12 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section{Abstract}
-\label{sec:org598be1c}
+\label{sec:org9ce2e1a}
 The topology of zeolite frameworks and of associated tetrahedral sites (T-sites) are commonly characterized by their associated rings, typically defined as some set of closed paths or cycles through a framework that cannot be decomposed into shorter cycles. These ring descriptors have been used to identify feasible zeolite topologies, to describe the similarity and differences between zeolites, to identify sites or voids of catalytic relevance, and as machine learning fingerprints. Numerous definitions and algorithms for finding zeolite rings have been proposed and applied throughout the literature. Here we report an analysis of rings and T-sites in a large number of zeolite frameworks using Zeolite Simulation Environment, a Python package that implements an efficient algorithm presented by Goetzke and Klein for finding rings in arbitrary frameworks. We compare the result of a number of common and new ring definitions applied to a large number of common zeolite frameworks. We discover previously unrecognized rings in a number of frameworks. We show that the vertex symbol, a common approach used to characterize T-sites, misses important parts of the stereochemistry around a T-site, and propose an alternative definition. This tool provides an effective platform for characterizing zeolite and T-site structures useful for building models and doing machine learning. 
 
 
 \section{Discussion With Bill:}
-\label{sec:org9624c98}
+\label{sec:org38f32bc}
 \begin{enumerate}
 \item Go through table again to make sure we agree
 \begin{enumerate}
@@ -111,7 +111,7 @@ The topology of zeolite frameworks and of associated tetrahedral sites (T-sites)
 \end{enumerate}
 
 \section{Highlights}
-\label{sec:orgcb8af34}
+\label{sec:org732966a}
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
 \begin{enumerate}
@@ -133,7 +133,7 @@ What is the main point of the paper? What problem is it addressing? What are the
 \end{enumerate}
 
 \section{Introduction}
-\label{sec:org5fd2860}
+\label{sec:orgdb6474c}
 
 \textbf{\textbf{Paragraph 1: background on uses for zeolite rings}}
 \begin{itemize}
@@ -168,8 +168,8 @@ What is the main point of the paper? What problem is it addressing? What are the
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=0.60\textwidth]{../figures/completed-figures/ring-examples.pdf}
-\captionof{figure}{Cutout of the Chabazite framework showing a path from node 3 to node 9 outlined in teal, a cycle (3-4-18-19-20-17) outlined in red, an 8-MR in pink, and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. \label{fig:cha-labeled}}
+\includegraphics[width=0.60\textwidth]{../figures/completed-figures/ring-examples2.pdf}
+\captionof{figure}{Cutout of the Chabazite framework showing a path (5-6-7-8-9) highlighted with purple bonds, a cycle (3-4-18-19-20-17) highlighted with blue bonds, an 8-MR filled in with pink, and a 4-MR filled in with green. Yellow atoms are Si (T-sites), and red atoms are oxygen. \label{fig:cha-labeled}}
 \end{center}
 
 \newpage
@@ -237,7 +237,7 @@ Using ZSE we show the differences in framework, T-site, and oxygen ring descript
 
 
 \section{Software Description}
-\label{sec:orgbff414f}
+\label{sec:org249dbf1}
 
 \textbf{\textbf{Paragraph 1: Basics of ZSE tootls}}
 \begin{itemize}
@@ -274,7 +274,7 @@ Process to find rings:
 
 
 \section{Results}
-\label{sec:org6a10ab6}
+\label{sec:org64d529f}
 \textbf{\textbf{Paragraph 1: Differences in frameworks}}
 \begin{itemize}
 \item Ring counts frequency plots
@@ -313,6 +313,13 @@ Process to find rings:
 \captionof{figure}{Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. \label{fig:unique-ts}}
 \end{center}
 
+Note that in \Cref{fig:tsite-frequency} a bar for IZA rings is not present. This is because the IZA does not list rings that pass through specific T-sites.
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/tsite-ring-counts.pdf}
+\captionof{figure}{Frequency of T-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. \label{fig:tsite-frequency}}
+\end{center}
+
 \begin{itemize}
 \item Include a heat map based on Cameron's results showing the coefficient of similarity that he defined
 \end{itemize}
@@ -332,6 +339,13 @@ Process to find rings:
 \begin{center}
 \includegraphics[width=.6\textwidth]{../figures/completed-figures/unique-os.pdf}
 \captionof{figure}{Number of unique oxygen sites when classified by the rings passing through them using varrious ring finding rules. Vertex method not included, since that is a way to classify T-sites only. \label{fig:unique-os}}
+\end{center}
+
+Note that in \Cref{fig:osite-frequency} a bar for Vertex rings is not present. This is because the Vertex symbol only defines rings that pass through a specific T-site. 
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/osite-ring-counts.pdf}
+\captionof{figure}{Frequency of O-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. \label{fig:osite-frequency}}
 \end{center}
 
 \textbf{\textbf{Paragraph 4: Comparison to previously published results by Sastre}}
@@ -523,7 +537,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 
 
 \section{Conclusions}
-\label{sec:org97a358f}
+\label{sec:org36e2194}
 \begin{itemize}
 \item \red{Rings of graph are well defined; here identify all rings up to XXX in YYY frameworks. Find that commonly reported (IZA) ring sizes miss certain rings.}
 \end{itemize}
@@ -541,7 +555,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \bibliography{ref}
 
 \section{Acknowledgments}
-\label{sec:org6d5013b}
+\label{sec:org1f2a844}
 \begin{itemize}
 \item Funding
 \begin{itemize}

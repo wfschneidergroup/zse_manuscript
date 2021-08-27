@@ -120,8 +120,8 @@ What is the main point of the paper? What problem is it addressing? What are the
   - Nodes 5-6-7-8-9 outlined in teal represent a path through the framework. 
 
 #+attr_latex: :float :width 0.60\textwidth
-#+caption: Cutout of the Chabazite framework showing a path from node 3 to node 9 outlined in teal, a cycle (3-4-18-19-20-17) outlined in red, an 8-MR in pink, and a 4-MR in green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
-file:../figures/completed-figures/ring-examples.pdf
+#+caption: Cutout of the Chabazite framework showing a path (5-6-7-8-9) highlighted with purple bonds, a cycle (3-4-18-19-20-17) highlighted with blue bonds, an 8-MR filled in with pink, and a 4-MR filled in with green. Yellow atoms are Si (T-sites), and red atoms are oxygen. label:fig:cha-labeled
+file:../figures/completed-figures/ring-examples2.pdf
 
 \newpage
 
@@ -215,6 +215,12 @@ file:../figures/completed-figures/ring-counts.pdf
 #+caption: Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. label:fig:unique-ts
 file:../figures/completed-figures/unique-ts.pdf
 
+Note that in Cref:fig:tsite-frequency a bar for IZA rings is not present. This is because the IZA does not list rings that pass through specific T-sites.
+
+#+attr_latex: :float :width .6\textwidth
+#+caption: Frequency of T-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. label:fig:tsite-frequency
+file:../figures/completed-figures/tsite-ring-counts.pdf
+
 - Include a heat map based on Cameron's results showing the coefficient of similarity that he defined
 
 **Paragraph 3: Differences in O-sites**
@@ -228,6 +234,12 @@ file:../figures/completed-figures/unique-ts.pdf
 #+attr_latex: :float :width .6\textwidth
 #+caption: Number of unique oxygen sites when classified by the rings passing through them using varrious ring finding rules. Vertex method not included, since that is a way to classify T-sites only. label:fig:unique-os
 file:../figures/completed-figures/unique-os.pdf
+
+Note that in Cref:fig:osite-frequency a bar for Vertex rings is not present. This is because the Vertex symbol only defines rings that pass through a specific T-site. 
+
+#+attr_latex: :float :width .6\textwidth
+#+caption: Frequency of O-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. label:fig:osite-frequency
+file:../figures/completed-figures/osite-ring-counts.pdf
 
 **Paragraph 4: Comparison to previously published results by Sastre**
 - Reproduce the results from Sastre paper, show ring counts with the other rules, Cref:tab:ring-counts
