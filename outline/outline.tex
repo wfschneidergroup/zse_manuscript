@@ -1,4 +1,4 @@
-% Created 2021-08-27 Fri 09:55
+% Created 2022-01-09 Sun 14:34
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -84,34 +84,17 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \begin{asparaenum}[\expandafter\textsuperscript a ]
 \item Department of Chemical and Biolmolecular Engineering, University of Notre Dame, 250 Nieuwland Science Hall, Notre Dame, IN 46556, USA \\
 \item Department of Applied Mathematics, University of Arizona, 617 N Santa Rita Ave, Tucson, AZ 85721, USA\\
-\item Department of Chemistry and Biochmeistry, University of Notre Dame, 251 Nieuwland Science Hall, Notre Dame, IN 46556, USA
+\item Department of Chemistry and Biochemistry, University of Notre Dame, 251 Nieuwland Science Hall, Notre Dame, IN 46556, USA
 \end{asparaenum}
 
 \newpage
 \section{Abstract}
-\label{sec:org9ce2e1a}
+\label{sec:orgef0dc6e}
 The topology of zeolite frameworks and of associated tetrahedral sites (T-sites) are commonly characterized by their associated rings, typically defined as some set of closed paths or cycles through a framework that cannot be decomposed into shorter cycles. These ring descriptors have been used to identify feasible zeolite topologies, to describe the similarity and differences between zeolites, to identify sites or voids of catalytic relevance, and as machine learning fingerprints. Numerous definitions and algorithms for finding zeolite rings have been proposed and applied throughout the literature. Here we report an analysis of rings and T-sites in a large number of zeolite frameworks using Zeolite Simulation Environment, a Python package that implements an efficient algorithm presented by Goetzke and Klein for finding rings in arbitrary frameworks. We compare the result of a number of common and new ring definitions applied to a large number of common zeolite frameworks. We discover previously unrecognized rings in a number of frameworks. We show that the vertex symbol, a common approach used to characterize T-sites, misses important parts of the stereochemistry around a T-site, and propose an alternative definition. This tool provides an effective platform for characterizing zeolite and T-site structures useful for building models and doing machine learning. 
 
 
-\section{Discussion With Bill:}
-\label{sec:org38f32bc}
-\begin{enumerate}
-\item Go through table again to make sure we agree
-\begin{enumerate}
-\item Will move vertex symbol outside of table
-\end{enumerate}
-\item Naming the ring conventions:
-\begin{enumerate}
-\item Goetzke: ring, primitive ring, fundamental ring \cite{marians-network-1990,guttman-ring-1990,goetzke-properties-1991}
-\item Sastre: Shortest path ring, something else?
-\item Crum: Unstacked rings, something else?
-\end{enumerate}
-\item Look at updated highlights
-\item Look at intro again
-\end{enumerate}
-
 \section{Highlights}
-\label{sec:org732966a}
+\label{sec:orgc351069}
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
 \begin{enumerate}
@@ -120,20 +103,13 @@ What is the main point of the paper? What problem is it addressing? What are the
 \item PROBLEM TO ADDRESS: The convention used will provide different ring counts
 \item SOLUTION: We provide a Python package that has the ability to identify and classify these rings based on previously published and new conventions
 \item This software tool uses a node-based search procedure that takes advantage of algorithms developed for general nets
-\item We compute and compare conventions across all known frameworks
+\item We compute and compare conventions across all known frameworks, highlighting differences in which rings get counted by which convention
 \item Some features treated by convention as rings are not rings in a topological sense but are rather defined by the void space they create.
-\item We enumerate all rings, defined as paths with no short-cut, up to 18 T-sites across all known Fws
-\begin{enumerate}
-\item Would be very cool to classify Fws according to these rings\ldots{}.
-\begin{enumerate}
-\item Not sure what approach to use for that, but it is a good idea
-\end{enumerate}
-\item Compare to other classifications, eg cage-window vs channel
-\end{enumerate}
+\item We show that the common method of describing a T-site by it's vertex symbol does not incorporate important information about the stereochemistry of the rings, and provide a new method for listing vertex symbol rings that compensates for that deficiency
 \end{enumerate}
 
 \section{Introduction}
-\label{sec:orgdb6474c}
+\label{sec:orgc8ebded}
 
 \textbf{\textbf{Paragraph 1: background on uses for zeolite rings}}
 \begin{itemize}
@@ -237,7 +213,7 @@ Using ZSE we show the differences in framework, T-site, and oxygen ring descript
 
 
 \section{Software Description}
-\label{sec:org249dbf1}
+\label{sec:org7e0878c}
 
 \textbf{\textbf{Paragraph 1: Basics of ZSE tootls}}
 \begin{itemize}
@@ -274,23 +250,28 @@ Process to find rings:
 
 
 \section{Results}
-\label{sec:org64d529f}
-\textbf{\textbf{Paragraph 1: Differences in frameworks}}
-\begin{itemize}
-\item Ring counts frequency plots
-\begin{itemize}
-\item Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
-\item This highlights the differences in the ring rules, and shows that results will vary depending on rule.
-\end{itemize}
-\end{itemize}
-\begin{center}
-\includegraphics[width=.6\textwidth]{../figures/completed-figures/ring-counts.pdf}
-\captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website. Currently the IZA does not show any ring data for the SVY framework, providing one less framework to count.  \label{fig:ring-counts}}
-\end{center}
+\label{sec:org664ded4}
 
+\textbf{\textbf{Paragraph 1: IZA doesn't list all rings in a framework}}
+\begin{itemize}
+\item IZA is a common reference used to identify all the rings in a zeolite framework
+\item It only lists the rings that define a channel (ex: 12-MR in AFI), or rings associated with the vertex symbol of a T-site
+\item These rings have been called tabulated rings in previous literature \cite{curtis-statistical-2003}
+\item In some frameworks, other rings (cycles not containing shortcuts) exist that are not included in the tabulated rings
+\item These rings still may provide important information about the topology of a zeolite framework, or the local void environment around a T-site
+\item \cref{fig:framework-counts} shows counts of frameworks containing each size ring from 3- to 18-MR using the Goetzke algorithm and the listed rings on the IZA database
+\item At larger sized rings (>8-MR) we see the two counts diverge
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/rings-vs-iza-rings.pdf}
+\captionof{figure}{Counts of frameworks containing each size rings between 3 and 18-MR using the Goetzke algorithm and the tabulated rings on the IZA database. \label{fig:framework-counts}}
+\end{center}
 
 \textbf{\textbf{Paragraph 2: Differences in T-sites}}
 \begin{itemize}
+\item Starting with T-sites we can find all the rings that pass through each T-site using a modified version of the Goetzke algorithm.
+\item We can prune this list of rings using other definitions, such as the shortest path rings presented by Sastre et al. \cite{sastre-topological-2009}, by counting only the vertex symbol rings \cite{okeeffe-vertex-1997}, or by our new algorithm that removes any ring that transcends a stacked set of rings.
 \item Number of unique T-sites
 \begin{itemize}
 \item There are 1460 T-sites through all the frameworks listed on the IZA website.
@@ -313,16 +294,31 @@ Process to find rings:
 \captionof{figure}{Number of unique T-sites when classified by the rings passing through them using varrious ring finding rules. \label{fig:unique-ts}}
 \end{center}
 
-Note that in \Cref{fig:tsite-frequency} a bar for IZA rings is not present. This is because the IZA does not list rings that pass through specific T-sites.
-
 \begin{center}
 \includegraphics[width=.6\textwidth]{../figures/completed-figures/tsite-ring-counts.pdf}
 \captionof{figure}{Frequency of T-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. \label{fig:tsite-frequency}}
 \end{center}
 
 \begin{itemize}
-\item Include a heat map based on Cameron's results showing the coefficient of similarity that he defined
+\item Here we use a similarity score to determine how similar or different the rings found by each counting method are to each other
+\item The similarity score is determined by \cref{eq:similarity}, where \(sr\) is the number of similar rings found by each method, and \(mr\) is the max number of rings found by either method.
 \end{itemize}
+\begin{equation}\label{eq:similarity}
+s = \frac{sr}{mr}
+\end{equation}
+\begin{itemize}
+\item We compare each method for every T-site in the IZA database, and average the similarity scores for each method pair
+\item The results are shown in the following heat map
+\item We see that down the diagonal is each method compared to itself, and thus has a similarity score of 1
+\item The remainder of the table follows intuition
+\item the most restrictive counting method (vertex symbol rings) compared to the least restrictive method (rings) has the lowest similarity score
+\item The two most similar ring counting methods are this work compared to the shortest path rings
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/similarity-score.png}
+\captionof{figure}{Heat map showing the similarity score for four ring counting methods. Similarity score of 1 means identical, and a similarity score of zero implies no similar rings found. \label{fig:similarity}}
+\end{center}
 
 \textbf{\textbf{Paragraph 3: Differences in O-sites}}
 \begin{itemize}
@@ -419,13 +415,38 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \captionof{figure}{Cutout of MFI framework showing the structure referred to as an \(\alpha\)-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found as a ring by any of the connectivity ring rules (Goetzke, Crum, Sastre, or vertex symbol). \label{fig:mfi-6}}
 \end{center}
 
-\textbf{\textbf{Paragraph 7: Stereochemistry concerns when using Ring Index}}
+\textbf{\textbf{Paragraph 7: Stereochemistry concerns when using vertex symbols}}
 \begin{itemize}
-\item The ring index for a T-site or O-site only list the size and counts of rings, but does not include any useful information about the orientation of those rings in space
-\item Because of this, multiple T-sites could have the same ring index, but with very different stereochemisty of those rings
-\item Stereochemistry could influence the chemical properties we care about, such as deprotonation energy, T-site substitution energy, or catalytic properties
-\item This would indicate that a ring index is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation.
-\item \textbf{\textbf{Here we insert a figure of two T-sites with the same ring index, but very different orientations}}
+\item Vertex symbols are common way to identify similar T-sites in zeolite frameworks
+\item The vertex symbol as defined lists the rings included by finding pairs of opposite edge rings, and listing them from smallest pair to largest pair
+\item This method does not capture subtle but distinct differences in the orientation of the rings around the T-site that can lead to varying local void environments
+\item For example: MOR T3, MON T1, and EON T9 all have the same vertex symbol of: 4\textbullet{}5\(_{\text{2}}\)\textbullet{}5\textbullet{}8\(_{\text{2}}\)\textbullet{}5\textbullet{}8\(_{\text{2}}\)
+\begin{itemize}
+\item So each T-site is a member of one 4-MR, four 5-MRs, and four 8-MRs
+\item However, the orientation of those rings around each of those T-sites are not identical
+\item FIGURE below shows a cutout of each of these frameworks only including the atoms that make up the vertex symbol rings around the specified T-sites
+\item We can see that MOR T3 and EON T9 have the same ring orientation, and that orientation is different from the rings making up MON T1
+\item \red{I can make this figure better with more angles, and maybe include a line diagram explaining the differences}
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/stereo.png}
+\captionof{figure}{Cutout of MOR, EON, and MON that only shows the rings associated with the vertex symbol of T3, T9, and T1 respectively. \label{fig:stereo}}
+\end{center}
+
+\begin{itemize}
+\item This has lead us to create a new method for listing the rings in the vertex symbol that takes into account the structural connection of the rings
+\begin{itemize}
+\item This is accomplished by assigning a weight to each of the oxygen atoms around the T-site in question based on the size of rings that connect to that oxygen
+\item \red{need to work out how to describe the method here}
+\item With this new descriptor MOR T3 and EON T9 would be labeled as: 8\(_{\text{2}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}5\(_{\text{2}}\)\textbullet{}5\textbullet{}4\textbullet{}5 and MON T1 as: 8\(_{\text{2}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}4\textbullet{}5\textbullet{}5\(_{\text{2}}\)\textbullet{}5
+\item The difference is subtle, but highlights the distinct structural  difference between the two types of T-sites that is not otherwise captured by a vertex symbol
+\end{itemize}
+\item \red{Here we would include a table of some of the most common vertex symbols, and how many different variations they have with this new descriptor}
+
+\item Stereochemistry of the rings associated with a T-site could influence the chemical properties we care about, such as deprotonation energy, T-site substitution energy, or catalytic properties
+\item This would indicate that a vertex symbol is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation.
 \end{itemize}
 
 \textbf{\textbf{Not sure if this is relevant to include or not, but it provides some context for us too discuss}}
@@ -533,11 +554,23 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \end{table}
 
 \newpage
-
+\red{Removed paragraph, because we don't want to describe frameworks using these other ring finding methods. Keeping text in case we want to bring this back.}
+\textbf{\textbf{Paragraph 1: Differences in frameworks}}
+\begin{itemize}
+\item Ring counts frequency plots
+\begin{itemize}
+\item Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
+\item This highlights the differences in the ring rules, and shows that results will vary depending on rule.
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/ring-counts.pdf}
+\captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website. Currently the IZA does not show any ring data for the SVY framework, providing one less framework to count.  \label{fig:ring-counts}}
+\end{center}
 
 
 \section{Conclusions}
-\label{sec:org36e2194}
+\label{sec:orgf48f218}
 \begin{itemize}
 \item \red{Rings of graph are well defined; here identify all rings up to XXX in YYY frameworks. Find that commonly reported (IZA) ring sizes miss certain rings.}
 \end{itemize}
@@ -555,7 +588,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \bibliography{ref}
 
 \section{Acknowledgments}
-\label{sec:org1f2a844}
+\label{sec:org3dde92a}
 \begin{itemize}
 \item Funding
 \begin{itemize}

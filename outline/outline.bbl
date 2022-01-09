@@ -1,41 +1,9 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Marians and Hobbs(1990)]{marians-network-1990}
-Marians, C.~S. and Hobbs, L.~W.
-\newblock Network properties of crystalline polymorphs of silica.
-\newblock \emph{Journal of Non-Crystalline Solids}, 124\penalty0
-  (2-3):\penalty0 242--253, October 1990.
-\newblock ISSN 00223093.
-\newblock \doi{10.1016/0022-3093(90)90269-R}.
-\newblock URL
-  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939090269R}.
-
-\bibitem[Guttman(1990)]{guttman-ring-1990}
-Guttman, L.
-\newblock Ring structure of the crystalline and amorphous forms of silicon
-  dioxide.
-\newblock \emph{Journal of Non-Crystalline Solids}, 116\penalty0
-  (2-3):\penalty0 145--147, February 1990.
-\newblock ISSN 00223093.
-\newblock \doi{10.1016/0022-3093(90)90686-G}.
-\newblock URL
-  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939090686G}.
-
-\bibitem[Goetzke and Klein(1991)]{goetzke-properties-1991}
-Goetzke, K. and Klein, H.-J.
-\newblock Properties and efficient algorithmic determination of different
-  classes of rings in finite and infinite polyhedral networks.
-\newblock \emph{Journal of Non-Crystalline Solids}, 127\penalty0 (2):\penalty0
-  215--220, February 1991.
-\newblock ISSN 00223093.
-\newblock \doi{10.1016/0022-3093(91)90145-V}.
-\newblock URL
-  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939190145V}.
 
 \bibitem[Li and Deem(2014)]{li-why-2014}
 Li, X. and Deem, M.~W.
@@ -75,6 +43,28 @@ Kester, P.~M., Crum, J.~T., Li, S., Schneider, W.~F., and Gounder, R.
 \newblock \doi{10.1016/j.jcat.2020.12.038}.
 \newblock URL
   \url{https://linkinghub.elsevier.com/retrieve/pii/S0021951721000191}.
+
+\bibitem[Goetzke and Klein(1991)]{goetzke-properties-1991}
+Goetzke, K. and Klein, H.-J.
+\newblock Properties and efficient algorithmic determination of different
+  classes of rings in finite and infinite polyhedral networks.
+\newblock \emph{Journal of Non-Crystalline Solids}, 127\penalty0 (2):\penalty0
+  215--220, February 1991.
+\newblock ISSN 00223093.
+\newblock \doi{10.1016/0022-3093(91)90145-V}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939190145V}.
+
+\bibitem[Guttman(1990)]{guttman-ring-1990}
+Guttman, L.
+\newblock Ring structure of the crystalline and amorphous forms of silicon
+  dioxide.
+\newblock \emph{Journal of Non-Crystalline Solids}, 116\penalty0
+  (2-3):\penalty0 145--147, February 1990.
+\newblock ISSN 00223093.
+\newblock \doi{10.1016/0022-3093(90)90686-G}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939090686G}.
 
 \bibitem[Sastre and Corma(2009)]{sastre-topological-2009}
 Sastre, G. and Corma, A.
