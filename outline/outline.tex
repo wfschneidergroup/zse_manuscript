@@ -1,4 +1,4 @@
-% Created 2022-01-09 Sun 14:34
+% Created 2022-01-22 Sat 12:56
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -89,12 +89,12 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section{Abstract}
-\label{sec:orgef0dc6e}
+\label{sec:org14a7c72}
 The topology of zeolite frameworks and of associated tetrahedral sites (T-sites) are commonly characterized by their associated rings, typically defined as some set of closed paths or cycles through a framework that cannot be decomposed into shorter cycles. These ring descriptors have been used to identify feasible zeolite topologies, to describe the similarity and differences between zeolites, to identify sites or voids of catalytic relevance, and as machine learning fingerprints. Numerous definitions and algorithms for finding zeolite rings have been proposed and applied throughout the literature. Here we report an analysis of rings and T-sites in a large number of zeolite frameworks using Zeolite Simulation Environment, a Python package that implements an efficient algorithm presented by Goetzke and Klein for finding rings in arbitrary frameworks. We compare the result of a number of common and new ring definitions applied to a large number of common zeolite frameworks. We discover previously unrecognized rings in a number of frameworks. We show that the vertex symbol, a common approach used to characterize T-sites, misses important parts of the stereochemistry around a T-site, and propose an alternative definition. This tool provides an effective platform for characterizing zeolite and T-site structures useful for building models and doing machine learning. 
 
 
 \section{Highlights}
-\label{sec:orgc351069}
+\label{sec:orga9a0704}
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
 \begin{enumerate}
@@ -109,7 +109,7 @@ What is the main point of the paper? What problem is it addressing? What are the
 \end{enumerate}
 
 \section{Introduction}
-\label{sec:orgc8ebded}
+\label{sec:org9bb9b10}
 
 \textbf{\textbf{Paragraph 1: background on uses for zeolite rings}}
 \begin{itemize}
@@ -213,7 +213,7 @@ Using ZSE we show the differences in framework, T-site, and oxygen ring descript
 
 
 \section{Software Description}
-\label{sec:org7e0878c}
+\label{sec:org2e90fc2}
 
 \textbf{\textbf{Paragraph 1: Basics of ZSE tootls}}
 \begin{itemize}
@@ -250,7 +250,7 @@ Process to find rings:
 
 
 \section{Results}
-\label{sec:org664ded4}
+\label{sec:orge3c702c}
 
 \textbf{\textbf{Paragraph 1: IZA doesn't list all rings in a framework}}
 \begin{itemize}
@@ -268,25 +268,162 @@ Process to find rings:
 \captionof{figure}{Counts of frameworks containing each size rings between 3 and 18-MR using the Goetzke algorithm and the tabulated rings on the IZA database. \label{fig:framework-counts}}
 \end{center}
 
-\textbf{\textbf{Paragraph 2: Differences in T-sites}}
+\textbf{\textbf{Paragraph 2: Example of untabulated rings in CHA shows 12-MR belt on cage, and 8-MRs in the D6R}}
 \begin{itemize}
-\item Starting with T-sites we can find all the rings that pass through each T-site using a modified version of the Goetzke algorithm.
-\item We can prune this list of rings using other definitions, such as the shortest path rings presented by Sastre et al. \cite{sastre-topological-2009}, by counting only the vertex symbol rings \cite{okeeffe-vertex-1997}, or by our new algorithm that removes any ring that transcends a stacked set of rings.
+\item Taking a closer look at some of these untabulated rings, highlights rings not typically but listed for some frameworks, but still relevant to describing their topology
+\item Here we show an example of untabulated rings in the Chabazite framework
+\item Show the cage belts results for CHA, AFT, etc\ldots{} and discuss how those rings don't show up in previous literature, \Cref{fig:cha-rings}
+\begin{itemize}
+\item Looking at results for CHA in \Cref{tab:ring-counts} we see the Goetzke method finds 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{1}}\)
+\item This is different from the results in the Sastre paper \cite{sastre-topological-2009}, in that they only show 2 8-MRs and no 12-MRs
+\item The extra 8-MRs result from cycles traversing nodes in both 6-MRs of the d6r
+\item The 12-MR is a cycle that circumferences the CHA cage
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{../figures/completed-figures/cha-all-rings.pdf}
+\captionof{figure}{Chabazite cage and d6r with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature, Si atoms have been replaced with Al atoms to help identify those rings in the overall cage structure. \label{fig:cha-rings}}
+\end{center}
+
+\textbf{\textbf{Paragraph 3: Untabulated rings in AFI also reveals rings traversing a pair of stacked rings}}
+\begin{itemize}
+\item AFI has one unique T-site
+\item According to the IZA it contains 4, 6, and 12-MRs
+\item When we search using the Goetzke algorithm, we also find that it contains 14-MRs that traverses two stacked 12-MRs shown in \cref{fig:afi-14}
+\item These types of rings may not be of interest depending on what you want to describe
+\item Using the method outlined in section X.Y we can remove these types of rings from the Goetzke ring counts
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{../figures/completed-figures/afi-14.pdf}
+\captionof{figure}{12-MR channel in AFI with a 14-MR traversing 7 T-sites of each 12-MR highlighted in purple. \label{fig:afi-14}}
+\end{center}
+
+\textbf{\textbf{Paragraph 4: Comparing all 4 ringing finding conventions and IZA listed rings by counting the number of frameworks containing each size ring}}
+\begin{itemize}
+\item Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
+\item This highlights the differences in the conventions, and shows that results will vary depending on method used.
+\item In general a hierarchy of rings sizes found by each method is rings>this work>shortest path rings>vertex symbol rings
+\item While the IZA lists all vertex symbol rings, and a selection of general rings
+\end{itemize}
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/ring-counts.pdf}
+\captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website. Currently the IZA does not show any ring data for the SVY framework, providing one less framework to count.  \label{fig:ring-counts}}
+\end{center}
+
+\textbf{\textbf{Paragraph 5: Some cycles behave like rings while not be considered rings by connectivity rules}} 
+\begin{itemize}
+\item On the other end of the spectrum, there are cycles that would not be classified as a rings by the connectivity rules previously outlined, but display properties similar to rings
+\item The trade-off to using well defined connectivity based ring definitions leaves out these particular void environments that may still be of interest
+\item These shortcut containing cycles can display chemical and/or geometric properties consistent with rings, and are of interest to catalysis researchers even though they are not considered rings by connectivity rules
+\item One example is the 6-membered cycle referred to as the \(\alpha\)-6-MR in literature (\Cref{fig:mfi-6}) and is present in a number of frameworks including but not limited to  MOR, FER, MFI, and BEA \cite{dedecek-siting-2012,bernauer-proton-2016}, which is a potential location for Co\(^{\text{2+}}\) uptake when two Al atoms are 3rd nearest neighbor in the cycle. Similar to Co\(^{\text{2+}}\) uptake in 3NN Al atoms in 6-MRs in other frameworks such as CHA and AEI.
+\item This 6-membered cycle would not be considered a ring by any of the connectivity rules outlined here due to the shortcut splitting the cycle into two 5-MRs
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.4\textwidth]{../figures/completed-figures/MFI-6MC.pdf}
+\captionof{figure}{Cutout of MFI framework showing the structure referred to as an \(\alpha\)-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found as a ring by any of the connectivity ring rules (Goetzke, Crum, Sastre, or vertex symbol). \label{fig:mfi-6}}
+\end{center}
+
+
+\textbf{\textbf{Paragraph 6: We can describe T-sites of a framework by the rings of that framework that pass through it AFI Example}}
+\begin{itemize}
+\item Take for example the AFI framework, made of 4, 6, 12, and 14-MRs and containing one symmetry distinct T-site
+\item We can describe that T-site by counting how many rings of each size pass through it
+\item We can prune this list of rings using other definitions, such as the shortest path rings presented by Sastre et al. \cite{sastre-topological-2009}, by counting only the vertex symbol rings \cite{okeeffe-vertex-1997}, or by our new algorithm that removes any ring that traverses a stacked set of rings
+\item Listing these rings by using a ring index (size\(_{\text{count}}\) from smallest to largest rings) \cite{sastre-topological-2009} shows the differences in counts by each method
+\begin{itemize}
+\item Rings: 4\textbullet{}6\(_{\text{13}}\)\textbullet{}12\textbullet{}14\(_{\text{7}}\)
+\item This work: 4\textbullet{}6\(_{\text{13}}\)\textbullet{}12
+\item Shortest Path Rings: 4\textbullet{}6\(_{\text{13}}\)
+\item Vertex Symbol Rings: 4\textbullet{}6\(_{\text{11}}\)
+\end{itemize}
+\item Each method returns a different count, this is highlighted in figure\ldots{}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/afi-funnel.pdf}
+\captionof{figure}{Diagram showing the ring counts of each size ring that pass through the single symmetry distinct T-site in AFI for each of the various ring finding conventions. \label{fig:afi-funnel}}
+\end{center}
+
+\textbf{\textbf{Paragraph 7: Comparison to previously published results by Sastre}}
+\begin{table}[htbp]
+\caption{Comparison of Ring Indices for the T-sites in Various Uninodal Zeolite Frameworks \label{tab:ring-counts}}
+\centering
+\begin{tabular}{lllll}
+Framework & Rings & This Work & Shortest Path Rings \cite{sastre-topological-2009} & Vertex Symbol Rings \cite{baerlocher-database-nodate}\\
+\hline
+ABW & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{2}}\)\\
+ACO & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}10\(_{\text{15}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\)\\
+AFI & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\textbullet{}12\(_{\text{1}}\)\textbullet{}14\(_{\text{7}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{11}}\)\\
+ANA & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{8}}\)\\
+ATO & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\textbullet{}8\(_{\text{8}}\)\textbullet{}12\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\textbullet{}12\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\\
+BCT & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{12}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\\
+CHA & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\\
+DFT & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\)\textbullet{}10\(_{\text{10}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{4}}\)\textbullet{}8\(_{\text{6}}\)\\
+GIS & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
+GME & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{7}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\\
+MER & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\textbullet{}10\(_{\text{10}}\)\textbullet{}14\(_{\text{14}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
+MON & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{4}}\)\textbullet{}8\(_{\text{4}}\)\\
+NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}\) & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}\) & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\) & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\\
+\end{tabular}
+\end{table}
+
+
+\begin{itemize}
+\item Reproduce the results from Sastre paper, show ring counts with the other rules, \Cref{tab:ring-counts}
+\begin{itemize}
+\item Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma \cite{sastre-topological-2009}
+\item Results in the Vertex symbol rings column were also found with ZSE but agree directly will the vertex symbols listed on the IZA website
+\begin{itemize}
+\item These vertex symbols have been compressed into a ring index to compare with the other methods
+\end{itemize}
+\item This provides an in depth look at some of the frameworks and the differences in rings found by each rule.
+\item Leads into the next section discussing the specific rings of CHA and pentasil that do or don't get counted by each rule.
+\end{itemize}
+\end{itemize}
+
+
+\textbf{\textbf{Paragraph 8: Example of T-site ring counts for 6 symmetry distinct T-sites in MOZ shows limitations of shortest path and vertex symbol rings}}
+\begin{itemize}
+\item MOZ framework is made of 4, 6, 8, 10, 12, 14, and 18-MRs, and contains 6 symmetry distinct T-sites
+\item \cref{table:moz} shows the ring index for each T-site using each ring finding method
+\end{itemize}
+\begin{table}[htbp]
+\caption{Ring indices for each distinct T-site in the MOZ framework using each ring counting convention. \label{table:moz}}
+\centering
+\begin{tabular}{lllll}
+T-Site & Rings & This Work & Shortest Path Rings & Vertex Symbol Rings\\
+\hline
+T1 & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\(_{\text{7}}\)•10\(_{\text{7}}\)•18\(_{\text{5}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\(_{\text{3}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\(_{\text{3}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\\
+T2 & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\(_{\text{7}}\)•10\(_{\text{7}}\)•14\(_{\text{5}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\(_{\text{3}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\(_{\text{3}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\\
+T3 & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\(_{\text{5}}\)•10\(_{\text{4}}\)•12\(_{\text{4}}\)•14\(_{\text{5}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8•12\(_{\text{4}}\) & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8 & 4\(_{\text{3}}\)•6\(_{\text{2}}\)•8\\
+T4 & 4\(_{\text{2}}\)•6•8\(_{\text{6}}\)•10\(_{\text{6}}\)•12•18\(_{\text{26}}\) & 4\(_{\text{2}}\)•6•8\(_{\text{6}}\)•12 & 4\(_{\text{2}}\)•6•8\(_{\text{6}}\)•12 & 4\(_{\text{2}}\)•6•8\(_{\text{6}}\)•12\\
+T5 & 4\(_{\text{2}}\)•6•8\(_{\text{7}}\)•10\(_{\text{6}}\)•14\(_{\text{18}}\) & 4\(_{\text{2}}\)•6•8\(_{\text{7}}\) & 4\(_{\text{2}}\)•6•8\(_{\text{7}}\) & 4\(_{\text{2}}\)•6•8\(_{\text{7}}\)\\
+T6 & 4\(_{\text{2}}\)•6•8\(_{\text{3}}\)•10\(_{\text{2}}\)•12\(_{\text{8}}\)•14\(_{\text{18}}\) & 4\(_{\text{2}}\)•6•8\(_{\text{3}}\)•12\(_{\text{8}}\) & 4\(_{\text{2}}\)•6•8\(_{\text{3}}\) & 4\(_{\text{2}}\)•6•8\(_{\text{3}}\)\\
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\item \cref{fig:moz} shows the T-site locations inside the framework
+\item If you were interested in which T-sites have access to the 12-MR channels, the shortest path rings and vertex symbol rings would only say T3
+\item However general rings, and this work would tell you T4 and T6 also have access to the 12-MR channels as highlighted in Figure ..
+\end{itemize}
+\begin{center}
+\includegraphics[width=.5\textwidth]{../figures/completed-figures/moz.pdf}
+\captionof{figure}{Cutout of the MOZ framework showing two 12-MR channels, with distinct T-sites highlighted. T1: navy, T2: green, T3: orange, T4: purple, T5: blue, T6: red. \label{fig:moz}}
+\end{center}
+
+\textbf{\textbf{Paragraph 9: Comparing ring counts for every T-site across the IZA database highlights differences in conventions}}
+\begin{itemize}
 \item Number of unique T-sites
 \begin{itemize}
 \item There are 1460 T-sites through all the frameworks listed on the IZA website.
 \item We can characterize those T-sites by the rings that pass through them
-\item Sastre did this, and called the list of rings, the ring index
-\item If we do this using different rules for ring finding how do the results change?
-\begin{itemize}
-\item See \Cref{fig:unique-ts}
-\end{itemize}
 \item Most common T-site ring index using Goetzke method is: 5\(_{\text{6}}\)\textbullet{}10\(_{\text{4}}\) showing up 23 times through the IZA frameworks.
 \item Most common T-site ring index using Crum method is: 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) showing up 31 times through the IZA frameworks.
 \begin{itemize}
 \item Next most common T-site with Crum method is 5\(_{\text{6}}\)\textbullet{}10\(_{\text{4}}\) showing up 25 times
 \end{itemize}
-\item This raises the question, if you want to use machine learning to correlate T-site rings to chemical properties, which ring method should you use?
+\item This raises the question, if you want to ascertain chemical or physical properties about a T-site based on it's ring count, the results will depend on the convention used
 \end{itemize}
 \end{itemize}
 \begin{center}
@@ -295,10 +432,11 @@ Process to find rings:
 \end{center}
 
 \begin{center}
-\includegraphics[width=.6\textwidth]{../figures/completed-figures/tsite-ring-counts.pdf}
-\captionof{figure}{Frequency of T-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. \label{fig:tsite-frequency}}
+\includegraphics[width=.8\textwidth]{../figures/completed-figures/dist-cumudist.pdf}
+\captionof{figure}{Frequency of T-sites across all IZA frameworks containing ring sizes between 3- and 18-MR (left), and cumulative distribution of T-sites containing each ring size normalized to final rings value (right). \label{fig:tsite-frequency}}
 \end{center}
 
+\textbf{\textbf{Paragraph 10: Similarity of results returned by each ring finding convention}}
 \begin{itemize}
 \item Here we use a similarity score to determine how similar or different the rings found by each counting method are to each other
 \item The similarity score is determined by \cref{eq:similarity}, where \(sr\) is the number of similar rings found by each method, and \(mr\) is the max number of rings found by either method.
@@ -316,106 +454,11 @@ s = \frac{sr}{mr}
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=.6\textwidth]{../figures/completed-figures/similarity-score.png}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/similarity-heat-map.pdf}
 \captionof{figure}{Heat map showing the similarity score for four ring counting methods. Similarity score of 1 means identical, and a similarity score of zero implies no similar rings found. \label{fig:similarity}}
 \end{center}
 
-\textbf{\textbf{Paragraph 3: Differences in O-sites}}
-\begin{itemize}
-\item Number of unique oxygen sites
-\begin{itemize}
-\item We can repeat this method for the oxygen atoms in all the frameworks
-\item Counting the symmetry distinct oxygen atoms in each framework on the IZA database leads to a total count of 3219
-\item We can classify those oxygen atoms based on the rings that pass through them, using the various ring counting rules
-\item \Cref{fig:unique-os} shows counts based on ring finding rules
-\item The percentage of unique oxygen sites is much lower than the percentage of unique T-sites for every ring finding method
-\end{itemize}
-\end{itemize}
-
-\begin{center}
-\includegraphics[width=.6\textwidth]{../figures/completed-figures/unique-os.pdf}
-\captionof{figure}{Number of unique oxygen sites when classified by the rings passing through them using varrious ring finding rules. Vertex method not included, since that is a way to classify T-sites only. \label{fig:unique-os}}
-\end{center}
-
-Note that in \Cref{fig:osite-frequency} a bar for Vertex rings is not present. This is because the Vertex symbol only defines rings that pass through a specific T-site. 
-
-\begin{center}
-\includegraphics[width=.6\textwidth]{../figures/completed-figures/osite-ring-counts.pdf}
-\captionof{figure}{Frequency of O-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. \label{fig:osite-frequency}}
-\end{center}
-
-\textbf{\textbf{Paragraph 4: Comparison to previously published results by Sastre}}
-\begin{itemize}
-\item Reproduce the results from Sastre paper, show ring counts with the other rules, \Cref{tab:ring-counts}
-\begin{itemize}
-\item Ring index was presented by Sastre and Corma as a way to list the rings that pass through a node in a zeolite \cite{sastre-topological-2009}
-\item List rings from smallest to largest, and any multiplicities are shown by a subscript
-\item This is a convenient way to characterize the atoms of a zeolite by the rings they are associated with
-\item Results in the Sastre column were found using ZSE but agree directly with the results shown by Sastre and Corma \cite{sastre-topological-2009}
-\item This provides an in depth look at some of the frameworks and the differences in rings found by each rule.
-\item Leads into the next section discussing the specific rings of CHA and pentasil that do or don't get counted by each rule.
-\end{itemize}
-\end{itemize}
-
-\begin{table}[htbp]
-\caption{Comparison of Ring Indices for the T-sites in Various Uninodal Zeolite Frameworks \label{tab:ring-counts}}
-\centering
-\begin{tabular}{llll}
-Framework & Goetzke & Crum & Sastre \cite{sastre-topological-2009}\\
-\hline
-ABW & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
-ACO & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}10\(_{\text{15}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{6}}\)\\
-AFI & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\textbullet{}12\(_{\text{1}}\)\textbullet{}14\(_{\text{7}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{13}}\)\\
-ANA & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{2}}\)\textbullet{}8\(_{\text{16}}\)\\
-ATO & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\textbullet{}8\(_{\text{8}}\)\textbullet{}12\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\textbullet{}12\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{9}}\)\\
-BCT & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{20}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{12}}\) & 4\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\\
-CHA & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\\
-DFT & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\)\textbullet{}10\(_{\text{10}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\) & 4\(_{\text{2}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}8\(_{\text{10}}\)\\
-GIS & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
-GME & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{7}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\textbullet{}12\(_{\text{1}}\) & 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{2}}\)\\
-MER & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\textbullet{}10\(_{\text{10}}\)\textbullet{}14\(_{\text{14}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\) & 4\(_{\text{3}}\)\textbullet{}8\(_{\text{4}}\)\\
-MON & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\) & 4\(_{\text{1}}\)\textbullet{}5\(_{\text{5}}\)\textbullet{}8\(_{\text{6}}\)\\
-NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}\) & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}\) & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\\
-\end{tabular}
-\end{table}
-
-\textbf{\textbf{Paragraph 5: Rings that are found using Goetzke method, but not discussed in most literature}}
-\begin{itemize}
-\item These ring finding rules often find rings that are not commonly discussed in literature, and are not listed by the IZA
-\item These are classified as untabulated rings by Curtis and Deem \cite{curtis-statistical-2003}
-\item However it is possible that these rings are relevant for describing chemical, catalytic, or topological properties of zeolites
-\item Here we show an example of untabulated rings in the Chabazite framework
-\item Show the cage belts results for CHA, AFT, etc\ldots{} and discuss how those rings don't show up in previous literature, \Cref{fig:cha-rings}
-\begin{itemize}
-\item Looking at results for CHA in \Cref{tab:ring-counts} we see the Goetzke method finds 4\(_{\text{3}}\)\textbullet{}6\(_{\text{1}}\)\textbullet{}8\(_{\text{6}}\)\textbullet{}12\(_{\text{1}}\)
-\item This is different from the results in the Sastre paper \cite{sastre-topological-2009}, in that they only show 2 8-MRs and no 12-MRs
-\item The extra 8-MRs result from cycles traversing nodes in both 6-MRs of the d6r
-\begin{itemize}
-\item Crum rule removes these 8-MRs while still finding the 12-MR
-\item Sastre rule does not find the 8-MRs in the d6r or the 12-MR
-\end{itemize}
-\item The 12-MR is a cycle that circumferences the CHA cage
-\end{itemize}
-\end{itemize}
-\begin{center}
-\includegraphics[width=0.45\textwidth]{../figures/completed-figures/cha-all-rings.pdf}
-\captionof{figure}{Chabazite cage and d6r with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the d6r and the 12-MR are rings not typically discussed in literature, Si atoms have been replaced with Al atoms to help identify those rings in the overall cage structure.. \label{fig:cha-rings}}
-\end{center}
-
-\textbf{\textbf{Paragraph 6: Geometric rings}}
-\begin{itemize}
-\item On the other end of the spectrum, there are cycles that would not be classified as a rings by the connectivity rules previously outlined that display properties similar to rings
-\item These shortcut containing cycles can display chemical and/or geometric properties consistent with rings, and are of interest to catalysis researchers even though they are not considered rings by connectivity rules
-\item One example is the 6-membered cycle referred to as the \(\alpha\)-6-MR in literature (\Cref{fig:mfi-6}) and is present in a number of frameworks including but not limited to  MOR, FER, MFI, and BEA \cite{dedecek-siting-2012,bernauer-proton-2016}, which is a potential location for Co\(^{\text{2+}}\) uptake when two Al atoms are 3rd nearest neighbor in the cycle. Similar to Co\(^{\text{2+}}\) uptake in 3NN Al atoms in 6-MRs in other frameworks such as CHA and AEI.
-\item This 6-membered cycle would not be considered a ring by any of the connectivity rules outlined here due to the shortcut splitting the cycle into two 5-MRs
-\end{itemize}
-
-\begin{center}
-\includegraphics[width=.4\textwidth]{../figures/completed-figures/MFI-6MC.pdf}
-\captionof{figure}{Cutout of MFI framework showing the structure referred to as an \(\alpha\)-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found as a ring by any of the connectivity ring rules (Goetzke, Crum, Sastre, or vertex symbol). \label{fig:mfi-6}}
-\end{center}
-
-\textbf{\textbf{Paragraph 7: Stereochemistry concerns when using vertex symbols}}
+\textbf{\textbf{Paragraph 11: Stereochemistry concerns when using vertex symbols}}
 \begin{itemize}
 \item Vertex symbols are common way to identify similar T-sites in zeolite frameworks
 \item The vertex symbol as defined lists the rings included by finding pairs of opposite edge rings, and listing them from smallest pair to largest pair
@@ -449,7 +492,31 @@ NPO & 3\(_{\text{1}}\)\textbullet{}6\(_{\text{6}}\)\textbullet{}12\(_{\text{40}}
 \item This would indicate that a vertex symbol is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation.
 \end{itemize}
 
-\textbf{\textbf{Not sure if this is relevant to include or not, but it provides some context for us too discuss}}
+\textbf{\textbf{Everything below here is not intended to be included in the main text of the paper}}
+
+\textbf{\textbf{Paragraph 3: Differences in O-sites}}
+\begin{itemize}
+\item Number of unique oxygen sites
+\begin{itemize}
+\item We can repeat this method for the oxygen atoms in all the frameworks
+\item Counting the symmetry distinct oxygen atoms in each framework on the IZA database leads to a total count of 3219
+\item We can classify those oxygen atoms based on the rings that pass through them, using the various ring counting rules
+\item \Cref{fig:unique-os} shows counts based on ring finding rules
+\item The percentage of unique oxygen sites is much lower than the percentage of unique T-sites for every ring finding method
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/unique-os.pdf}
+\captionof{figure}{Number of unique oxygen sites when classified by the rings passing through them using varrious ring finding rules. Vertex method not included, since that is a way to classify T-sites only. \label{fig:unique-os}}
+\end{center}
+
+Note that in \Cref{fig:osite-frequency} a bar for Vertex rings is not present. This is because the Vertex symbol only defines rings that pass through a specific T-site. 
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{../figures/completed-figures/osite-ring-counts.pdf}
+\captionof{figure}{Frequency of O-sites across all IZA frameworks containing ring sizes between 3- and 18-MR. \label{fig:osite-frequency}}
+\end{center}
 \begin{itemize}
 \item Here we show the most common ring indices for T-sites in the IZA database using each of the ring finding rules
 \item \Cref{tab:goetzke-ts} shows the five most common ring indices for T-sites using the Goetzke  rule
@@ -556,21 +623,10 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \newpage
 \red{Removed paragraph, because we don't want to describe frameworks using these other ring finding methods. Keeping text in case we want to bring this back.}
 \textbf{\textbf{Paragraph 1: Differences in frameworks}}
-\begin{itemize}
-\item Ring counts frequency plots
-\begin{itemize}
-\item Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
-\item This highlights the differences in the ring rules, and shows that results will vary depending on rule.
-\end{itemize}
-\end{itemize}
-\begin{center}
-\includegraphics[width=.6\textwidth]{../figures/completed-figures/ring-counts.pdf}
-\captionof{figure}{Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website. Currently the IZA does not show any ring data for the SVY framework, providing one less framework to count.  \label{fig:ring-counts}}
-\end{center}
 
 
 \section{Conclusions}
-\label{sec:orgf48f218}
+\label{sec:org2135ac7}
 \begin{itemize}
 \item \red{Rings of graph are well defined; here identify all rings up to XXX in YYY frameworks. Find that commonly reported (IZA) ring sizes miss certain rings.}
 \end{itemize}
@@ -588,7 +644,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \bibliography{ref}
 
 \section{Acknowledgments}
-\label{sec:org3dde92a}
+\label{sec:org7b1d020}
 \begin{itemize}
 \item Funding
 \begin{itemize}
