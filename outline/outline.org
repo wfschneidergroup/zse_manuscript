@@ -54,7 +54,7 @@
 #+OPTIONS: ':t
 #+END_OPTIONS
 
-#+Title: ZSE Manuscript Outline
+#+Title: ZSE Manuscript Outline---Needs a Title!!!!
 
 #+author:Jerry T. Crum^{a}, Justin R. Crum^{b}, Cameron Taylor^{a}, William F. Schneider^{a,c}
 \maketitle
@@ -177,8 +177,8 @@ Process to find rings:
 5. ZSE returns a list of the rings found, a list of the atom indicies that compose each ring, Atoms objects for each ring that can be further analyzed or visualized by the user
 
 
-* Results
-
+* Results and Discussion
+** Characterizing rings in a zeolite graph
 **Paragraph 1: IZA doesn't list all rings in a framework**
 - IZA is a common reference used to identify all the rings in a zeolite framework
 - It only lists the rings that define a channel (ex: 12-MR in AFI), or rings associated with the vertex symbol of a T-site
@@ -214,11 +214,14 @@ file:../figures/completed-figures/cha-all-rings.pdf
 #+caption: 12-MR channel in AFI with a 14-MR traversing 7 T-sites of each 12-MR highlighted in purple. label:fig:afi-14
 file:../figures/completed-figures/afi-14.pdf
 
+** Characterizing frameworks by rings
 **Paragraph 4: Comparing all 4 ringing finding conventions and IZA listed rings by counting the number of frameworks containing each size ring**
 - Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
 - This highlights the differences in the conventions, and shows that results will vary depending on method used.
 - In general a hierarchy of rings sizes found by each method is rings>this work>shortest path rings>vertex symbol rings
 - While the IZA lists all vertex symbol rings, and a selection of general rings
+- \red{How many unique combinations of ring sizes within all known zeolites?}
+
 #+attr_latex: :float :width .6\textwidth
 #+caption: Number of IZA frameworks containing each size ring, using the various ring counting rules. [This will be updated with the Sastre method, vertex method, and the rings listed on  the IZA website. Currently the IZA does not show any ring data for the SVY framework, providing one less framework to count.  label:fig:ring-counts
 file:../figures/completed-figures/ring-counts.pdf
@@ -234,6 +237,8 @@ file:../figures/completed-figures/ring-counts.pdf
 #+caption: Cutout of MFI framework showing the structure referred to as an \alpha-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found as a ring by any of the connectivity ring rules (Goetzke, Crum, Sastre, or vertex symbol). label:fig:mfi-6
 file:../figures/completed-figures/MFI-6MC.pdf
 
+** Characterizing T-sites by rings
+Motivate this....
 
 **Paragraph 6: We can describe T-sites of a framework by the rings of that framework that pass through it AFI Example**
 - Take for example the AFI framework, made of 4, 6, 12, and 14-MRs and containing one symmetry distinct T-site
@@ -453,8 +458,12 @@ file:../figures/completed-figures/osite-ring-counts.pdf
 **Paragraph 1: Differences in frameworks**
 
 
-* Conclusions
+* Conclusions---Needs to be updated
+- \red{Conclusions need to be connected to motivations and results above. Should connect to points made in abstract. Why do I care about rings in a framework? What are their practical significance?}
+
 - \red{Rings of graph are well defined; here identify all rings up to XXX in YYY frameworks. Find that commonly reported (IZA) ring sizes miss certain rings.}
+
+- Can characterize Fws by 
 
 
 - The method used to find rings in a zeolite will provide different ring counts \red{unclear}
