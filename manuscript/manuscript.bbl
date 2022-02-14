@@ -1,0 +1,204 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Baerlocher and McCusker()]{baerlocher-database-nodate}
+C.~Baerlocher and L.~McCusker.
+\newblock Database of {Zeolite} {Structures}.
+\newblock URL \url{http://www.iza-structure.org/databases/}.
+
+\bibitem[Bermúdez and Sastre(2017)]{bermudez-calculation-2017}
+D.~Bermúdez and G.~Sastre.
+\newblock \emph{Theoretical Chemistry Accounts}, 136\penalty0 (10):\penalty0
+  116, Oct. 2017.
+\newblock ISSN 1432-2234.
+\newblock \doi{10.1007/s00214-017-2143-6}.
+\newblock URL \url{https://doi.org/10.1007/s00214-017-2143-6}.
+
+\bibitem[Bernauer et~al.(2016)Bernauer, Tabor, Pashkova, Kaucký, Sobalík,
+  Wichterlová, and Dedecek]{bernauer-proton-2016}
+M.~Bernauer, E.~Tabor, V.~Pashkova, D.~Kaucký, Z.~Sobalík, B.~Wichterlová,
+  and J.~Dedecek.
+\newblock \emph{Journal of Catalysis}, 344:\penalty0 157--172, Dec. 2016.
+\newblock ISSN 00219517.
+\newblock \doi{10.1016/j.jcat.2016.09.025}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S002195171630197X}.
+
+\bibitem[Curtis and Deem(2003)]{curtis-statistical-2003}
+R.~A. Curtis and M.~W. Deem.
+\newblock \emph{Journal of Physical Chemistry B}, 107:\penalty0 8612--8620,
+  2003.
+
+\bibitem[Dědeček et~al.(2012)Dědeček, Sobalík, and
+  Wichterlová]{dedecek-siting-2012}
+J.~Dědeček, Z.~Sobalík, and B.~Wichterlová.
+\newblock \emph{Catalysis Reviews}, 54\penalty0 (2):\penalty0 135--223, Apr.
+  2012.
+\newblock ISSN 0161-4940, 1520-5703.
+\newblock \doi{10.1080/01614940.2012.632662}.
+\newblock URL
+  \url{http://www.tandfonline.com/doi/abs/10.1080/01614940.2012.632662}.
+
+\bibitem[Di~Iorio et~al.(2020)Di~Iorio, Li, Jones, Nimlos, Wang, Kunkes,
+  Vattipalli, Prasad, Moini, Schneider, and Gounder]{di-iorio-cooperative-2020}
+J.~R. Di~Iorio, S.~Li, C.~B. Jones, C.~T. Nimlos, Y.~Wang, E.~Kunkes,
+  V.~Vattipalli, S.~Prasad, A.~Moini, W.~F. Schneider, and R.~Gounder.
+\newblock \emph{Journal of the American Chemical Society}, 142\penalty0
+  (10):\penalty0 4807--4819, Mar. 2020.
+\newblock ISSN 0002-7863, 1520-5126.
+\newblock \doi{10.1021/jacs.9b13817}.
+\newblock URL \url{https://pubs.acs.org/doi/10.1021/jacs.9b13817}.
+
+\bibitem[Franzblau(1991)]{franzblau-computation-1991}
+D.~S. Franzblau.
+\newblock \emph{Physical Review B}, 44\penalty0 (10):\penalty0 4925--4930,
+  Sept. 1991.
+\newblock ISSN 0163-1829, 1095-3795.
+\newblock \doi{10.1103/PhysRevB.44.4925}.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevB.44.4925}.
+
+\bibitem[Goetzke and Klein(1991)]{goetzke-properties-1991}
+K.~Goetzke and H.-J. Klein.
+\newblock \emph{Journal of Non-Crystalline Solids}, 127\penalty0 (2):\penalty0
+  215--220, Feb. 1991.
+\newblock ISSN 00223093.
+\newblock \doi{10.1016/0022-3093(91)90145-V}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939190145V}.
+
+\bibitem[Guttman(1990)]{guttman-ring-1990}
+L.~Guttman.
+\newblock \emph{Journal of Non-Crystalline Solids}, 116\penalty0
+  (2-3):\penalty0 145--147, Feb. 1990.
+\newblock ISSN 00223093.
+\newblock \doi{10.1016/0022-3093(90)90686-G}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/002230939090686G}.
+
+\bibitem[Hagberg et~al.(2008)Hagberg, Schult, and
+  Swart]{hagberg-exploring-2008}
+A.~A. Hagberg, D.~A. Schult, and P.~J. Swart.
+\newblock Exploring network structure, dynamics, and function using {NetworkX}.
+\newblock In \emph{Proceedings of the 7th {Python} in {Science} {Conference}},
+  pages 11--15, Pasadena, CA USA, Aug. 2008.
+
+\bibitem[Helfrecht et~al.(2019)Helfrecht, Semino, Pireddu, Auerbach, and
+  Ceriotti]{helfrecht-new-2019}
+B.~A. Helfrecht, R.~Semino, G.~Pireddu, S.~M. Auerbach, and M.~Ceriotti.
+\newblock \emph{The Journal of Chemical Physics}, 151\penalty0 (15):\penalty0
+  154112, Oct. 2019.
+\newblock ISSN 0021-9606, 1089-7690.
+\newblock \doi{10.1063/1.5119751}.
+\newblock URL \url{http://aip.scitation.org/doi/10.1063/1.5119751}.
+
+\bibitem[Hjorth~Larsen et~al.(2017)Hjorth~Larsen, Jørgen~Mortensen, Blomqvist,
+  Castelli, Christensen, Dułak, Friis, Groves, Hammer, Hargus, Hermes,
+  Jennings, Bjerre~Jensen, Kermode, Kitchin, Leonhard~Kolsbjerg, Kubal,
+  Kaasbjerg, Lysgaard, Bergmann~Maronsson, Maxson, Olsen, Pastewka, Peterson,
+  Rostgaard, Schiøtz, Schütt, Strange, Thygesen, Vegge, Vilhelmsen, Walter,
+  Zeng, and Jacobsen]{hjorth-larsen-atomic-2017}
+A.~Hjorth~Larsen, J.~Jørgen~Mortensen, J.~Blomqvist, I.~E. Castelli,
+  R.~Christensen, M.~Dułak, J.~Friis, M.~N. Groves, B.~Hammer, C.~Hargus,
+  E.~D. Hermes, P.~C. Jennings, P.~Bjerre~Jensen, J.~Kermode, J.~R. Kitchin,
+  E.~Leonhard~Kolsbjerg, J.~Kubal, K.~Kaasbjerg, S.~Lysgaard,
+  J.~Bergmann~Maronsson, T.~Maxson, T.~Olsen, L.~Pastewka, A.~Peterson,
+  C.~Rostgaard, J.~Schiøtz, O.~Schütt, M.~Strange, K.~S. Thygesen, T.~Vegge,
+  L.~Vilhelmsen, M.~Walter, Z.~Zeng, and K.~W. Jacobsen.
+\newblock \emph{Journal of Physics: Condensed Matter}, 29\penalty0
+  (27):\penalty0 273002, July 2017.
+\newblock ISSN 0953-8984, 1361-648X.
+\newblock \doi{10.1088/1361-648X/aa680e}.
+\newblock URL
+  \url{http://stacks.iop.org/0953-8984/29/i=27/a=273002?key=crossref.20f9751653d872507bf6c0cc5737032c}.
+
+\bibitem[Kester et~al.(2021)Kester, Crum, Li, Schneider, and
+  Gounder]{kester-effects-2021}
+P.~M. Kester, J.~T. Crum, S.~Li, W.~F. Schneider, and R.~Gounder.
+\newblock \emph{Journal of Catalysis}, 395:\penalty0 210--226, Mar. 2021.
+\newblock ISSN 00219517.
+\newblock \doi{10.1016/j.jcat.2020.12.038}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0021951721000191}.
+
+\bibitem[Le~Roux and Jund(2010)]{le-roux-ring-2010}
+S.~Le~Roux and P.~Jund.
+\newblock \emph{Computational Materials Science}, 49\penalty0 (1):\penalty0
+  70--83, June 2010.
+\newblock ISSN 09270256.
+\newblock \doi{10.1016/j.commatsci.2010.04.023}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0927025610002363}.
+
+\bibitem[Li et~al.(2018)Li, Li, Gounder, Debellis, Müller, Prasad, Moini, and
+  Schneider]{li-first-principles-2018}
+S.~Li, H.~Li, R.~Gounder, A.~Debellis, I.~B. Müller, S.~Prasad, A.~Moini, and
+  W.~F. Schneider.
+\newblock \emph{The Journal of Physical Chemistry C}, 122\penalty0
+  (41):\penalty0 23564--23573, Oct. 2018.
+\newblock ISSN 1932-7447, 1932-7455.
+\newblock \doi{10.1021/acs.jpcc.8b07213}.
+\newblock URL \url{https://pubs.acs.org/doi/10.1021/acs.jpcc.8b07213}.
+
+\bibitem[Li and Deem(2014)]{li-why-2014}
+X.~Li and M.~W. Deem.
+\newblock \emph{The Journal of Physical Chemistry C}, 118\penalty0
+  (29):\penalty0 15835--15839, July 2014.
+\newblock ISSN 1932-7447, 1932-7455.
+\newblock \doi{10.1021/jp504143r}.
+\newblock URL \url{https://pubs.acs.org/doi/10.1021/jp504143r}.
+
+\bibitem[Nimlos et~al.(2020)Nimlos, Hoffman, Gul~Hur, Jin~Lee, Di~Iorio,
+  Hibbitts, and Gounder]{nimlos-experimental-2020}
+C.~T. Nimlos, A.~J. Hoffman, Y.~Gul~Hur, B.~Jin~Lee, J.~R. Di~Iorio,
+  D.~Hibbitts, and R.~Gounder.
+\newblock \emph{Chemistry of Materials}, 2020.
+\newblock \doi{https://doi.org/10.1021/acs.chemmater.0c03154}.
+
+\bibitem[O'Keeffe and Hyde(1997)]{okeeffe-vertex-1997}
+M.~O'Keeffe and S.~Hyde.
+\newblock \emph{Zeolites}, 19\penalty0 (5-6):\penalty0 370--374, Nov. 1997.
+\newblock ISSN 01442449.
+\newblock \doi{10.1016/S0144-2449(97)00133-4}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0144244997001334}.
+
+\bibitem[Sastre and Corma(2009)]{sastre-topological-2009}
+G.~Sastre and A.~Corma.
+\newblock \emph{The Journal of Physical Chemistry C}, 113\penalty0
+  (16):\penalty0 6398--6405, Apr. 2009.
+\newblock ISSN 1932-7447, 1932-7455.
+\newblock \doi{10.1021/jp8100128}.
+\newblock URL \url{https://pubs.acs.org/doi/10.1021/jp8100128}.
+
+\bibitem[Sastre and Gale(2001)]{sastre-zeotsites-2001}
+G.~Sastre and J.~D. Gale.
+\newblock \emph{Microporous and Mesoporous Materials}, 43\penalty0
+  (1):\penalty0 27--40, Mar. 2001.
+\newblock ISSN 13871811.
+\newblock \doi{10.1016/S1387-1811(00)00344-9}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S1387181100003449}.
+
+\bibitem[Wooten(2002)]{wooten-structure-2002}
+F.~Wooten.
+\newblock \emph{Acta Crystallographica Section A: Foundations of
+  Crystallography}, 58\penalty0 (4):\penalty0 346--351, July 2002.
+\newblock ISSN 0108-7673.
+\newblock \doi{10.1107/S0108767302006669}.
+\newblock URL \url{http://scripts.iucr.org/cgi-bin/paper?bk0109}.
+\newblock Number: 4 Publisher: International Union of Crystallography.
+
+\bibitem[Yuan and Cormack(2002)]{yuan-efficient-2002-1}
+X.~Yuan and A.~Cormack.
+\newblock \emph{Computational Materials Science}, 24\penalty0 (3):\penalty0
+  343--360, June 2002.
+\newblock ISSN 09270256.
+\newblock \doi{10.1016/S0927-0256(01)00256-7}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0927025601002567}.
+
+\end{thebibliography}
