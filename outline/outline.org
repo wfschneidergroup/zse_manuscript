@@ -54,7 +54,7 @@
 #+OPTIONS: ':t
 #+END_OPTIONS
 
-#+Title: ZSE Manuscript Outline---Needs a Title!!!!
+#+Title: Characterization and Analysis of Ring Topology of Zeolite Frameworks
 
 #+author:Jerry T. Crum^{a}, Justin R. Crum^{b}, Cameron Taylor^{a}, William F. Schneider^{a,c}
 \maketitle

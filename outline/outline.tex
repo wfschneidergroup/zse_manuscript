@@ -1,4 +1,4 @@
-% Created 2022-02-05 Sat 09:46
+% Created 2022-02-14 Mon 09:26
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -71,7 +71,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \usepackage[capitalise]{cleveref}
 \author{Jerry T. Crum\(^{\text{a}}\), Justin R. Crum\(^{\text{b}}\), Cameron Taylor\(^{\text{a}}\), William F. Schneider\(^{\text{a,c}}\)}
 \date{}
-\title{ZSE Manuscript Outline---Needs a Title!!!!}
+\title{Characterization and Analysis of Ring Topology of Zeolite Frameworks}
 \begin{document}
 
 \begin{OPTIONS}
@@ -89,12 +89,12 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 
 \newpage
 \section{Abstract}
-\label{sec:orgb67b8b5}
+\label{sec:org12f50fd}
 The topology of zeolite frameworks and of associated tetrahedral sites (T-sites) are commonly characterized by their associated rings, typically defined as some set of closed paths or cycles through a framework that cannot be decomposed into shorter cycles. These ring descriptors have been used to identify feasible zeolite topologies, to describe the similarity and differences between zeolites, to identify sites or voids of catalytic relevance, and as machine learning fingerprints. Numerous definitions and algorithms for finding zeolite rings have been proposed and applied throughout the literature. Here we report an analysis of rings and T-sites in a large number of zeolite frameworks using Zeolite Simulation Environment, a Python package that implements an efficient algorithm presented by Goetzke and Klein for finding rings in arbitrary frameworks. We compare the result of a number of common and new ring definitions applied to a large number of common zeolite frameworks. We discover previously unrecognized rings in a number of frameworks. We show that the vertex symbol, a common approach used to characterize T-sites, misses important parts of the stereochemistry around a T-site, and propose an alternative definition. This tool provides an effective platform for characterizing zeolite and T-site structures useful for building models and doing machine learning. 
 
 
 \section{Highlights}
-\label{sec:orgf8787e1}
+\label{sec:org87be40d}
 What is the main point of the paper? What problem is it addressing? What are the main insights?
 
 \begin{enumerate}
@@ -109,7 +109,7 @@ What is the main point of the paper? What problem is it addressing? What are the
 \end{enumerate}
 
 \section{Introduction}
-\label{sec:org38f6217}
+\label{sec:org54979aa}
 
 \textbf{\textbf{Paragraph 1: background on uses for zeolite rings}}
 \begin{itemize}
@@ -213,7 +213,7 @@ Using ZSE we show the differences in framework, T-site, and oxygen ring descript
 
 
 \section{Software Description}
-\label{sec:org6a04a45}
+\label{sec:orge438e7d}
 
 \textbf{\textbf{Paragraph 1: Basics of ZSE tootls}}
 \begin{itemize}
@@ -250,9 +250,9 @@ Process to find rings:
 
 
 \section{Results and Discussion}
-\label{sec:org2e12605}
+\label{sec:orgf17e1d7}
 \subsection{Characterizing rings in a zeolite graph}
-\label{sec:org9599689}
+\label{sec:orga4651b7}
 \textbf{\textbf{Paragraph 1: IZA doesn't list all rings in a framework}}
 \begin{itemize}
 \item IZA is a common reference used to identify all the rings in a zeolite framework
@@ -300,7 +300,7 @@ Process to find rings:
 \end{center}
 
 \subsection{Characterizing frameworks by rings}
-\label{sec:org90a7fd6}
+\label{sec:org8b6927e}
 \textbf{\textbf{Paragraph 4: Comparing all 4 ringing finding conventions and IZA listed rings by counting the number of frameworks containing each size ring}}
 \begin{itemize}
 \item Plot showing how many frameworks on the IZA contain each size ring found using the various ring counting methods
@@ -330,7 +330,7 @@ Process to find rings:
 \end{center}
 
 \subsection{Characterizing T-sites by rings}
-\label{sec:org41f4a0a}
+\label{sec:org98bec9d}
 Motivate this\ldots{}.
 
 \textbf{\textbf{Paragraph 6: We can describe T-sites of a framework by the rings of that framework that pass through it AFI Example}}
@@ -634,7 +634,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 
 
 \section{Conclusions---Needs to be updated}
-\label{sec:org999ea72}
+\label{sec:orgd9045f5}
 \begin{itemize}
 \item \red{Conclusions need to be connected to motivations and results above. Should connect to points made in abstract. Why do I care about rings in a framework? What are their practical significance?}
 
@@ -656,7 +656,7 @@ Vertex Symbol & Count & Frameworks Containing Index\\
 \bibliography{ref}
 
 \section{Acknowledgments}
-\label{sec:org8d20140}
+\label{sec:orgf859058}
 \begin{itemize}
 \item Funding
 \begin{itemize}
