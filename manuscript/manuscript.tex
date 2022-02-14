@@ -1,4 +1,4 @@
-% Created 2022-02-14 Mon 09:23
+% Created 2022-02-14 Mon 09:29
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -71,7 +71,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \usepackage[capitalise]{cleveref}
 \author{Jerry T. Crum\(^{\text{a}}\), Justin R. Crum\(^{\text{b}}\), Cameron Taylor\(^{\text{a}}\), William F. Schneider\(^{\text{a,c}}\)}
 \date{}
-\title{ZSE Manuscript Outline---Needs a Title!!!!}
+\title{Characterization and Analysis of Ring Topology of Zeolite Frameworks}
 \begin{document}
 
 \begin{OPTIONS}
@@ -90,7 +90,7 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
 \newpage
 
 \section{Introduction}
-\label{sec:orgf4a8429}
+\label{sec:org69cd8cc}
 Zeolites are three dimensional crystalline structures containing tetrahedral Si or Al atoms connected by oxygen bridges. The International Zeolite Association (IZA) lists over 200 known zeolite frameworks that are described by dimensionality, pore shape and size, and Si/Al ratios \cite{baerlocher-database-nodate}. It is natural to characterize differences in zeolites by the size and shapes of the features present in the crystal. Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites (T-sites) of a zeolite. Rings have been used to identify feasible zeolites topologies \cite{li-why-2014}, to describe the similarity and differences between zeolites \cite{curtis-statistical-2003,bermudez-calculation-2017}, to identify sites or voids of catalytic relevance \cite{li-first-principles-2018,kester-effects-2021}, and as machine learning finger prints of physicochemical properties \cite{helfrecht-new-2019}. 
 
 \begin{figure}
@@ -163,10 +163,10 @@ We can use ring counts to characterize entire zeolite frameworks, T-sites that m
 Here we present the Zeolite Simulation Environment (ZSE, \url{https://wwww.github.com/jtcrum/zse}), a Python package that implements the ring finding algorithm presented by Goetzke and Klein \cite{goetzke-properties-1991} to find rings up to a user defined cutoff size, and can implement the previously published ring set reduction conventions. We use ZSE to provide an analysis of rings returned from each conventions on the entire set of IZA Database of zeolite frameworks \cite{baerlocher-database-nodate} to compare how they results in different characterizations. We highlight rings that are found by these conventions but not typically discussed in the literature for a number of frameworks. We also show that the vertex symbol, a common approach used to characterize T-sites misses important parts of the stereochemistry around a T-site. 
 
 \section{Methods}
-\label{sec:org347f423}
+\label{sec:org4e3a1e8}
 
 \subsection{Finding Rings That do not Contain Shortcuts \label{section:goetzke}}
-\label{sec:org942aa65}
+\label{sec:org3a6a8dc}
 
 In this work we implement an efficient algorithm that was presented by Goetzke and Klein to find all the rings associated with a T-site that do not contain a shortcut \cite{goetzke-properties-1991} in a Python package called the Zeolite Simulation Environment (ZSE). In ZSE we use the framework put in place by the Atomic Simulation Environment (ASE) \cite{hjorth-larsen-atomic-2017} to handle routine analysis zeolite crystal structures. All graph theory functions are performed used the NetworkX Python package \cite{hagberg-exploring-2008}. 
 
@@ -181,17 +181,17 @@ First, we convert the ASE atoms object into a connectivity matrix which represen
 \end{figure}
 
 \subsection{Finding Vertex Symbol Rings \label{section:vertex}}
-\label{sec:orgf265857}
+\label{sec:orgc034067}
 
 Starting from the set of all rings found in \cref{section:goetzke}, we can prune the ring list to the set of vertex symbol rings. We find the shortest ring in the set that connects each pair of oxygens bound to our initial T-site. It is possible for there to be multiple rings of the same size connecting each oxygen, in which case all the rings of that size are kept. 
 
 \subsection{Finding Shortest Path Rings}
-\label{sec:org50f9a65}
+\label{sec:orge66ba34}
 
 Here we prune the set of all rings from \cref{section:goetzke} to a subset of rings the meets the shortest path definition published by Sastre and Corma \cite{sastre-topological-2009}. For each ring, we iterate over every group of O-T-O atoms in the ring, and check if this ring is the shortest path connecting the two oxygen atoms. If so, the loop is broke, because the ring need only be the shortest path for one group of O-T-O atoms to fit the definition. This is the most time consuming process out of all the ring finding conventions we have implemented.
 
 \subsection{Modified Shortcut Rings}
-\label{sec:orgde5abba}
+\label{sec:org34a7c1c}
 
 In this work we present a modified definition of shortcut to capture a different subset of rings from any of the other ring finding conventions. Traditionally a shortcut is a path connecting two nodes of a cycle that decomposes the cycle into smaller rings \cite{guttman-ring-1990,goetzke-properties-1991}. We propose that a shortcut is a path connecting two nodes of a cycle that decomposes the cycle into at least one smaller ring. This definition does not require that the shortcut between two nodes be shorter than both paths connecting those nodes along the cycle. Our shortcut only needs to be shorter than one of the paths connecting those two nodes along the cycle. 
 
@@ -208,7 +208,7 @@ This definition is explained graphically in \cref{fig:mod}, where we present a c
 To remove rings containing modified shortcuts from the full set of rings, we iterate over every T-site pair of the ring and check for the shortest path connecting them. If that shortest path is shorter than either of the two paths along the ring connecting the two T-sites, we check if the combination of this shorter path and the shorter of the two ring paths forms a new smaller ring. If so the iteration is broken, and the ring is removed from the counted set. 
 
 \subsection{Ordered Vertex Symbols \label{section:ov}}
-\label{sec:org678cf59}
+\label{sec:org71add99}
 
 To add information about the spatial orientation of the rings around a T-site to the vertex symbol, we have developed a method to order the edges in the vertex symbol. We systematically list the rings by following the edges of the tetrahedron such that each ring listed is connected to one of the oxygens of the next ring listed. After removing all the rings that are not a part of the vertex symbol (\cref{section:vertex}) we use the following process to order them. 
 
@@ -225,16 +225,16 @@ To add information about the spatial orientation of the rings around a T-site to
 \end{enumerate}
 
 \subsection{Determining All Ring Sizes Contained in a Zeolite Framework}
-\label{sec:org0e83149}
+\label{sec:orgd45fa37}
 
 
 
 Finally, to determine all the ring sizes exhibited with in a zeolite framework, we take advantage of T-site symmetry. The rings of a framework are made of T-sites, and if two T-sites are symmetrically identical they will have the same set of rings passing through them. Therefore, we only need to find the rings associated with each symmetry distinct T-sites to know all the possible ring sizes within a framework. For example, AFI only contains one symmetry distinct T-site (T1). Using the basic definition of a shortcut, T1 is a part of 4-, 6-, 12-, and 14-MRs when using a cutoff of 18-MR. Every other T-site in the AFI framework is also a T1, thus the only possible ring sizes in AFI are 4-, 6-, 12-, and 14-MRs.
 
 \section{Results}
-\label{sec:orgdb1ba9c}
+\label{sec:orgf83bcff}
 \subsection{Characterizing Rings in a Zeolite Graph}
-\label{sec:org07b595e}
+\label{sec:org4f9d4d6}
 The IZA Database \cite{baerlocher-database-nodate} is a common reference used to identify all the rings in a zeolite framework, however it only lists the rings that define a channel (ex: 12-MR in AFI), or rings associated with the symbol of a T-site. These rings listed by the IZA are referred to as tabulated rings in the literature \cite{curtis-statistical-2003}. In some frameworks, other rings (cycles not containing shortcuts) exist that are not included in the list of tabulated rings. These 'untabulated' rings may still provide important topological information about a zeolite framework, or the local void environment around a T-site. \cref{fig:fw-counts} shows counts of frameworks containing each size ring from 3- to 18-MR using the Goetzke algorithm and the listed rings on the IZA database \cite{baerlocher-database-nodate}. There are slight differences in the counts up to 6-MRs, but the main divergence takes place as we get to ring sizes \textgreater6-MR.
 
 \begin{figure}
@@ -266,7 +266,7 @@ Using AFI as another example, we find another type of ring that arises from trav
 \end{figure}
 
 \subsection{Characterizing Frameworks by Rings}
-\label{sec:org9ac1d1a}
+\label{sec:orgbdafedc}
 With the addition of our modified shortcut definition, we have four ring finding conventions to compare, as well as including the tabulated rings from the IZA Database. \cref{fig:ring-counts} shows how many frameworks contain each size ring found using the various ring counting conventions from 3- to 18-MRs. This plot highlights the differences in the conventions and shows that a topological description of a framework based on rings will depend on the way that you define a ring. In general, a hierarchy of ring sizes found by each convention is: all rings not containing a shortcut \textgreater this work \textgreater shortest path rings \textgreater vertex symbol rings. While the IZA listed rings includes the vertex symbol rings, and a selection of general rings \cite{baerlocher-database-nodate}.  
 
 \begin{figure}
@@ -288,7 +288,7 @@ One drawback to using a ring convention based on connectivity and shortcuts is t
 \end{figure}
 
 \subsection{Characterizing T-sites by Rings}
-\label{sec:org362568a}
+\label{sec:orgc865d95}
 
 Considering that zeolite frameworks are comprised of one or more symmetry distinct T-sites, it may be of interest to describe those T-sites by the rings that pass through them. Most often the vertex symbol is used to make such a classification \cite{okeeffe-vertex-1997}. Sastre and Corma also provided characterization of T-sites using the shortest path rings that pass through them \cite{sastre-topological-2009}. In their work, they presented the ring index, which lists all the rings passing through a T-site from smallest to largest, and a subscript for each size representing it's multiplicity.  The rings associated with a T-site can provided information about the local void environments around the T-site, and could potentially be correlated to other physicochemical properties of the T-site once enough once sufficient data on those physicochemical properties exists. 
 
@@ -473,7 +473,7 @@ Vertex Symbol & Framework T-site & Ordered Vertex Symbol\\
 \end{threeparttable}
 \end{table}
 \section{Conclusions}
-\label{sec:orge6f2ecc}
+\label{sec:org95528f4}
 Rings of a graph are well defined; here we identified all rings up to 18-MR in every zeolite framework listed on the IZA Structure Database \cite{baerlocher-database-nodate}. We find that the commonly reported ring sizes in literature and on the IZA website leave out many rings that fit the classical definition of a cycle that does not contain a shortcut. To completely describe the topology of a zeolite these rings are required, however there are often cases where someone might want to consider only a subset of rings of interest. 
 
 We have shown a comparison of three different conventions used to count rings, and highlighted the differences in rings that are found by each convention. The classic definition of a ring identifies the largest set of ring sizes across all the zeolite frameworks, while the shortest path ring and vertex symbol rings only identify smaller ring sizes. We have provided a modified definition of a shortcut that when used to find rings still finds larger rings defining channel openings, but excludes rings that are able to be decomposed into at least one smaller ring. It is important to understand the difference of ring sizes and types found by each convention when discussing the rings of a zeolite framework. A disadvantage to using purely connectivity based definitions of rings is the exclusion of cycles in a framework that behave physicochemically like a ring but contain a shortcut. We have displayed an example case of these geometric rings, and in the future it would be beneficial to develop a computation method of identifying these cycles. 
@@ -481,7 +481,7 @@ We have shown a comparison of three different conventions used to count rings, a
 This same methodology was used to describe T-sites in zeolite frameworks by counting all of the rings that pass through the T-site using each of the ring counting conventions described. When using ring finding conventions that find larger rings, we see more diversity in the descriptions of T-sites, which can aid researchers who want to identify similar T-sites across multiple frameworks. We have also shown that the vertex symbol used to describe T-sites leaves out subtle but distinct stereochemical differences in the spatial orientation of the rings around a T-site. To address this shortcoming we have provided a new method for ordering the rings of a vertex symbol that takes into consideration the ring stereochemistry and is able to identify differences in T-sites that have the same vertex symbol. In the future, correlating physicochemical properties of T-sites to the ring descriptors identified with each ring counting convention can help identify sets of frameworks with desired T-site properties. 
 
 \section{Acknowledgments}
-\label{sec:org0cb7f0a}
+\label{sec:org4b5ad85}
 
 We acknowledge financial support provided by the National Science Foundation under Cooperative Agreement No. EEC-1647722, which is an Engineering Research Center for the Innovative and Strategic Transformation of Alkane Resources. JTC thanks the Arthur J. Schmitt Foundation for financial aid in the form of a PhD fellowship. We thank Dr. Christian Baerlocher for the numerous discussions about the topology of zeolites, and methodologies used by the IZA Structure Database. We thank Dr. German Sastre for providing a copy of zeoTsites to compare results, and for the helpful conversions about use cases and zeolite topology. This research was supported in part by the Notre Dame center for Research Computing through access to high performance computing clusters. 
 \backmatter
