@@ -5,4 +5,4 @@ This is the repo we will be hosting all the information for the ZSE manuscript i
 - Outline [[./outline/outline.pdf][PDF]] [[./outline/outline.org][org]]  
 - Manuscript [[./manuscript/manuscript.pdf][PDF]] [[./manuscript/manuscript.org][org]]  
 - Elsevier Format [[./elsman/manuscript.pdf][PDF]] [[./elsman/manuscript.org][org]]  
-[[./figures/][- Figures]]
+- [[./figures/][Figures]]
