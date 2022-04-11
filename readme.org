@@ -2,7 +2,7 @@
 This is the repo we will be hosting all the information for the ZSE manuscript in. 
 
 * Navigation
-Outline [[./outline/outline.pdf][PDF]] [[./outline/outline.org][org]] \\
-Manuscript [[./manuscript/manuscript.pdf][PDF]] [[./manuscript/manuscript.org][org]] \\
-Elsevier Format [[./elsman/manuscript.pdf][PDF]] [[./elsman/manuscript.org][org]] \\
+Outline [[./outline/outline.pdf][PDF]] [[./outline/outline.org][org]]  
+Manuscript [[./manuscript/manuscript.pdf][PDF]] [[./manuscript/manuscript.org][org]]  
+Elsevier Format [[./elsman/manuscript.pdf][PDF]] [[./elsman/manuscript.org][org]]  
 [[./figures/][Figures]]
