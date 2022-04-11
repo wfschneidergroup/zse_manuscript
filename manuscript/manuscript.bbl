@@ -12,6 +12,7 @@ C.~Baerlocher and L.~McCusker.
 
 \bibitem[Bermúdez and Sastre(2017)]{bermudez-calculation-2017}
 D.~Bermúdez and G.~Sastre.
+\newblock Calculation of pore diameters in zeolites.
 \newblock \emph{Theoretical Chemistry Accounts}, 136\penalty0 (10):\penalty0
   116, Oct. 2017.
 \newblock ISSN 1432-2234.
@@ -22,6 +23,8 @@ D.~Bermúdez and G.~Sastre.
   Wichterlová, and Dedecek]{bernauer-proton-2016}
 M.~Bernauer, E.~Tabor, V.~Pashkova, D.~Kaucký, Z.~Sobalík, B.~Wichterlová,
   and J.~Dedecek.
+\newblock Proton proximity – {New} key parameter controlling adsorption,
+  desorption and activity in propene oligomerization over {H}-{ZSM}-5 zeolites.
 \newblock \emph{Journal of Catalysis}, 344:\penalty0 157--172, Dec. 2016.
 \newblock ISSN 00219517.
 \newblock \doi{10.1016/j.jcat.2016.09.025}.
@@ -30,12 +33,16 @@ M.~Bernauer, E.~Tabor, V.~Pashkova, D.~Kaucký, Z.~Sobalík, B.~Wichterlová,
 
 \bibitem[Curtis and Deem(2003)]{curtis-statistical-2003}
 R.~A. Curtis and M.~W. Deem.
+\newblock A {Statistical} {Mechanics} {Study} of {Ring} {Size}, {Ring} {Shape},
+  and the {Relation} to {Pores} {Found} in {Zeolites}.
 \newblock \emph{Journal of Physical Chemistry B}, 107:\penalty0 8612--8620,
   2003.
 
 \bibitem[Dědeček et~al.(2012)Dědeček, Sobalík, and
   Wichterlová]{dedecek-siting-2012}
 J.~Dědeček, Z.~Sobalík, and B.~Wichterlová.
+\newblock Siting and distribution of framework aluminium atoms in silicon-rich
+  zeolites and impact on catalysis.
 \newblock \emph{Catalysis Reviews}, 54\penalty0 (2):\penalty0 135--223, Apr.
   2012.
 \newblock ISSN 0161-4940, 1520-5703.
@@ -47,6 +54,9 @@ J.~Dědeček, Z.~Sobalík, and B.~Wichterlová.
   Vattipalli, Prasad, Moini, Schneider, and Gounder]{di-iorio-cooperative-2020}
 J.~R. Di~Iorio, S.~Li, C.~B. Jones, C.~T. Nimlos, Y.~Wang, E.~Kunkes,
   V.~Vattipalli, S.~Prasad, A.~Moini, W.~F. Schneider, and R.~Gounder.
+\newblock Cooperative and {Competitive} {Occlusion} of {Organic} and
+  {Inorganic} {Structure}-{Directing} {Agents} within {Chabazite} {Zeolites}
+  {Influences} {Their} {Aluminum} {Arrangement}.
 \newblock \emph{Journal of the American Chemical Society}, 142\penalty0
   (10):\penalty0 4807--4819, Mar. 2020.
 \newblock ISSN 0002-7863, 1520-5126.
@@ -55,6 +65,7 @@ J.~R. Di~Iorio, S.~Li, C.~B. Jones, C.~T. Nimlos, Y.~Wang, E.~Kunkes,
 
 \bibitem[Franzblau(1991)]{franzblau-computation-1991}
 D.~S. Franzblau.
+\newblock Computation of ring statistics for network models of solids.
 \newblock \emph{Physical Review B}, 44\penalty0 (10):\penalty0 4925--4930,
   Sept. 1991.
 \newblock ISSN 0163-1829, 1095-3795.
@@ -63,6 +74,8 @@ D.~S. Franzblau.
 
 \bibitem[Goetzke and Klein(1991)]{goetzke-properties-1991}
 K.~Goetzke and H.-J. Klein.
+\newblock Properties and efficient algorithmic determination of different
+  classes of rings in finite and infinite polyhedral networks.
 \newblock \emph{Journal of Non-Crystalline Solids}, 127\penalty0 (2):\penalty0
   215--220, Feb. 1991.
 \newblock ISSN 00223093.
@@ -72,6 +85,8 @@ K.~Goetzke and H.-J. Klein.
 
 \bibitem[Guttman(1990)]{guttman-ring-1990}
 L.~Guttman.
+\newblock Ring structure of the crystalline and amorphous forms of silicon
+  dioxide.
 \newblock \emph{Journal of Non-Crystalline Solids}, 116\penalty0
   (2-3):\penalty0 145--147, Feb. 1990.
 \newblock ISSN 00223093.
@@ -89,6 +104,7 @@ A.~A. Hagberg, D.~A. Schult, and P.~J. Swart.
 \bibitem[Helfrecht et~al.(2019)Helfrecht, Semino, Pireddu, Auerbach, and
   Ceriotti]{helfrecht-new-2019}
 B.~A. Helfrecht, R.~Semino, G.~Pireddu, S.~M. Auerbach, and M.~Ceriotti.
+\newblock A new kind of atlas of zeolite building blocks.
 \newblock \emph{The Journal of Chemical Physics}, 151\penalty0 (15):\penalty0
   154112, Oct. 2019.
 \newblock ISSN 0021-9606, 1089-7690.
@@ -108,6 +124,8 @@ A.~Hjorth~Larsen, J.~Jørgen~Mortensen, J.~Blomqvist, I.~E. Castelli,
   J.~Bergmann~Maronsson, T.~Maxson, T.~Olsen, L.~Pastewka, A.~Peterson,
   C.~Rostgaard, J.~Schiøtz, O.~Schütt, M.~Strange, K.~S. Thygesen, T.~Vegge,
   L.~Vilhelmsen, M.~Walter, Z.~Zeng, and K.~W. Jacobsen.
+\newblock The atomic simulation environment—a {Python} library for working
+  with atoms.
 \newblock \emph{Journal of Physics: Condensed Matter}, 29\penalty0
   (27):\penalty0 273002, July 2017.
 \newblock ISSN 0953-8984, 1361-648X.
@@ -118,6 +136,8 @@ A.~Hjorth~Larsen, J.~Jørgen~Mortensen, J.~Blomqvist, I.~E. Castelli,
 \bibitem[Kester et~al.(2021)Kester, Crum, Li, Schneider, and
   Gounder]{kester-effects-2021}
 P.~M. Kester, J.~T. Crum, S.~Li, W.~F. Schneider, and R.~Gounder.
+\newblock Effects of {Brønsted} acid site proximity in chabazite zeolites on
+  {OH} infrared spectra and protolytic propane cracking kinetics.
 \newblock \emph{Journal of Catalysis}, 395:\penalty0 210--226, Mar. 2021.
 \newblock ISSN 00219517.
 \newblock \doi{10.1016/j.jcat.2020.12.038}.
@@ -126,6 +146,8 @@ P.~M. Kester, J.~T. Crum, S.~Li, W.~F. Schneider, and R.~Gounder.
 
 \bibitem[Le~Roux and Jund(2010)]{le-roux-ring-2010}
 S.~Le~Roux and P.~Jund.
+\newblock Ring statistics analysis of topological networks: {New} approach and
+  application to amorphous {GeS2} and {SiO2} systems.
 \newblock \emph{Computational Materials Science}, 49\penalty0 (1):\penalty0
   70--83, June 2010.
 \newblock ISSN 09270256.
@@ -137,6 +159,8 @@ S.~Le~Roux and P.~Jund.
   Schneider]{li-first-principles-2018}
 S.~Li, H.~Li, R.~Gounder, A.~Debellis, I.~B. Müller, S.~Prasad, A.~Moini, and
   W.~F. Schneider.
+\newblock First-{Principles} {Comparison} of {Proton} and {Divalent} {Copper}
+  {Cation} {Exchange} {Energy} {Landscapes} in {SSZ}-13 {Zeolite}.
 \newblock \emph{The Journal of Physical Chemistry C}, 122\penalty0
   (41):\penalty0 23564--23573, Oct. 2018.
 \newblock ISSN 1932-7447, 1932-7455.
@@ -145,6 +169,7 @@ S.~Li, H.~Li, R.~Gounder, A.~Debellis, I.~B. Müller, S.~Prasad, A.~Moini, and
 
 \bibitem[Li and Deem(2014)]{li-why-2014}
 X.~Li and M.~W. Deem.
+\newblock Why {Zeolites} {Have} {So} {Few} {Seven}-{Membered} {Rings}.
 \newblock \emph{The Journal of Physical Chemistry C}, 118\penalty0
   (29):\penalty0 15835--15839, July 2014.
 \newblock ISSN 1932-7447, 1932-7455.
@@ -155,11 +180,15 @@ X.~Li and M.~W. Deem.
   Hibbitts, and Gounder]{nimlos-experimental-2020}
 C.~T. Nimlos, A.~J. Hoffman, Y.~Gul~Hur, B.~Jin~Lee, J.~R. Di~Iorio,
   D.~Hibbitts, and R.~Gounder.
+\newblock Experimental and {Theoretical} {Assessments} of {Aluminum}
+  {Proximity} in {MFI} {Zeolites} and its {Alteration} by {Organic} and
+  {Inorganic} {Structure}-{Directing} {Agents}.
 \newblock \emph{Chemistry of Materials}, 2020.
 \newblock \doi{https://doi.org/10.1021/acs.chemmater.0c03154}.
 
 \bibitem[O'Keeffe and Hyde(1997)]{okeeffe-vertex-1997}
 M.~O'Keeffe and S.~Hyde.
+\newblock Vertex symbols for zeolite nets.
 \newblock \emph{Zeolites}, 19\penalty0 (5-6):\penalty0 370--374, Nov. 1997.
 \newblock ISSN 01442449.
 \newblock \doi{10.1016/S0144-2449(97)00133-4}.
@@ -168,6 +197,8 @@ M.~O'Keeffe and S.~Hyde.
 
 \bibitem[Sastre and Corma(2009)]{sastre-topological-2009}
 G.~Sastre and A.~Corma.
+\newblock Topological {Descriptor} for {Oxygens} in {Zeolites}. {Analysis} of
+  {Ring} {Counting} in {Tetracoordinated} {Nets}.
 \newblock \emph{The Journal of Physical Chemistry C}, 113\penalty0
   (16):\penalty0 6398--6405, Apr. 2009.
 \newblock ISSN 1932-7447, 1932-7455.
@@ -176,6 +207,8 @@ G.~Sastre and A.~Corma.
 
 \bibitem[Sastre and Gale(2001)]{sastre-zeotsites-2001}
 G.~Sastre and J.~D. Gale.
+\newblock {ZeoTsites}: a code for topological and crystallographic tetrahedral
+  sites analysis in zeolites and zeotypes.
 \newblock \emph{Microporous and Mesoporous Materials}, 43\penalty0
   (1):\penalty0 27--40, Mar. 2001.
 \newblock ISSN 13871811.
@@ -185,6 +218,8 @@ G.~Sastre and J.~D. Gale.
 
 \bibitem[Wooten(2002)]{wooten-structure-2002}
 F.~Wooten.
+\newblock Structure, odd lines and topological entropy of disorder of amorphous
+  silicon.
 \newblock \emph{Acta Crystallographica Section A: Foundations of
   Crystallography}, 58\penalty0 (4):\penalty0 346--351, July 2002.
 \newblock ISSN 0108-7673.
@@ -194,6 +229,8 @@ F.~Wooten.
 
 \bibitem[Yuan and Cormack(2002)]{yuan-efficient-2002-1}
 X.~Yuan and A.~Cormack.
+\newblock Efficient algorithm for primitive ring statistics in topological
+  networks.
 \newblock \emph{Computational Materials Science}, 24\penalty0 (3):\penalty0
   343--360, June 2002.
 \newblock ISSN 09270256.
