@@ -2,7 +2,7 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+OPTIONS: author:nil date:nil toc:nil tex:dvipng
 #+LATEX_CLASS: elsarticle
-#+LATEX_CLASS_OPTIONS: [final,numrefs,noinfo,sort&compress]
+#+LATEX_CLASS_OPTIONS: [preprint,numrefs,noinfo,sort&compress]
 
 #+latex_header: \usepackage[utf8]{inputenc}
 #+latex_header: \usepackage{url}
@@ -328,9 +328,7 @@ One final point we would like to make about T-site characterization, is that the
 file:figures/chapter-3/stereo.pdf
 #+end_figure
 
-The structural differences shown in cref:fig:stereo that are not able to be captured by the vertex symbol leads us to believe that the vertex symbol is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation. This has led us to create a new method for listing the rings in the vertex symbol that considers the structural connection of the rings. 
-
-DEFINE ORDERED VERTEX SYMBOL HERE
+The structural differences shown in cref:fig:stereo that are not able to be captured by the vertex symbol leads us to believe that the vertex symbol is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation. This has led us to create a new method for listing the rings in the vertex symbol that considers the structural connection of the rings described in cref:section:ov. 
 
 With this new descriptor MOR T3 and EON T9 would be labeled as: 8_{2}\cdot8_{2}\cdot5_{2}\cdot5\cdot4\cdot5, and MON T1 as: 8_{2}\cdot8_{2}\cdot4\cdot5\cdot5_{2}\cdot5. The difference is subtle but highlights the distinct structural difference between the two types of T-sites that is not otherwise captured by a vertex symbol. Stereochemistry of the rings associated with a T-site could influence the chemical properties we care about such as deprotonation energy, T-site substitution energy, or catalytic properties of reactions happening at that T-site.
 
