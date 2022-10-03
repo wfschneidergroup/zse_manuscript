@@ -1,4 +1,4 @@
-% Created 2022-08-29 Mon 07:25
+% Created 2022-10-03 Mon 12:32
 % Intended LaTeX compiler: pdflatex
 \documentclass[preprint,numrefs,noinfo,sort&compress]{elsarticle}
   \usepackage[utf8]{inputenc}
@@ -50,7 +50,7 @@ The topology of zeolite frameworks and of associated tetrahedral sites (T-sites)
 
 \mainmatter
 \section{Introduction}
-\label{sec:org2a67457}
+\label{sec:org7af04cb}
 Zeolites are three dimensional crystalline structures containing tetrahedral Si or Al atoms connected by oxygen bridges. The International Zeolite Association (IZA) lists over 200 known zeolite frameworks that are described by dimensionality, pore shape and size, and Si/Al ratios \cite{baerlocher-database-nodate}. It is natural to characterize differences in zeolites by the size and shapes of the features present in the crystal. Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites (T-sites) of a zeolite. Rings have been used to identify feasible zeolites topologies \cite{li-why-2014}, to describe the similarity and differences between zeolites \cite{curtis-statistical-2003,bermudez-calculation-2017}, to identify sites or voids of catalytic relevance \cite{li-first-principles-2018,kester-effects-2021}, and as machine learning finger prints of physicochemical properties \cite{helfrecht-new-2019}. 
 
 \begin{figure}
@@ -97,7 +97,7 @@ A shortcut is defined as a path connecting two nodes of a cycle that decomposes 
 \end{figure}
 \end{figure}
 
-Vertex symbols are a common way to describe the T-sites of a zeolite framework, and were first used to do so in 1997 by O'Keeffe and Hyde in 1997 \cite{okeeffe-vertex-1997}. The vertex symbol of a T-site contains the shortest rings associated with each of the six edges of the tetrahedron formed by the T-atom and its four bounded oxygen atoms. The ring sizes, and  their multiplicity, for opposite edges (edges of the tetrahedron that do not connect to the same oxygen atom) are grouped together. These grouped pairs are listed from smallest to largest forming the vertex symbol. \cref{fig:cha-vertex}(a) shows an example of the tetrahedron formed at the single symmetry distinct T-site in the CHA framework. The edges of the tetrahedron are labeled to aid in identification. \cref{fig:cha-vertex}(b-d) show the rings associated with each opposite pair of edges. The vertex symbol of T1 in CHA is thus able to be determined as 4\(\cdot\)4\(\cdot\)4\(\cdot\)8\(\cdot\)6\(\cdot\)8. For a T-site that contains a multiplicity of rings at one edge, that multiplicity would be represented as a subscript in the vertex symbol. An example would be the vertex symbol of 4\(\cdot\)6\(_{\text{2}} \cdot\)6\(\cdot\)6\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)6\(_{\text{3}}\) for T1 in AFI. 
+Vertex symbols are a common way to describe the T-sites of a zeolite framework, and were first used to do so in 1997 by O'Keeffe and Hyde in 1997 \cite{okeeffe-vertex-1997}. The vertex symbol of a T-site contains the shortest rings associated with each of the six edges of the tetrahedron formed by the T-atom and its four bounded oxygen atoms. The ring sizes, and  their multiplicity, for opposite edges (edges of the tetrahedron that do not connect to the same oxygen atom) are grouped together. These grouped pairs are listed from smallest to largest forming the vertex symbol. \cref{fig:cha-vertex}(a) shows an example of the tetrahedron formed at the single symmetry distinct T-site in the CHA framework. The edges of the tetrahedron are labeled to aid in identification. \cref{fig:cha-vertex}(b-d) show the rings associated with each opposite pair of edges. The vertex symbol of T1 in CHA is thus able to be determined as 4\(\cdot\)4\(\cdot\)4\(\cdot\)8\(\cdot\)6\(\cdot\)8. For a T-site that contains a multiplicity of rings at one edge, that multiplicity would be represented as a subscript in the vertex symbol. An example would be the vertex symbol of 4\(\cdot\)6\textsubscript{2}\(\cdot\)6\(\cdot\)6\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)6\textsubscript{3} for T1 in AFI. 
 
 Another ring counting convention presented by Sastre and Corma is to count only the shortest path connecting an O-T-O in a framework. With this definition, they can find and count all the rings in a framework that are the shortest path for at least one set of O-T-O along the cycle \cite{sastre-topological-2009}. Using AFI as an example again (\cref{fig:3.3}), we see that both a 12-MR (purple) and a 6-MR (blue) pass through the labeled T1 atom. The 12-MR would not be included because for every O-T-O along the 12-MR, the shortest path connecting them is not the 12-MR. The difference between this method and the vertex symbol rings is subtle, but with this shortest path convention any ring belonging to the vertex symbol of any T-site in a framework will be included in the ring count for each of the T-sites that ring passes through. \cref{fig:3.4} shows a cutout of the TON framework including a 6- (blue) and 10-MR (orange). For T1, only the 6-MR would be counted in the vertex symbol because it is the shortest path connecting O2 and O3. The 10-MR is part of the vertex symbol for T3 because it is the shortest path connecting O2 and O14. Since this 10-MR is the shortest path for at least one set of O-T-O along the ring, and passes through T1, it does get counted in the shortest path rings for T1. 
 
@@ -122,10 +122,10 @@ We can use ring counts to characterize entire zeolite frameworks, T-sites that m
 Here we present an analysis of rings captured by Goetzke and Klein's efficient ring finding algorithm \cite{goetzke-properties-1991}, and compare those rings to the rings found by other previously published ring set reduction conventions. We have implemented all of these ring finding conventions in a Python package called the Zeolite Simulation Environment (ZSE, \url{https://www.github.com/jtcrum/zse}). We use ZSE to provide an analysis of rings captured by each convention for the entire set of zeolite frameworks contained on the IZA Database \cite{baerlocher-database-nodate} to compare how these sets of rings provide different characterizations of said frameworks. We highlight rings that are found by these conventions but not typically discussed in the literature for a number of frameworks. We also show that the vertex symbol, a common approach used to characterize T-sites \cite{okeeffe-vertex-1997}, based on the shortest rings connecting the neighboring oxygen, misses important parts of the stereochemistry around a T-site. Finally, we provide an alternative method for listing the vertex symbol rings that takes into account their orientation and connectivity around the T-site.. 
 
 \section{Methods}
-\label{sec:org6431034}
+\label{sec:org83ee037}
 
 \subsection{Finding Rings That do not Contain Shortcuts \label{section:goetzke}}
-\label{sec:org42ddcba}
+\label{sec:orge9b7691}
 
 In this work we implement an efficient algorithm that was presented by Goetzke and Klein to find all the rings associated with a T-site that do not contain a shortcut \cite{goetzke-properties-1991} in a Python package called the Zeolite Simulation Environment (ZSE). In ZSE we use the framework put in place by the Atomic Simulation Environment (ASE) \cite{hjorth-larsen-atomic-2017} to handle routine analysis zeolite crystal structures. All graph theory functions are performed used the NetworkX Python package \cite{hagberg-exploring-2008}. 
 
@@ -140,17 +140,17 @@ First, we convert the ASE atoms object into a connectivity matrix which represen
 \end{figure}
 
 \subsection{Finding Vertex Symbol Rings \label{section:vertex}}
-\label{sec:org20e1097}
+\label{sec:org89c7798}
 
 Starting from the set of all rings found in \cref{section:goetzke}, we can prune the ring list to the set of vertex symbol rings. We find the shortest ring in the set that connects each pair of oxygens bound to our initial T-site. It is possible for there to be multiple rings of the same size connecting each oxygen, in which case all the rings of that size are kept. 
 
 \subsection{Finding Shortest Path Rings}
-\label{sec:org42016a9}
+\label{sec:org0530c72}
 
 Here we prune the set of all rings from \cref{section:goetzke} to a subset of rings the meets the shortest path definition published by Sastre and Corma \cite{sastre-topological-2009}. For each ring, we iterate over every group of O-T-O atoms in the ring, and check if this ring is the shortest path connecting the two oxygen atoms. If so, the loop is broke, because the ring need only be the shortest path for one group of O-T-O atoms to fit the definition. This is the most time consuming process out of all the ring finding conventions we have implemented.
 
 \subsection{Modified Shortcut Rings}
-\label{sec:orgd5be89b}
+\label{sec:org7cfe2eb}
 
 In this work we present a modified definition of shortcut to capture a different subset of rings from any of the other ring finding conventions. Traditionally a shortcut is a path connecting two nodes of a cycle that decomposes the cycle into smaller rings \cite{guttman-ring-1990,goetzke-properties-1991}. We propose that a shortcut is a path connecting two nodes of a cycle that decomposes the cycle into at least one smaller ring. This definition does not require that the shortcut between two nodes be shorter than both paths connecting those nodes along the cycle. Our shortcut only needs to be shorter than one of the paths connecting those two nodes along the cycle. 
 
@@ -167,7 +167,7 @@ This definition is explained graphically in \cref{fig:mod}, where we present a c
 To remove rings containing modified shortcuts from the full set of rings, we iterate over every T-site pair of the ring and check for the shortest path connecting them. If that shortest path is shorter than either of the two paths along the ring connecting the two T-sites, we check if the combination of this shorter path and the shorter of the two ring paths forms a new smaller ring. If so the iteration is broken, and the ring is removed from the counted set. 
 
 \subsection{Ordered Vertex Symbols \label{section:ov}}
-\label{sec:org8f45030}
+\label{sec:org54f88e7}
 
 To add information about the spatial orientation of the rings around a T-site to the vertex symbol, we have developed a method to order the edges in the vertex symbol. We systematically list the rings by following the edges of the tetrahedron such that each ring listed is connected to one of the oxygens of the next ring listed. After removing all the rings that are not a part of the vertex symbol (\cref{section:vertex}) we use the following process to order them. 
 
@@ -184,16 +184,16 @@ To add information about the spatial orientation of the rings around a T-site to
 \end{enumerate}
 
 \subsection{Determining All Ring Sizes Contained in a Zeolite Framework}
-\label{sec:org79d764e}
+\label{sec:orgb8842aa}
 
 
 
 Finally, to determine all the ring sizes exhibited with in a zeolite framework, we take advantage of T-site symmetry. The rings of a framework are made of T-sites, and if two T-sites are symmetrically identical they will have the same set of rings passing through them. Therefore, we only need to find the rings associated with each symmetry distinct T-sites to know all the possible ring sizes within a framework. For example, AFI only contains one symmetry distinct T-site (T1). Using the basic definition of a shortcut, T1 is a part of 4-, 6-, 12-, and 14-MRs when using a cutoff of 18-MR. Every other T-site in the AFI framework is also a T1, thus the only possible ring sizes in AFI are 4-, 6-, 12-, and 14-MRs.
 
 \section{Results}
-\label{sec:orgcd96db0}
+\label{sec:org3113701}
 \subsection{Characterizing Rings in a Zeolite Graph}
-\label{sec:org15e507d}
+\label{sec:org11cd53a}
 The IZA Database \cite{baerlocher-database-nodate} is a common reference used to identify all the rings in a zeolite framework, however it only lists the rings that define a channel (ex: 12-MR in AFI), or rings associated with the symbol of a T-site. These rings listed by the IZA are referred to as tabulated rings in the literature \cite{curtis-statistical-2003}. In some frameworks, other rings (cycles not containing shortcuts) exist that are not included in the list of tabulated rings. These 'untabulated' rings may still provide important topological information about a zeolite framework, or the local void environment around a T-site. \cref{fig:fw-counts} shows counts of frameworks containing each size ring from 3- to 18-MR using the Goetzke algorithm and the listed rings on the IZA database \cite{baerlocher-database-nodate}. There are slight differences in the counts up to 6-MRs, but the main divergence takes place as we get to ring sizes \textgreater6-MR.
 
 \begin{figure}
@@ -225,7 +225,7 @@ Using AFI as another example, we find another type of ring that arises from trav
 \end{figure}
 
 \subsection{Characterizing Frameworks by Rings}
-\label{sec:orgb71506d}
+\label{sec:orgc427fb9}
 With the addition of our modified shortcut definition, we have four ring finding conventions to compare, as well as including the tabulated rings from the IZA Database. \cref{fig:ring-counts} shows how many frameworks contain each size ring found using the various ring counting conventions from 3- to 18-MRs. This plot highlights the differences in the conventions and shows that a topological description of a framework based on rings will depend on the way that you define a ring. In general, a hierarchy of ring sizes found by each convention is: all rings not containing a shortcut \textgreater this work \textgreater shortest path rings \textgreater vertex symbol rings. While the IZA listed rings includes the vertex symbol rings, and a selection of general rings \cite{baerlocher-database-nodate}.  
 
 \begin{figure}
@@ -236,7 +236,7 @@ With the addition of our modified shortcut definition, we have four ring finding
 \end{figure}
 \end{figure}
 
-One drawback to using a ring convention based on connectivity and shortcuts is the exclusion of cycles that don't fit this definition, but still exhibit properties like rings. This is a trade-off between well-defined connectivity rules, and the inclusion of particular void environments that may still have important applications. These shortcut containing cycles can display chemical and/or geometric properties consistent with rings and are of interest to catalysis researchers even though they are not classically considered rings. One example is the 6-membered cycle referred to as the \(\alpha\)-6-MR in literature (\cref{fig:mfi-6}) and is present in a number of frameworks including but not limited to MOR, FER, MFI, and BEA \cite{dedecek-siting-2012,bernauer-proton-2016}, which is a potential location for Co\(^{\text{2+}}\) uptake when two Al atoms are 3rd nearest neighbor (NN) in the cycle  \cite{bernauer-proton-2016,nimlos-experimental-2020}. Similar to Co\(^{\text{2+}}\) uptake at 3NN Al atoms in 6-MRs in other frameworks such as CHA \cite{di-iorio-cooperative-2020}. \cref{fig:mfi-6} shows that this particular structure would be considered two 5-MRs using connectivity rules based on a shortcut. 
+One drawback to using a ring convention based on connectivity and shortcuts is the exclusion of cycles that don't fit this definition, but still exhibit properties like rings. This is a trade-off between well-defined connectivity rules, and the inclusion of particular void environments that may still have important applications. These shortcut containing cycles can display chemical and/or geometric properties consistent with rings and are of interest to catalysis researchers even though they are not classically considered rings. One example is the 6-membered cycle referred to as the \(\alpha\)-6-MR in literature (\cref{fig:mfi-6}) and is present in a number of frameworks including but not limited to MOR, FER, MFI, and BEA \cite{dedecek-siting-2012,bernauer-proton-2016}, which is a potential location for Co\textsuperscript{2+} uptake when two Al atoms are 3rd nearest neighbor (NN) in the cycle  \cite{bernauer-proton-2016,nimlos-experimental-2020}. Similar to Co\textsuperscript{2+} uptake at 3NN Al atoms in 6-MRs in other frameworks such as CHA \cite{di-iorio-cooperative-2020}. \cref{fig:mfi-6} shows that this particular structure would be considered two 5-MRs using connectivity rules based on a shortcut. 
 
 \begin{figure}
 \begin{figure}[H]
@@ -247,16 +247,16 @@ One drawback to using a ring convention based on connectivity and shortcuts is t
 \end{figure}
 
 \subsection{Characterizing T-sites by Rings}
-\label{sec:orge809831}
+\label{sec:orgc94a591}
 
 Considering that zeolite frameworks are comprised of one or more symmetry distinct T-sites, it may be of interest to describe those T-sites by the rings that pass through them. Most often the vertex symbol is used to make such a classification \cite{okeeffe-vertex-1997}. Sastre and Corma also provided characterization of T-sites using the shortest path rings that pass through them \cite{sastre-topological-2009}. In their work, they presented the ring index, which lists all the rings passing through a T-site from smallest to largest, and a subscript for each size representing it's multiplicity.  The rings associated with a T-site can provided information about the local void environments around the T-site, and could potentially be correlated to other physicochemical properties of the T-site once enough once sufficient data on those physicochemical properties exists. 
 
 Take for example the AFI framework, containing one symmetry distinct T-site. AFI contains 4-, 6-, 12-, and 14-MRs. To describe that T-site we can count how many of each of those rings pass through the T-site. We can also prune this list using our modified definition of a shortcut, the shortest path rings definition \cite{sastre-topological-2009}, or the rings contained within the vertex symbol of this T-site \cite{okeeffe-vertex-1997}. Using the ring index outlined above, each of these conventions will provide a different description of the zeolite (highlighted in \cref{fig:afi-funnel}:
 \begin{itemize}
-\item Rings: 4\(\cdot\)6\(_{\text{13}} \cdot\)12\(\cdot\)14\(_{\text{7}}\)
-\item This work: 4\(\cdot\)6\(_{\text{13}} \cdot\)12
-\item Shortest Path Rings: 4\(\cdot\)6\(_{\text{13}}\)
-\item Vertex Symbol Rings: 4\(\cdot\)6\(_{\text{11}}\)
+\item Rings: 4\(\cdot\)6\textsubscript{13}\(\cdot\)12\(\cdot\)14\textsubscript{7}
+\item This work: 4\(\cdot\)6\textsubscript{13}\(\cdot\)12
+\item Shortest Path Rings: 4\(\cdot\)6\textsubscript{13}
+\item Vertex Symbol Rings: 4\(\cdot\)6\textsubscript{11}
 \end{itemize}
 
 \begin{figure}
@@ -278,19 +278,19 @@ With an understanding of how we characterize T-site by counting the rings that p
 \hline
 Framework & Rings & This Work & Shortest Path Rings \cite{sastre-topological-2009} & Vertex Symbol Rings \cite{baerlocher-database-nodate}\\
 \hline
-ABW & 4\(_{\text{2}} \cdot\)6\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{3}} \cdot\)8\(_{\text{2}}\)\\
-ACO & 4\(_{\text{3}} \cdot\)6\(_{\text{3}} \cdot\)8\(_{\text{6}} \cdot\)10\(_{\text{15}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{6}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{6}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{6}}\)\\
-AFI & 4\(_{\text{1}} \cdot\)\(_{\text{13}} \cdot\)12\(_{\text{1}} \cdot\)14\(_{\text{7}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{13}} \cdot\)12\(_{\text{1}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{13}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{11}}\)\\
-ANA & 4\(_{\text{2}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{16}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{16}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{16}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{8}}\)\\
-ATO & 4\(_{\text{1}} \cdot\)6\(_{\text{9}} \cdot\)8\(_{\text{8}} \cdot\)12\(_{\text{20}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{9}} \cdot\)12\(_{\text{20}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{9}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{9}}\)\\
-BCT & 4\(_{\text{1}} \cdot\)6\(_{\text{6}} \cdot\)8\(_{\text{20}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{6}} \cdot\)8\(_{\text{12}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{6}}\) & 4\(_{\text{1}} \cdot\)6\(_{\text{6}}\)\\
-CHA & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{6}} \cdot\)12\(_{\text{1}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{2}} \cdot\)12\(_{\text{1}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{2}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{2}}\)\\
-DFT & 4\(_{\text{2}} \cdot\)6\(_{\text{6}} \cdot\)8\(_{\text{10}} \cdot\)10\(_{\text{10}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{6}} \cdot\)8\(_{\text{10}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{6}} \cdot\)8\(_{\text{10}}\) & 4\(_{\text{2}} \cdot\)6\(_{\text{4}} \cdot\)8\(_{\text{6}}\)\\
-GIS & 4\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{4}}\)\\
-GME & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{6}} \cdot\)12\(_{\text{7}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{2}} \cdot\)12\(_{\text{1}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{2}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{1}} \cdot\)8\(_{\text{2}}\)\\
-MER & 4\(_{\text{3}} \cdot\)8\(_{\text{4}} \cdot\)10\(_{\text{10}} \cdot\)14\(_{\text{14}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{4}}\) & 4\(_{\text{3}} \cdot\)8\(_{\text{4}}\)\\
-MON & 4\(_{\text{1}} \cdot\)5\(_{\text{5}} \cdot\)8\(_{\text{6}}\) & 4\(_{\text{1}} \cdot\)5\(_{\text{5}} \cdot\)8\(_{\text{6}}\) & 4\(_{\text{1}} \cdot\)5\(_{\text{5}} \cdot\)8\(_{\text{6}}\) & 4\(_{\text{1}} \cdot\)5\(_{\text{4}} \cdot\)8\(_{\text{4}}\)\\
-NPO & 3\(_{\text{1}} \cdot\)6\(_{\text{6}} \cdot\)12\(_{\text{40}}\) & 3\(_{\text{1}} \cdot\)6\(_{\text{6}} \cdot\)12\(_{\text{40}}\) & 3\(_{\text{1}} \cdot\)6\(_{\text{6}}\) & 3\(_{\text{1}} \cdot\)6\(_{\text{6}}\)\\
+ABW & 4\textsubscript{2}\(\cdot\)6\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{2}\(\cdot\)6\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{2}\(\cdot\)6\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{2}\(\cdot\)6\textsubscript{3}\(\cdot\)8\textsubscript{2}\\
+ACO & 4\textsubscript{3}\(\cdot\)6\textsubscript{3}\(\cdot\)8\textsubscript{6}\(\cdot\)10\textsubscript{15} & 4\textsubscript{3}\(\cdot\)8\textsubscript{6} & 4\textsubscript{3}\(\cdot\)8\textsubscript{6} & 4\textsubscript{3}\(\cdot\)8\textsubscript{6}\\
+AFI & 4\textsubscript{1}\(\cdot\)\textsubscript{13}\(\cdot\)12\textsubscript{1}\(\cdot\)14\textsubscript{7} & 4\textsubscript{1}\(\cdot\)6\textsubscript{13}\(\cdot\)12\textsubscript{1} & 4\textsubscript{1}\(\cdot\)6\textsubscript{13} & 4\textsubscript{1}\(\cdot\)6\textsubscript{11}\\
+ANA & 4\textsubscript{2}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{16} & 4\textsubscript{2}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{16} & 4\textsubscript{2}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{16} & 4\textsubscript{2}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{8}\\
+ATO & 4\textsubscript{1}\(\cdot\)6\textsubscript{9}\(\cdot\)8\textsubscript{8}\(\cdot\)12\textsubscript{20} & 4\textsubscript{1}\(\cdot\)6\textsubscript{9}\(\cdot\)12\textsubscript{20} & 4\textsubscript{1}\(\cdot\)6\textsubscript{9} & 4\textsubscript{1}\(\cdot\)6\textsubscript{9}\\
+BCT & 4\textsubscript{1}\(\cdot\)6\textsubscript{6}\(\cdot\)8\textsubscript{20} & 4\textsubscript{1}\(\cdot\)6\textsubscript{6}\(\cdot\)8\textsubscript{12} & 4\textsubscript{1}\(\cdot\)6\textsubscript{6} & 4\textsubscript{1}\(\cdot\)6\textsubscript{6}\\
+CHA & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{6}\(\cdot\)12\textsubscript{1} & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{2}\(\cdot\)12\textsubscript{1} & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{2} & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{2}\\
+DFT & 4\textsubscript{2}\(\cdot\)6\textsubscript{6}\(\cdot\)8\textsubscript{10}\(\cdot\)10\textsubscript{10} & 4\textsubscript{2}\(\cdot\)6\textsubscript{6}\(\cdot\)8\textsubscript{10} & 4\textsubscript{2}\(\cdot\)6\textsubscript{6}\(\cdot\)8\textsubscript{10} & 4\textsubscript{2}\(\cdot\)6\textsubscript{4}\(\cdot\)8\textsubscript{6}\\
+GIS & 4\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{3}\(\cdot\)8\textsubscript{4}\\
+GME & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{6}\(\cdot\)12\textsubscript{7} & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{2}\(\cdot\)12\textsubscript{1} & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{2} & 4\textsubscript{3}\(\cdot\)6\textsubscript{1}\(\cdot\)8\textsubscript{2}\\
+MER & 4\textsubscript{3}\(\cdot\)8\textsubscript{4}\(\cdot\)10\textsubscript{10}\(\cdot\)14\textsubscript{14} & 4\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{3}\(\cdot\)8\textsubscript{4} & 4\textsubscript{3}\(\cdot\)8\textsubscript{4}\\
+MON & 4\textsubscript{1}\(\cdot\)5\textsubscript{5}\(\cdot\)8\textsubscript{6} & 4\textsubscript{1}\(\cdot\)5\textsubscript{5}\(\cdot\)8\textsubscript{6} & 4\textsubscript{1}\(\cdot\)5\textsubscript{5}\(\cdot\)8\textsubscript{6} & 4\textsubscript{1}\(\cdot\)5\textsubscript{4}\(\cdot\)8\textsubscript{4}\\
+NPO & 3\textsubscript{1}\(\cdot\)6\textsubscript{6}\(\cdot\)12\textsubscript{40} & 3\textsubscript{1}\(\cdot\)6\textsubscript{6}\(\cdot\)12\textsubscript{40} & 3\textsubscript{1}\(\cdot\)6\textsubscript{6} & 3\textsubscript{1}\(\cdot\)6\textsubscript{6}\\
 \hline
 \end{tabular}
 \begin{tablenotes}
@@ -311,12 +311,12 @@ Next, we take an in-depth look at the ring counts for a framework with multiple 
 \hline
 T-Site & Rings & This Work & Shortest Path Rings & Vertex Symbol Rings\\
 \hline
-T1 & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{7}} \cdot\)10\(_{\text{7}} \cdot\)18\(_{\text{5}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{3}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{3}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\\
-T2 & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{7}} \cdot\)10\(_{\text{7}} \cdot\)14\(_{\text{5}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{3}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{3}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\\
-T3 & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(_{\text{5}} \cdot\)10\(_{\text{4}} \cdot\)12\(_{\text{4}} \cdot\)14\(_{\text{5}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\(\cdot\)12\(_{\text{4}}\) & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8 & 4\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)8\\
-T4 & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{6}} \cdot\)10\(_{\text{6}} \cdot\)12\(\cdot\)18\(_{\text{26}}\) & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{6}} \cdot\)12 & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{6}} \cdot\)12 & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{6}} \cdot\)12\\
-T5 & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{7}} \cdot\)10\(_{\text{6}} \cdot\)14\(_{\text{18}}\) & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{7}}\) & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{7}}\) & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{7}}\)\\
-T6 & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{3}} \cdot\)10\(_{\text{2}} \cdot\)12\(_{\text{8}} \cdot\)14\(_{\text{18}}\) & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{3}} \cdot\)12\(_{\text{8}}\) & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{3}}\) & 4\(_{\text{2}} \cdot\)6\(\cdot\)8\(_{\text{3}}\)\\
+T1 & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{7}\(\cdot\)10\textsubscript{7}\(\cdot\)18\textsubscript{5} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{3} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{3} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\\
+T2 & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{7}\(\cdot\)10\textsubscript{7}\(\cdot\)14\textsubscript{5} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{3} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{3} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\\
+T3 & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\textsubscript{5}\(\cdot\)10\textsubscript{4}\(\cdot\)12\textsubscript{4}\(\cdot\)14\textsubscript{5} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\(\cdot\)12\textsubscript{4} & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8 & 4\textsubscript{3}\(\cdot\)6\textsubscript{2}\(\cdot\)8\\
+T4 & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{6}\(\cdot\)10\textsubscript{6}\(\cdot\)12\(\cdot\)18\textsubscript{26} & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{6}\(\cdot\)12 & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{6}\(\cdot\)12 & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{6}\(\cdot\)12\\
+T5 & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{7}\(\cdot\)10\textsubscript{6}\(\cdot\)14\textsubscript{18} & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{7} & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{7} & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{7}\\
+T6 & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{3}\(\cdot\)10\textsubscript{2}\(\cdot\)12\textsubscript{8}\(\cdot\)14\textsubscript{18} & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{3}\(\cdot\)12\textsubscript{8} & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{3} & 4\textsubscript{2}\(\cdot\)6\(\cdot\)8\textsubscript{3}\\
 \hline
 \end{tabular}
 \begin{tablenotes}
@@ -356,7 +356,7 @@ To further compare the ring counting conventions, we show a distribution of the 
 \end{figure}
 \end{figure}
 
-To complete the comparison of ring counting conventions, we have developed method to determine how similar the ring counts of one convention are to another. We do this by comparing the ring index for a T-site using each convention, where the similarity of the ring indices is scored with \cref{eq:similarity}. In this equation, sr is the number of similar rings that are found in both counting conventions, and mr is the maximum number of rings found by either convention. For example: the ring index of AFI using the classic shortcut definition and the shortest path definition are 4\(\cdot\)6\(_{\text{13}} \cdot\)12\(\cdot\)14\(_{\text{7}}\) and 4\(\cdot\)6\(_{\text{13}} \cdot\). The number of similar rings found by both conventions is 14, and the maximum number of rings found by either convention is 22. This would lead to a similarity score of 0.636. We do this for every T-site between two conventions and average the similarity score to get the results in \cref{fig:similarity}. Down the diagonal each method is compared to itself and clearly has a similarity of 1. The remainder of the table follows intuition, in that the  most restrictive ring counting convention (vertex symbol rings) compare to the least restrictive convention (rings) has the lowest similarity score. The two most similar ring counting methods are our modified shortcut definition and the shortest path rings. 
+To complete the comparison of ring counting conventions, we have developed method to determine how similar the ring counts of one convention are to another. We do this by comparing the ring index for a T-site using each convention, where the similarity of the ring indices is scored with \cref{eq:similarity}. In this equation, sr is the number of similar rings that are found in both counting conventions, and mr is the maximum number of rings found by either convention. For example: the ring index of AFI using the classic shortcut definition and the shortest path definition are 4\(\cdot\)6\textsubscript{13}\(\cdot\)12\(\cdot\)14\textsubscript{7} and 4\(\cdot\)6\textsubscript{13}\(\cdot\). The number of similar rings found by both conventions is 14, and the maximum number of rings found by either convention is 22. This would lead to a similarity score of 0.636. We do this for every T-site between two conventions and average the similarity score to get the results in \cref{fig:similarity}. Down the diagonal each method is compared to itself and clearly has a similarity of 1. The remainder of the table follows intuition, in that the  most restrictive ring counting convention (vertex symbol rings) compare to the least restrictive convention (rings) has the lowest similarity score. The two most similar ring counting methods are our modified shortcut definition and the shortest path rings. 
 
 \begin{equation}\label{eq:similarity}
 s = \mathrm{ \frac{sr}{mr} }
@@ -370,7 +370,7 @@ s = \mathrm{ \frac{sr}{mr} }
 \end{figure}
 \end{figure}
 
-One final point we would like to make about T-site characterization, is that the vertex symbol and ring indices only provide information about rings, and do not give any information about the spatial orientation of those rings around the T-site. The vertex symbol comes close to accomplishing that, by finding rings associated with opposite edge pairs of the tetrahedron, and then listing the those pairs from smallest to largest. However, the vertex symbol does not capture subtle but distinct differences in the orientation of the rings around the T-site that can lead to varying local void environments. For example: MOR T3, MON T1, and EON T9 all have the same vertex symbol of: 4\codt5\(_{\text{2}} \cdot\)5\(\cdot\)8\(_{\text{2}} \cdot\)5\(\cdot\)8\(_{\text{2}}\). However, the orientation of those rings around each of those T-sites are not identical. \cref{fig:stereo} shows a cutout of each of these frameworks that only includes the atoms that make up the rings of the vertex symbol around the specified T-sites. We can see that MOR T3 and EON T9 have the same ring orientation, and that orientation is different from the rings making up the vertex symbol of MON T1. The main difference is the location of the 5\(_{\text{2}}\)- and 4-MR edges. They are highlighted in \cref{fig:stereo}.
+One final point we would like to make about T-site characterization, is that the vertex symbol and ring indices only provide information about rings, and do not give any information about the spatial orientation of those rings around the T-site. The vertex symbol comes close to accomplishing that, by finding rings associated with opposite edge pairs of the tetrahedron, and then listing the those pairs from smallest to largest. However, the vertex symbol does not capture subtle but distinct differences in the orientation of the rings around the T-site that can lead to varying local void environments. For example: MOR T3, MON T1, and EON T9 all have the same vertex symbol of: 4\codt5\textsubscript{2}\(\cdot\)5\(\cdot\)8\textsubscript{2}\(\cdot\)5\(\cdot\)8\textsubscript{2}. However, the orientation of those rings around each of those T-sites are not identical. \cref{fig:stereo} shows a cutout of each of these frameworks that only includes the atoms that make up the rings of the vertex symbol around the specified T-sites. We can see that MOR T3 and EON T9 have the same ring orientation, and that orientation is different from the rings making up the vertex symbol of MON T1. The main difference is the location of the 5\textsubscript{2}- and 4-MR edges. They are highlighted in \cref{fig:stereo}.
 
 \begin{figure}
 \begin{figure}[H]
@@ -382,7 +382,7 @@ One final point we would like to make about T-site characterization, is that the
 
 The structural differences shown in \cref{fig:stereo} that are not able to be captured by the vertex symbol leads us to believe that the vertex symbol is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation. This has led us to create a new method for listing the rings in the vertex symbol that considers the structural connection of the rings described in \cref{section:ov}. 
 
-With this new descriptor MOR T3 and EON T9 would be labeled as: 8\(_{\text{2}} \cdot\)8\(_{\text{2}} \cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)4\(\cdot\)5, and MON T1 as: 8\(_{\text{2}} \cdot\)8\(_{\text{2}} \cdot\)4\(\cdot\)5\(\cdot\)5\(_{\text{2}} \cdot\)5. The difference is subtle but highlights the distinct structural difference between the two types of T-sites that is not otherwise captured by a vertex symbol. Stereochemistry of the rings associated with a T-site could influence the chemical properties we care about such as deprotonation energy, T-site substitution energy, or catalytic properties of reactions happening at that T-site.
+With this new descriptor MOR T3 and EON T9 would be labeled as: 8\textsubscript{2}\(\cdot\)8\textsubscript{2}\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)4\(\cdot\)5, and MON T1 as: 8\textsubscript{2}\(\cdot\)8\textsubscript{2}\(\cdot\)4\(\cdot\)5\(\cdot\)5\textsubscript{2}\(\cdot\)5. The difference is subtle but highlights the distinct structural difference between the two types of T-sites that is not otherwise captured by a vertex symbol. Stereochemistry of the rings associated with a T-site could influence the chemical properties we care about such as deprotonation energy, T-site substitution energy, or catalytic properties of reactions happening at that T-site.
 
 We have used this new ordered vertex symbol to characterize all 1460 T-sites in the IZA Database. We found that using the standard vertex symbol to characterize T-sites there are 649 unique vertex symbols present. In contrast, there are 666 unique ordered vertex symbols across every T-site. This would imply that not a large amount of vertex symbols contain stereochemical differences. In \cref{tab:ov} we provide a list of some common T-site vertex symbols, and their representative ordered vertex symbols. 
 
@@ -395,27 +395,27 @@ We have used this new ordered vertex symbol to characterize all 1460 T-sites in 
 \hline
 Vertex Symbol & Framework T-site & Ordered Vertex Symbol\\
 \hline
-5\(\cdot\)5\(\cdot\)5\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)10 & EWS T3 & 10\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & ITN T9 & 10\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & ITN T21 & 5\(_{\text{2}} \cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & OKO T2 & 10\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & OKO T5 & 5\(_{\text{2}} \cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & PCS T2 & 10\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & PCS T3 & 5\(_{\text{2}} \cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & SFS T10 & 5\(_{\text{2}} \cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & SFV T3 & 5\(_{\text{2}} \cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & SFV T7 & 5\(_{\text{2}} \cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
- & TUN T10 & 10\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+5\(\cdot\)5\(\cdot\)5\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)10 & EWS T3 & 10\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & ITN T9 & 10\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & ITN T21 & 5\textsubscript{2}\(\cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & OKO T2 & 10\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & OKO T5 & 5\textsubscript{2}\(\cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & PCS T2 & 10\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & PCS T3 & 5\textsubscript{2}\(\cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & SFS T10 & 5\textsubscript{2}\(\cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & SFV T3 & 5\textsubscript{2}\(\cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & SFV T7 & 5\textsubscript{2}\(\cdot\)10\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
+ & TUN T10 & 10\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)5\(\cdot\)5\(\cdot\)5\\
 \hline
-4\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)8\(\cdot\)5\(\cdot\)8 & DAC T3 & 5\(_{\text{2}} \cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
- & DAC T4 & 5\(_{\text{2}} \cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
- & EON T10 & 5\(_{\text{2}} \cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
- & EPI T1 & 5\(_{\text{2}} \cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
- & MOR T4 & 5\(_{\text{2}} \cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
- & RSN T4 & 5\(_{\text{2}} \cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)8\(\cdot\)4\\
- & VNI T2 & 5\(_{\text{2}} \cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)8\(\cdot\)4\\
- & VSV T2 & 5\(_{\text{2}} \cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)8\(\cdot\)4\\
- & YFI T9 & 5\(_{\text{2}} \cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
+4\(\cdot\)5\textsubscript{2}\(\cdot\)5\(\cdot\)8\(\cdot\)5\(\cdot\)8 & DAC T3 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
+ & DAC T4 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
+ & EON T10 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
+ & EPI T1 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
+ & MOR T4 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
+ & RSN T4 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)8\(\cdot\)4\\
+ & VNI T2 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)8\(\cdot\)4\\
+ & VSV T2 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)8\(\cdot\)4\\
+ & YFI T9 & 5\textsubscript{2}\(\cdot\)8\(\cdot\)8\(\cdot\)5\(\cdot\)5\(\cdot\)4\\
 \hline
 4\(\cdot\)6\(\cdot\)4\(\cdot\)6\(\cdot\)6\(\cdot\)8 & ATN T1 & 8\(\cdot\)6\(\cdot\)4\(\cdot\)4\(\cdot\)6\(\cdot\)6\\
  & JSN T3 & 8\(\cdot\)6\(\cdot\)6\(\cdot\)4\(\cdot\)4\(\cdot\)6\\
@@ -430,7 +430,7 @@ Vertex Symbol & Framework T-site & Ordered Vertex Symbol\\
 \end{threeparttable}
 \end{table}
 \section{Conclusions}
-\label{sec:org0be7bec}
+\label{sec:org3c5b493}
 Rings of a graph are well defined; here we identified all rings up to 18-MR in every zeolite framework listed on the IZA Structure Database \cite{baerlocher-database-nodate}. We find that the commonly reported ring sizes in literature and on the IZA website leave out many rings that fit the classical definition of a cycle that does not contain a shortcut. To completely describe the topology of a zeolite these rings are required, however there are often cases where someone might want to consider only a subset of rings of interest. 
 
 We have shown a comparison of three different conventions used to count rings, and highlighted the differences in rings that are found by each convention. The classic definition of a ring identifies the largest set of ring sizes across all the zeolite frameworks, while the shortest path ring and vertex symbol rings only identify smaller ring sizes. We have provided a modified definition of a shortcut that when used to find rings still finds larger rings defining channel openings, but excludes rings that are able to be decomposed into at least one smaller ring. It is important to understand the difference of ring sizes and types found by each convention when discussing the rings of a zeolite framework. A disadvantage to using purely connectivity based definitions of rings is the exclusion of cycles in a framework that behave physicochemically like a ring but contain a shortcut. We have displayed an example case of these geometric rings, and in the future it would be beneficial to develop a computation method of identifying these cycles. 
@@ -438,7 +438,7 @@ We have shown a comparison of three different conventions used to count rings, a
 This same methodology was used to describe T-sites in zeolite frameworks by counting all of the rings that pass through the T-site using each of the ring counting conventions described. When using ring finding conventions that find larger rings, we see more diversity in the descriptions of T-sites, which can aid researchers who want to identify similar T-sites across multiple frameworks. We have also shown that the vertex symbol used to describe T-sites leaves out subtle but distinct stereochemical differences in the spatial orientation of the rings around a T-site. To address this shortcoming we have provided a new method for ordering the rings of a vertex symbol that takes into consideration the ring stereochemistry and is able to identify differences in T-sites that have the same vertex symbol. In the future, correlating physicochemical properties of T-sites to the ring descriptors identified with each ring counting convention can help identify sets of frameworks with desired T-site properties. 
 
 \section{Acknowledgments}
-\label{sec:org805a78b}
+\label{sec:org5f43fe4}
 
 We acknowledge financial support provided by the National Science Foundation under Cooperative Agreement No. EEC-1647722, which is an Engineering Research Center for the Innovative and Strategic Transformation of Alkane Resources. JTC thanks the Arthur J. Schmitt Foundation for financial aid in the form of a PhD fellowship. We thank Dr. Christian Baerlocher for the numerous discussions about the topology of zeolites, and methodologies used by the IZA Structure Database. We thank Dr. German Sastre for providing a copy of zeoTsites to compare results, and for the helpful conversions about use cases and zeolite topology. This research was supported in part by the Notre Dame center for Research Computing through access to high performance computing clusters. 
 \backmatter
