@@ -146,6 +146,13 @@ G.~Sastre, A.~Corma,
   {\path{doi:10.1021/jp8100128}}.
 \newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/jp8100128}
 
+\bibitem{crum-jtcrumzse-2022}
+J.~Crum, \href{https://zenodo.org/record/7080433}{jtcrum/zse: {ZSE} {Stable}
+  {Version}} (Sep. 2022).
+\newblock \href {https://doi.org/10.5281/ZENODO.7080433}
+  {\path{doi:10.5281/ZENODO.7080433}}.
+\newline\urlprefix\url{https://zenodo.org/record/7080433}
+
 \bibitem{hjorth-larsen-atomic-2017}
 A.~Hjorth~Larsen, J.~Jørgen~Mortensen, J.~Blomqvist, I.~E. Castelli,
   R.~Christensen, M.~Dułak, J.~Friis, M.~N. Groves, B.~Hammer, C.~Hargus,
