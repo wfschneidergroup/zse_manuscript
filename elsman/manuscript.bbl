@@ -128,6 +128,24 @@ G.~Sastre, J.~D. Gale,
   {\path{doi:10.1016/S1387-1811(00)00344-9}}.
 \newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S1387181100003449}
 
+\bibitem{blatov-applied-2014}
+V.~A. Blatov, A.~P. Shevchenko, D.~M. Proserpio,
+  \href{https://pubs.acs.org/doi/10.1021/cg500498k}{Applied {Topological}
+  {Analysis} of {Crystal} {Structures} with the {Program} {Package}
+  {ToposPro}}, Crystal Growth \& Design 14~(7) (2014) 3576--3586.
+\newblock \href {https://doi.org/10.1021/cg500498k}
+  {\path{doi:10.1021/cg500498k}}.
+\newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/cg500498k}
+
+\bibitem{blatov-three-periodic-2007}
+V.~A. Blatov, O.~Delgado-Friedrichs, M.~O'Keeffe, D.~M. Proserpio,
+  \href{https://scripts.iucr.org/cgi-bin/paper?S0108767307038287}{Three-periodic
+  nets and tilings: natural tilings for nets}, Acta Crystallographica Section A
+  Foundations of Crystallography 63~(5) (2007) 418--425.
+\newblock \href {https://doi.org/10.1107/S0108767307038287}
+  {\path{doi:10.1107/S0108767307038287}}.
+\newline\urlprefix\url{https://scripts.iucr.org/cgi-bin/paper?S0108767307038287}
+
 \bibitem{okeeffe-vertex-1997}
 M.~O'Keeffe, S.~Hyde,
   \href{https://linkinghub.elsevier.com/retrieve/pii/S0144244997001334}{Vertex
@@ -145,6 +163,13 @@ G.~Sastre, A.~Corma,
 \newblock \href {https://doi.org/10.1021/jp8100128}
   {\path{doi:10.1021/jp8100128}}.
 \newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/jp8100128}
+
+\bibitem{crum-jtcrumzse-2022}
+J.~Crum, \href{https://zenodo.org/record/7080433}{jtcrum/zse: {ZSE} {Stable}
+  {Version}} (Sep. 2022).
+\newblock \href {https://doi.org/10.5281/ZENODO.7080433}
+  {\path{doi:10.5281/ZENODO.7080433}}.
+\newline\urlprefix\url{https://zenodo.org/record/7080433}
 
 \bibitem{hjorth-larsen-atomic-2017}
 A.~Hjorth~Larsen, J.~Jørgen~Mortensen, J.~Blomqvist, I.~E. Castelli,
