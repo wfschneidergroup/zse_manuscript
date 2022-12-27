@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.aux
+The style file: elsarticle-num.bst
+Database file #1: ref.bib
+Warning--empty year in baerlocher-database-nodate
+You've used 25 entries,
+            2952 wiz_defined-function locations,
+            878 strings with 12818 characters,
+and the built_in function-call counts, 9418 in all, are:
+= -- 930
+> -- 367
+< -- 1
++ -- 139
+- -- 114
+* -- 914
+:= -- 1345
+add.period$ -- 47
+call.type$ -- 25
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 249
+empty$ -- 961
+format.name$ -- 135
+if$ -- 2314
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 23
+newline$ -- 127
+num.names$ -- 25
+pop$ -- 136
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 461
+stack$ -- 0
+substring$ -- 563
+swap$ -- 96
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 67
+width$ -- 27
+write$ -- 272
+(There was 1 warning)
