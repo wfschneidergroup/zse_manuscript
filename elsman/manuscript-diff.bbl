@@ -1,0 +1,235 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{baerlocher-database-nodate}
+C.~Baerlocher, L.~McCusker,
+  \href{http://www.iza-structure.org/databases/}{Database of {Zeolite}
+  {Structures}}.
+\newline\urlprefix\url{http://www.iza-structure.org/databases/}
+
+\bibitem{li-why-2014}
+X.~Li, M.~W. Deem, \href{https://pubs.acs.org/doi/10.1021/jp504143r}{Why
+  {Zeolites} {Have} {So} {Few} {Seven}-{Membered} {Rings}}, The Journal of
+  Physical Chemistry C 118~(29) (2014) 15835--15839.
+\newblock \href {https://doi.org/10.1021/jp504143r}
+  {\path{doi:10.1021/jp504143r}}.
+\newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/jp504143r}
+
+\bibitem{curtis-statistical-2003}
+R.~A. Curtis, M.~W. Deem, A {Statistical} {Mechanics} {Study} of {Ring} {Size},
+  {Ring} {Shape}, and the {Relation} to {Pores} {Found} in {Zeolites}, Journal
+  of Physical Chemistry B 107 (2003) 8612--8620.
+
+\bibitem{bermudez-calculation-2017}
+D.~Bermúdez, G.~Sastre,
+  \href{https://doi.org/10.1007/s00214-017-2143-6}{Calculation of pore
+  diameters in zeolites}, Theoretical Chemistry Accounts 136~(10) (2017) 116.
+\newblock \href {https://doi.org/10.1007/s00214-017-2143-6}
+  {\path{doi:10.1007/s00214-017-2143-6}}.
+\newline\urlprefix\url{https://doi.org/10.1007/s00214-017-2143-6}
+
+\bibitem{li-first-principles-2018}
+S.~Li, H.~Li, R.~Gounder, A.~Debellis, I.~B. Müller, S.~Prasad, A.~Moini,
+  W.~F. Schneider,
+  \href{https://pubs.acs.org/doi/10.1021/acs.jpcc.8b07213}{First-{Principles}
+  {Comparison} of {Proton} and {Divalent} {Copper} {Cation} {Exchange} {Energy}
+  {Landscapes} in {SSZ}-13 {Zeolite}}, The Journal of Physical Chemistry C
+  122~(41) (2018) 23564--23573.
+\newblock \href {https://doi.org/10.1021/acs.jpcc.8b07213}
+  {\path{doi:10.1021/acs.jpcc.8b07213}}.
+\newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/acs.jpcc.8b07213}
+
+\bibitem{kester-effects-2021}
+P.~M. Kester, J.~T. Crum, S.~Li, W.~F. Schneider, R.~Gounder,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/S0021951721000191}{Effects
+  of {Brønsted} acid site proximity in chabazite zeolites on {OH} infrared
+  spectra and protolytic propane cracking kinetics}, Journal of Catalysis 395
+  (2021) 210--226.
+\newblock \href {https://doi.org/10.1016/j.jcat.2020.12.038}
+  {\path{doi:10.1016/j.jcat.2020.12.038}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S0021951721000191}
+
+\bibitem{helfrecht-new-2019}
+B.~A. Helfrecht, R.~Semino, G.~Pireddu, S.~M. Auerbach, M.~Ceriotti,
+  \href{http://aip.scitation.org/doi/10.1063/1.5119751}{A new kind of atlas of
+  zeolite building blocks}, The Journal of Chemical Physics 151~(15) (2019)
+  154112.
+\newblock \href {https://doi.org/10.1063/1.5119751}
+  {\path{doi:10.1063/1.5119751}}.
+\newline\urlprefix\url{http://aip.scitation.org/doi/10.1063/1.5119751}
+
+\bibitem{guttman-ring-1990}
+L.~Guttman,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/002230939090686G}{Ring
+  structure of the crystalline and amorphous forms of silicon dioxide}, Journal
+  of Non-Crystalline Solids 116~(2-3) (1990) 145--147.
+\newblock \href {https://doi.org/10.1016/0022-3093(90)90686-G}
+  {\path{doi:10.1016/0022-3093(90)90686-G}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/002230939090686G}
+
+\bibitem{goetzke-properties-1991}
+K.~Goetzke, H.-J. Klein,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/002230939190145V}{Properties
+  and efficient algorithmic determination of different classes of rings in
+  finite and infinite polyhedral networks}, Journal of Non-Crystalline Solids
+  127~(2) (1991) 215--220.
+\newblock \href {https://doi.org/10.1016/0022-3093(91)90145-V}
+  {\path{doi:10.1016/0022-3093(91)90145-V}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/002230939190145V}
+
+\bibitem{franzblau-computation-1991}
+D.~S. Franzblau,
+  \href{https://link.aps.org/doi/10.1103/PhysRevB.44.4925}{Computation of ring
+  statistics for network models of solids}, Physical Review B 44~(10) (1991)
+  4925--4930.
+\newblock \href {https://doi.org/10.1103/PhysRevB.44.4925}
+  {\path{doi:10.1103/PhysRevB.44.4925}}.
+\newline\urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevB.44.4925}
+
+\bibitem{yuan-efficient-2002-1}
+X.~Yuan, A.~Cormack,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/S0927025601002567}{Efficient
+  algorithm for primitive ring statistics in topological networks},
+  Computational Materials Science 24~(3) (2002) 343--360.
+\newblock \href {https://doi.org/10.1016/S0927-0256(01)00256-7}
+  {\path{doi:10.1016/S0927-0256(01)00256-7}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S0927025601002567}
+
+\bibitem{wooten-structure-2002}
+F.~Wooten, \href{http://scripts.iucr.org/cgi-bin/paper?bk0109}{Structure, odd
+  lines and topological entropy of disorder of amorphous silicon}, Acta
+  Crystallographica Section A: Foundations of Crystallography 58~(4) (2002)
+  346--351, number: 4 Publisher: International Union of Crystallography.
+\newblock \href {https://doi.org/10.1107/S0108767302006669}
+  {\path{doi:10.1107/S0108767302006669}}.
+\newline\urlprefix\url{http://scripts.iucr.org/cgi-bin/paper?bk0109}
+
+\bibitem{le-roux-ring-2010}
+S.~Le~Roux, P.~Jund,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/S0927025610002363}{Ring
+  statistics analysis of topological networks: {New} approach and application
+  to amorphous {GeS2} and {SiO2} systems}, Computational Materials Science
+  49~(1) (2010) 70--83.
+\newblock \href {https://doi.org/10.1016/j.commatsci.2010.04.023}
+  {\path{doi:10.1016/j.commatsci.2010.04.023}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S0927025610002363}
+
+\bibitem{sastre-zeotsites-2001}
+G.~Sastre, J.~D. Gale,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/S1387181100003449}{{ZeoTsites}:
+  a code for topological and crystallographic tetrahedral sites analysis in
+  zeolites and zeotypes}, Microporous and Mesoporous Materials 43~(1) (2001)
+  27--40.
+\newblock \href {https://doi.org/10.1016/S1387-1811(00)00344-9}
+  {\path{doi:10.1016/S1387-1811(00)00344-9}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S1387181100003449}
+
+\bibitem{blatov-applied-2014}
+V.~A. Blatov, A.~P. Shevchenko, D.~M. Proserpio,
+  \href{https://pubs.acs.org/doi/10.1021/cg500498k}{Applied {Topological}
+  {Analysis} of {Crystal} {Structures} with the {Program} {Package}
+  {ToposPro}}, Crystal Growth \& Design 14~(7) (2014) 3576--3586.
+\newblock \href {https://doi.org/10.1021/cg500498k}
+  {\path{doi:10.1021/cg500498k}}.
+\newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/cg500498k}
+
+\bibitem{blatov-three-periodic-2007}
+V.~A. Blatov, O.~Delgado-Friedrichs, M.~O'Keeffe, D.~M. Proserpio,
+  \href{https://scripts.iucr.org/cgi-bin/paper?S0108767307038287}{Three-periodic
+  nets and tilings: natural tilings for nets}, Acta Crystallographica Section A
+  Foundations of Crystallography 63~(5) (2007) 418--425.
+\newblock \href {https://doi.org/10.1107/S0108767307038287}
+  {\path{doi:10.1107/S0108767307038287}}.
+\newline\urlprefix\url{https://scripts.iucr.org/cgi-bin/paper?S0108767307038287}
+
+\bibitem{okeeffe-vertex-1997}
+M.~O'Keeffe, S.~Hyde,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/S0144244997001334}{Vertex
+  symbols for zeolite nets}, Zeolites 19~(5-6) (1997) 370--374.
+\newblock \href {https://doi.org/10.1016/S0144-2449(97)00133-4}
+  {\path{doi:10.1016/S0144-2449(97)00133-4}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S0144244997001334}
+
+\bibitem{sastre-topological-2009}
+G.~Sastre, A.~Corma,
+  \href{https://pubs.acs.org/doi/10.1021/jp8100128}{Topological {Descriptor}
+  for {Oxygens} in {Zeolites}. {Analysis} of {Ring} {Counting} in
+  {Tetracoordinated} {Nets}}, The Journal of Physical Chemistry C 113~(16)
+  (2009) 6398--6405.
+\newblock \href {https://doi.org/10.1021/jp8100128}
+  {\path{doi:10.1021/jp8100128}}.
+\newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/jp8100128}
+
+\bibitem{crum-jtcrumzse-2022}
+J.~Crum, \href{https://zenodo.org/record/7080433}{jtcrum/zse: {ZSE} {Stable}
+  {Version}} (Sep. 2022).
+\newblock \href {https://doi.org/10.5281/ZENODO.7080433}
+  {\path{doi:10.5281/ZENODO.7080433}}.
+\newline\urlprefix\url{https://zenodo.org/record/7080433}
+
+\bibitem{hjorth-larsen-atomic-2017}
+A.~Hjorth~Larsen, J.~Jørgen~Mortensen, J.~Blomqvist, I.~E. Castelli,
+  R.~Christensen, M.~Dułak, J.~Friis, M.~N. Groves, B.~Hammer, C.~Hargus,
+  E.~D. Hermes, P.~C. Jennings, P.~Bjerre~Jensen, J.~Kermode, J.~R. Kitchin,
+  E.~Leonhard~Kolsbjerg, J.~Kubal, K.~Kaasbjerg, S.~Lysgaard,
+  J.~Bergmann~Maronsson, T.~Maxson, T.~Olsen, L.~Pastewka, A.~Peterson,
+  C.~Rostgaard, J.~Schiøtz, O.~Schütt, M.~Strange, K.~S. Thygesen, T.~Vegge,
+  L.~Vilhelmsen, M.~Walter, Z.~Zeng, K.~W. Jacobsen,
+  \href{http://stacks.iop.org/0953-8984/29/i=27/a=273002?key=crossref.20f9751653d872507bf6c0cc5737032c}{The
+  atomic simulation environment—a {Python} library for working with atoms},
+  Journal of Physics: Condensed Matter 29~(27) (2017) 273002.
+\newblock \href {https://doi.org/10.1088/1361-648X/aa680e}
+  {\path{doi:10.1088/1361-648X/aa680e}}.
+\newline\urlprefix\url{http://stacks.iop.org/0953-8984/29/i=27/a=273002?key=crossref.20f9751653d872507bf6c0cc5737032c}
+
+\bibitem{hagberg-exploring-2008}
+A.~A. Hagberg, D.~A. Schult, P.~J. Swart, Exploring network structure,
+  dynamics, and function using {NetworkX}, in: Proceedings of the 7th {Python}
+  in {Science} {Conference}, Pasadena, CA USA, 2008, pp. 11--15.
+
+\bibitem{dedecek-siting-2012}
+J.~Dědeček, Z.~Sobalík, B.~Wichterlová,
+  \href{http://www.tandfonline.com/doi/abs/10.1080/01614940.2012.632662}{Siting
+  and distribution of framework aluminium atoms in silicon-rich zeolites and
+  impact on catalysis}, Catalysis Reviews 54~(2) (2012) 135--223.
+\newblock \href {https://doi.org/10.1080/01614940.2012.632662}
+  {\path{doi:10.1080/01614940.2012.632662}}.
+\newline\urlprefix\url{http://www.tandfonline.com/doi/abs/10.1080/01614940.2012.632662}
+
+\bibitem{bernauer-proton-2016}
+M.~Bernauer, E.~Tabor, V.~Pashkova, D.~Kaucký, Z.~Sobalík, B.~Wichterlová,
+  J.~Dedecek,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/S002195171630197X}{Proton
+  proximity – {New} key parameter controlling adsorption, desorption and
+  activity in propene oligomerization over {H}-{ZSM}-5 zeolites}, Journal of
+  Catalysis 344 (2016) 157--172.
+\newblock \href {https://doi.org/10.1016/j.jcat.2016.09.025}
+  {\path{doi:10.1016/j.jcat.2016.09.025}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S002195171630197X}
+
+\bibitem{nimlos-experimental-2020}
+C.~T. Nimlos, A.~J. Hoffman, Y.~Gul~Hur, B.~Jin~Lee, J.~R. Di~Iorio,
+  D.~Hibbitts, R.~Gounder, Experimental and {Theoretical} {Assessments} of
+  {Aluminum} {Proximity} in {MFI} {Zeolites} and its {Alteration} by {Organic}
+  and {Inorganic} {Structure}-{Directing} {Agents}, Chemistry of Materials
+  (2020).
+\newblock \href {https://doi.org/https://doi.org/10.1021/acs.chemmater.0c03154}
+  {\path{doi:https://doi.org/10.1021/acs.chemmater.0c03154}}.
+
+\bibitem{di-iorio-cooperative-2020}
+J.~R. Di~Iorio, S.~Li, C.~B. Jones, C.~T. Nimlos, Y.~Wang, E.~Kunkes,
+  V.~Vattipalli, S.~Prasad, A.~Moini, W.~F. Schneider, R.~Gounder,
+  \href{https://pubs.acs.org/doi/10.1021/jacs.9b13817}{Cooperative and
+  {Competitive} {Occlusion} of {Organic} and {Inorganic}
+  {Structure}-{Directing} {Agents} within {Chabazite} {Zeolites} {Influences}
+  {Their} {Aluminum} {Arrangement}}, Journal of the American Chemical Society
+  142~(10) (2020) 4807--4819.
+\newblock \href {https://doi.org/10.1021/jacs.9b13817}
+  {\path{doi:10.1021/jacs.9b13817}}.
+\newline\urlprefix\url{https://pubs.acs.org/doi/10.1021/jacs.9b13817}
+
+\end{thebibliography}
