@@ -51,14 +51,14 @@ The topology of zeolite frameworks and of associated tetrahedral sites (T-sites)
 \mainmatter
 \section{Introduction}
 \label{sec:org497996e}
-Zeolites are three dimensional crystalline structures containing tetrahedral Si or Al atoms connected by oxygen bridges. The International Zeolite Association (IZA) lists over 200 known zeolite frameworks that are described by dimensionality, pore shape and size, and Si/Al ratios \cite{baerlocher-database-nodate}. It is natural to characterize differences in zeolites by the size and shapes of the features present in the crystal. Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites (T-sites) of a zeolite. Rings have been used to identify feasible zeolites topologies \cite{li-why-2014}, to describe the similarity and differences between zeolites \cite{curtis-statistical-2003,bermudez-calculation-2017}, to identify sites or voids of catalytic relevance \cite{li-first-principles-2018,kester-effects-2021}, and as machine learning finger prints of physicochemical properties \cite{helfrecht-new-2019}. Rings can be used to describe the channel sizes for understanding shape selectivity in catalysis, zeolite building blocks for solid state chemists, and the sizes of framework cages and windows to provide insights into adsorption properties. The dimension and number of rings in a framework can be used to characterize entire zeolite frameworks, T-sites that make up these frameworks, or even the oxygen atoms that connect the T-sites. Take for example the CHA framework, \cref{fig:3.1} shows an 8-membered ring (8-MR) and a 4-MR filled in with pink and green respectively. As an illustration of the significance of those rings, consider that the T-site labeled 20 is a Br\o nsted acid site, i.e., the site contains an Al and a charge-compensating proton bound to any one of the four adjacent oxygen atoms. While the T-site is symmetrically identical to all other T-sites in CHA, the proton sites are inequivalent, distinguished by the dimensions of the rings that pass through the oxygen atoms, a distinction that is experimentally observable in IR spectra \cite{kester-effects-2021}. The number and dimension  of rings that pass through a T-site can be used to describe and differentiate the local void environment around symmetry distinct T-sites and to  differentiate symmetry distinct oxygen atoms. 
+Zeolites are three dimensional crystalline structures containing tetrahedral Si or Al atoms connected by oxygen bridges. The International Zeolite Association (IZA) lists over 200 known zeolite frameworks that are described by dimensionality, pore shape and size, and Si/Al ratios \cite{baerlocher-database-nodate}. It is natural to characterize differences in zeolites by the size and shapes of the features present in the crystal. Rings are one common type of feature widely reported and used, both to characterize a zeolite crystal and as descriptors of the individual tetrahedral sites (T-sites) of a zeolite. Rings have been used to identify feasible zeolites topologies \cite{li-why-2014}, to describe the similarity and differences between zeolites \cite{curtis-statistical-2003,bermudez-calculation-2017}, to identify sites or voids of catalytic relevance \cite{li-first-principles-2018,kester-effects-2021}, and as machine learning finger prints of physicochemical properties \cite{helfrecht-new-2019}. Rings can be used to describe the channel sizes for understanding shape selectivity in catalysis, zeolite building blocks for solid state chemists, and the sizes of framework cages and windows to provide insights into adsorption properties. The dimension and number of rings in a framework can be used to characterize entire zeolite frameworks, T-sites that make up these frameworks, or even the oxygen atoms that connect the T-sites. The number and dimension  of rings that pass through a T-site can be used to describe and differentiate the local void environment around symmetry distinct T-sites and to  differentiate symmetry distinct oxygen atoms. 
 
-\begin{figure}
-\begin{figure}[H]
+\cref{fig:3.1} shows a cutout from the CHA framework, highlighting an 8-membered ring (8-MR) and a 4-MR filled in pink and green, respectively. As an illustration of the significance of those rings for a T-site, consider that the T-site labeled 20 is a Br\o nsted acid site, i.e., the site contains an Al. It will then have associated with it a charge-compensating proton that will bind to one of the four adjacent oxygen atoms. While the T-site is symmetrically identical to all other T-sites in CHA, the proton sites are inequivalent, distinguished by the dimensions of the rings that pass through them. These differences lead to differences in proton energies and vibrational frequenices, a distinction that is experimentally observable in infrared spectra \cite{kester-effects-2021}. 
+
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{figures/chapter-3/ring-examples2.pdf}
-\caption{Cutout of the Chabazite framework showing a path (5-6-7-8-9) highlighted with purple bonds, a cycle (3-4-18-19-20-17) highlighted with blue bonds, an 8-MR filled in with pink, and a 4-MR filled in with green. Yellow atoms are Si (T-sites), and red atoms are oxygen. \label{fig:3.1}}
-\end{figure}
+\caption{Cutout of the Chabazite framework showing a path (5-6-7-8-9) highlighted with purple bonds, a cycle (3-4-18-19-20-17) highlighted with blue bonds, an 8-MR filled in with pink, and a 4-MR filled in with green. Yellow and red spheres are T-sites (typically Si) and oxygen, respectively. \label{fig:3.1}}
 \end{figure}
 
 A number of definitions and enumerations of rings in zeolites have been presented   \cite{guttman-ring-1990,goetzke-properties-1991,franzblau-computation-1991,yuan-efficient-2002-1,wooten-structure-2002,le-roux-ring-2010,sastre-zeotsites-2001} and implemented in software tools, including ZeoTSites \cite{sastre-zeotsites-2001} and ToposPro \cite{blatov-applied-2014}. Zeolites are naturally  represented using graph theory, in which  atoms are nodes and bonds are edges.  Because the oxygen atoms are only connected to exactly two T-sites, their inclusion in a graph does not change the graph structure, and thus T-sites can be  defined as nodes and the intervening oxygen atoms as edges \cite{goetzke-properties-1991}.  The cutout of the chabazite (CHA) framework shown in \cref{fig:3.1}  and  \cref{tab:graphs} summarize basic definitions of graphs that will be used here.  The size of each of these features can either be defined by the total number of atoms contained in them, or by the number of T-sites contained in them. The latter method is the standard convention, which we will use. A path is a sequence of edges that connects a sequence of nodes in which every edge is distinct (shown with purple highlighted bonds in \cref{fig:3.1}). A cycle is a path that starts and ends at the same node, and does not repeat any other nodes (shown by blue bonds in \cref{fig:3.1}). A zeolite crystal contains an infinite number of cycles, but the symmetry of the crystal reduces this to a finite number of symmetry-distrinct rings whose exact identity is subject to definition. \cref{fig:3.1} shows an 8-MR and a 4-MR filled in pink and green, respectively.
@@ -93,34 +93,28 @@ Vertex Symbol Rings & The rings making up the vertex symbol of a T-site & Yet an
 
  Another method for pruning the list of rings found in a zeolite frameworks is based off of the concept of a vertex symbol. The vertex symbol is a common way to describe the structure around the T-sites of zeolite frameworks and was first used to do so in 1997 by O'Keeffe and Hyde \cite{okeeffe-vertex-1997}. The vertex symbol of a T-site is determined by the shortest rings associated with each of the six edges of the tetrahedron formed by the T-atom and its four bound oxygen atoms. The symbol is formed by grouping rings on opposite edges of the tetrahedron and listing from smallest to largest. \cref{fig:cha-vertex}(a) shows as example the tetrahedron formed at the single symmetry-distinct T-site in the CHA framework. The edges of the tetrahedron are labeled to aid in identification. \cref{fig:cha-vertex}(b-d) show the rings associated with each opposite pair of edges. The vertex symbol of T1 in CHA is thus 4\(\cdot\)4\(\cdot\)4\(\cdot\)8\(\cdot\)6\(\cdot\)8. For a T-site that contains a multiplicity of rings at one edge, that multiplicity would be represented as a subscript in the vertex symbol. An example would be the vertex symbol of 4\(\cdot\)6\(_{\text{2}} \cdot\)6\(\cdot\)6\(_{\text{3}} \cdot\)6\(_{\text{2}} \cdot\)6\(_{\text{3}}\) for T1 in AFI.  The rings of a framework are then the union of the rings of all the distinct T-sites, a definition that eliminates some rings that satisfy the no shortcut criterion. 
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/chapter-3/cha-vertex.pdf}
 \caption{Cutout of the CHA framework, showing the rings that make up the vertex symbol of the single symmetry distinct T-site. a) Example of the tetrahedron formed by the T-site and four connected oxygen atoms, with labeled edges of the tetrahedron. b) Rings associated with opposite edges E1 and E3. c) Rings associated with opposite edges E5 and E6. d) Ring associated with opposited edges E2 and E4. Rings are colored as: 4-MR (green), 6-MR (blue), and 8-MR (pink). \label{fig:cha-vertex}}
 \end{figure}
-\end{figure}
 
 Sastre and Corma \cite{sastre-topological-2009} proposed an alternative convetion, in which distinct rings are only those that form the shortest cycle connecting any \ce{O-T-O} in a framework. This convention provides an univocal count of the rings that pass through a T-site without the ambiguity of limiting the search to a certain ring size. Using AFI as an example,  (\cref{fig:3.3}(a)) shows that both a 12-MR (purple) and a 6-MR (blue) pass through the labeled T1 atom. The 12-MR would not be included in the Sastre and Corma enumeration because for every \ce{O-T-O} along the 12-MR, the shortest path connecting them is not the 12-MR. The difference between this criterion and the vertex symbol rings is subtle, but with this shortest path convention any ring belonging to the vertex symbol of any T-site in a framework will be included in the ring count for each of the T-sites that ring passes through. \cref{fig:3.4} shows a cutout of the TON framework including a 6- (blue) and 10-MR (orange). For T1, only the 6-MR would be counted within the vertex symbol convention because it is the shortest path connecting O2 and O3. The 10-MR is the shortest path connecting O2, and since this 10-MR is the shortest path for at least one set of \ce{O-T-O} along the cycle, and passes through T1, it does get counted in the shortest path rings for T1.
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/chapter-3/afi-14-and-modified.pdf}
 \caption{Cutouts of the 12-MR channel in AFI: a) Highlighting a 12-MR in purple, and a 6-MR in blue. The 6-MR is included in the vertex symbol of labeled T1 because it is the shortest path connecting O1 and O2. The 12-MR would not be included in the vertex symbol or shortest path ring list because for each O-T-O along the 12-MR there is a shorter path connecting them. b) A 14-MR is shown as T-sites replaced with aluminum atoms in gray. The two paths connecting Al1 and Al2 that make this 14-MR are highlighted with blue and purple bonds. Path 3 highlighted with green bonds is a modified shortcut connecting Al1 and Al2. \label{fig:3.3}}
-\end{figure}
 \end{figure}
 
 % The vertex symbol is a property of a T-site that is determined by the rings that pass through that site. Because the vertex symbol convention  lists rings in an order determined by size and locations on opposite edges of the tetrahedron, it is possible for two T-sites of differing connectivity (effectively, local constitutional isomers) to be described by the same  vertex symbol
 % The ring sizes, and  their multiplicity, for opposite edges (edges of the tetrahedron that do not connect to the same oxygen atom) are grouped together. These grouped pairs are listed from smallest to largest forming the vertex symbol.
 %  the number and type of rings Because various conventions exist that can reduce the set of rings in a zeolite to more strictly defined properties, the ring counts returned by the various conventions will differ. Differences in ring counts leads to differences in how one might describe the topological environment of a zeolite. Therefore, when using rings to describe the properties of a framework, T-site, or oxygen atom, it is of value to characterize the differences between the conventions and to have a use one that determines the features of interest.  
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{figures/chapter-3/ton-6-10.pdf}
+\includegraphics[width=0.4\textwidth]{figures/chapter-3/ton-6-10.pdf}
 \caption{Cutout of the TON framework showing a 6- (blue) and 10-MR (orange). The 10-MR is the shortest path connecting O14-T3-O2, and passes through T1, so it is counted in the shortest path rings for T1. \label{fig:3.4}}
-\end{figure}
 \end{figure}
 
 
@@ -136,12 +130,10 @@ We implemented the efficient algorithm presented by Goetzke and Klein \cite{goet
 
 First, we convert the ASE atoms object into a connectivity matrix which represents every atom across the columns and rows. If two atoms are bound together, their respective entry in the connectivity matrix contains a 1, else a 0. This connectivity matrix is then converted to a NetworkX graph object, and then a distance dictionary using NetworkX built in functions. Then we implement Step 3 from Geotzke and Klein's algorithm \cite{goetzke-properties-1991} summarized here: to find the rings that pass through a T-site, we iteratively search for every size ring between 3-MR and a maximum ring value that is user-specified. For this work we set a cutoff of 18-MRs. A schematic showing the evolution of the ring search is shown in \cref{fig:goetzke}. For ring size \(\lambda\) we start at the T-site of interest (labeled 1), and search the distance matrix for any T-sites that are \(\lambda\)/2 (even \(\lambda\)) or (\(\lambda\)-1)/2 (for odd \(\lambda\)) distance from the starting T-site (labeled 2). Next we attempt to create two distinct paths from 1 \(\rightarrow\) 2 and from 2 \(\rightarrow\) 1 alternating adding a node to each path as indicated by \cref{fig:goetzke}. Each node added to each of the paths must be \(\lambda\)/2 (even \(\lambda\)) or (\(\lambda\)-1)/2 (odd \(\lambda\)) from the head of the other path. Also each node added to each path needs to be the correct distance from 1 and 2 for the given step respectively. If either of the previous two conditions are not met, a ring cannot be formed of length \(\lambda\) along the given paths, we backtrack and repeat until all possible options have been explored for \(\lambda\). Then we increase \(\lambda\) and continue until the cutoff ring size is completed.
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{figures/chapter-3/goetzke.pdf}
+\includegraphics[width=0.4\textwidth]{figures/chapter-3/goetzke.pdf}
 \caption{Diagram showing how the ring finding algorithm evolves. Adapted from Goetzke and Klein \cite{goetzke-properties-1991}. \label{fig:goetzke}}
-\end{figure}
 \end{figure}
 
 \subsection{Vertex Symbol Rings \label{section:vertex}}
@@ -189,56 +181,46 @@ Finally, to determine all the ring sizes exhibited with in a zeolite framework, 
 \label{sec:org47268f3}
 \subsection{Characterizing Rings in a Zeolite Graph}
 \label{sec:orgdbc479c}
-The IZA Database \cite{baerlocher-database-nodate} is a common reference used to identify all the rings in a zeolite framework, however it only lists the rings that define a channel (ex: 12-MR in AFI), or rings associated with the symbol of a T-site. These rings listed by the IZA are referred to as tabulated rings in the literature \cite{curtis-statistical-2003}. In some frameworks, other rings (cycles not containing shortcuts) exist that are not included in the list of tabulated rings. These 'untabulated' rings may still provide important topological information about a zeolite framework, or the local void environment around a T-site. \cref{fig:fw-counts} shows counts of frameworks containing each size ring from 3- to 18-MR using the Goetzke algorithm and the listed rings on the IZA database \cite{baerlocher-database-nodate}. There are slight differences in the counts up to 6-MRs, but the main divergence takes place as we get to ring sizes \textgreater6-MR. We have limited our search to 18-MR because the differences in ring finding conventions are captured with the smaller rings, requiring less computation time, and there is a lower probability of finding larger rings in zeolites \cite{li-why-2014}.
+The IZA Database \cite{baerlocher-database-nodate} is a common reference used to identify all the rings in a zeolite framework, however it only lists the rings that define a channel (ex: 12-MR in AFI), or rings associated with the symbol of a T-site. These rings listed by the IZA are referred to as tabulated rings in the literature \cite{curtis-statistical-2003}. In some frameworks, other rings (cycles not containing shortcuts) exist that are not included in the list of tabulated rings. These ``untabulated'' rings may still provide important topological information about a zeolite framework, or the local void environment around a T-site. \cref{fig:fw-counts} shows counts of frameworks containing each size ring from 3- to 18-MR using the Goetzke algorithm and the listed rings on the IZA database \cite{baerlocher-database-nodate}. There are slight differences in the counts up to 6-MRs, but the main divergence takes place at ring sizes greater than six. We limit the search to 18-MR and smaller because the differences in ring finding conventions are captured within the smaller ring sets, because probabilities of occurrence become small with increasing ring size \cite{li-why-2014}, and for computational expediency. 
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t']
 \centering
-\includegraphics[width=\textwidth]{figures/chapter-3/rings-vs-iza-rings.pdf}
+\includegraphics[width=0.7\textwidth]{figures/chapter-3/rings-vs-iza-rings.pdf}
 \caption{Counts of IZA frameworks containing each size ring between 3- and 18-MR using the Goetzke algorithm and the tabulated rings listed by the IZA \cite{baerlocher-database-nodate}. \label{fig:fw-counts}}
-\end{figure}
 \end{figure}
 
 Taking a closer look at some of these untabulated rings highlights rings not typically listed for some frameworks, but are still relevant to describing their topology. Using CHA as an example, \cref{fig:cha-rings} displays a 12-MR (in purple) that circumferences the CHA cage. This ring is not associated with the vertex symbol of the single symmetry distinct T-site in CHA and does not define a channel. Thus, this ring is not included in the list of tabulated rings. We would argue that this is still a ring that provides an important topological descriptor of CHA because none of the tabulated rings provide information about the size of the CHA cage. 
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/chapter-3/cha-all-rings.pdf}
+\includegraphics[width=0.6\textwidth]{figures/chapter-3/cha-all-rings.pdf}
 \caption{Chabazite cage and double 6-MR (D6R) with highlighted rings: 4-MR in green, 8-MR in pink, and 12-MR in purple. The 8-MR in the D6R and the 12-MR are rings not typically discussed in literature. Si atoms have been replaced with Al atoms to help identify those rings in the overal cage strcuture. \label{fig:cha-rings}}
-\end{figure}
 \end{figure}
 
 Using AFI as another example, we find another type of ring that arises from traversing a pair of stacked rings and is not included in the list of tabulated rings. AFI, like CHA, contains one symmetry distinct T-site. According to the IZA, the AFI framework contains 4-, 6-, and 12-MRs \cite{baerlocher-database-nodate}. When we search for rings using the Goetzke algorithm \cite{goetzke-properties-1991}, we also find that it contains 14-MRs created by using seven T-sites from two 12-MRs that are separated by a distance of one oxygen (\cref{fig:afi-14}). Rings of this nature are prevalent in many frameworks; another example can be seen in the bottom right of \cref{fig:cha-rings}, where an 8-MR is highlighted traversing the two 6-MRs of the D6R. These types of rings may not be of interest depending on which topological feature one intends to describe. This has led us to create a modified definition of a shortcut as explained in \cref{section:modified}, which excludes these types of rings. The benefit of this new shortcut definition is that larger rings that are missed by the vertex symbol or shortest path rings (i.e., 12-MR in AFI) are still captured, while excluding rings that arise from convolution of stacked rings found with the typical shortcut definition.
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/chapter-3/afi-14.pdf}
+\includegraphics[width=0.5\textwidth]{figures/chapter-3/afi-14.pdf}
 \caption{Cutout of the 12-MR channel in AFI with a 14-MR (yellow) traversing seven T-sites of each 12-MR. The T-sites comprising the 14-MR have been replaced with Al for visibility. \label{fig:afi-14}}
-\end{figure}
 \end{figure}
 
 \subsection{Characterizing Frameworks by Rings}
 \label{sec:org3c3c2d3}
 With the addition of our modified shortcut definition, we can compare the results of four ring finding conventions to the tabulated rings listed in the IZA Database. \cref{fig:ring-counts} shows how many frameworks contain each size ring found using the various ring counting conventions from 3- to 18-MRs. This plot highlights the differences in the conventions and shows that a topological description of a framework based on rings will depend on the way that you define a ring. In general, a hierarchy of ring sizes found by each convention is: all rings not containing a shortcut \textgreater this work \textgreater shortest path rings \textgreater vertex symbol rings. The IZA listed rings include the vertex symbol rings, and a selection of general rings \cite{baerlocher-database-nodate}.  
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/chapter-3/ring-counts-2.pdf}
+\includegraphics[width=0.7\textwidth]{figures/chapter-3/ring-counts-2.pdf}
 \caption{Number of IZA zeolite frameworks containing each size ring, using the various ring counting conventions, as well as the rings listed by the IZA Database \cite{baerlocher-database-nodate}. \label{fig:ring-counts}}
-\end{figure}
 \end{figure}
 
 One drawback to using a ring convention based on connectivity and shortcuts is the exclusion of non-ring cycles that exhibit geometric properties similar to those designated as rings. This is a trade-off between well-defined connectivity rules, and the inclusion of particular void environments that may still have important applications. These shortcut containing cycles can display chemical and/or geometric properties consistent with rings and are of interest to catalysis researchers even though they are not classically considered rings. One example is the 6-membered cycle referred to as the \(\alpha\)-6-MR in literature (\cref{fig:mfi-6}) and is present in a number of frameworks including but not limited to MOR, FER, MFI, and BEA \cite{dedecek-siting-2012,bernauer-proton-2016}. This \(\alpha\)-6-MR is a potential location for Co\(^{\text{2+}}\) uptake when two Al atoms are 3rd nearest neighbor (NN) in the cycle  \cite{bernauer-proton-2016,nimlos-experimental-2020}, similar to Co\(^{\text{2+}}\) uptake at 3NN Al atoms in 6-MRs in other frameworks such as CHA \cite{di-iorio-cooperative-2020}. \cref{fig:mfi-6} shows that this particular structure would be considered two 5-MRs using connectivity rules based on a shortcut. 
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/chapter-3/MFI-6MC.pdf}
 \caption{Cutout of MFI framework showing the structure referred to as an \(\alpha\)-6-MR in blue, and the two 5-MRs that compose it in green. The 6-membered cycle would not be found by any of the connectivity ring rules outlined in this work. \label{fig:mfi-6}}
-\end{figure}
 \end{figure}
 
 \subsection{Characterizing T-sites by Rings}
@@ -258,7 +240,7 @@ Take for example the AFI framework, containing one symmetry distinct T-site. AFI
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/chapter-3/afi-funnel.pdf}
-\caption{Diagram showing the ring counts of each size ring that pass through the single symmetry distinct T-site in AFI for each of the various ring finding conventions. \label{fig:afi-funnel}}
+\caption{Ring counts of each size ring that pass through the single symmetry distinct T-site in AFI for each of the various ring finding conventions. \label{fig:afi-funnel}}
 \end{figure}
 \end{figure}
 
@@ -323,32 +305,26 @@ Vertex symbols have been represented in ring index format for ease of comparison
 
 \cref{fig:moz} shows the T-site locations inside a 2-dimensional view of the framework. If you were interested in which T-sites have access to the 12-MR channels, the shortest path rings and vertex symbol rings would only suggest T3 participates in the 12-MR rings. However, the all rings convention and the modified shortcut convention both identify T4 and T6 as participating in the 12-MR channels as highlighted in \cref{fig:moz}. 
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/chapter-3/moz.pdf}
+\includegraphics[width=0.8\textwidth]{figures/chapter-3/moz.pdf}
 \caption{Cutout of the MOZ framework showing two 12-MR channels, with an example of each distinct T-site highlighted. T1: navy, T2: green, T3: orange, T4: purple, T5: blue, and T6: red. As shown, T3, T4, and T6 are all associated with the 12-MR channels, while T1, T2, and T5 are not connected to the 12-MR channels. \label{fig:moz}}
-\end{figure}
 \end{figure}
 
 We next used ZSE to find the rings associated with every symmetry distinct T-site in every framework across the IZA Database using each of the four ring counting conventions. For each T-site we used the rings to generate a ring index, and \cref{fig:unique-ts} shows how many unique ring indices are present when using each of the ring counting conventions. The plot follows intuition with the number of unique ring indices decreasing as we use more restrictive ring counting conventions, because fewer rings are found providing less room for differentiation. This raises the question, if you want to ascertain chemical or physical properties about a T-site based on its ring count, and differentiate these T-sites from other similar but distinct T-sites, which ring counting convention will suffice? The answer will depend on what level of detail is desired. Larger rings can be found with the standard shortcut definition, while rings traversing other stacked rings will be excluded with our modified shortcut definition. The shortest path definition and vertex symbol rings will provide the most localized information about a T-site. 
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/chapter-3/unique-ts.pdf}
+\includegraphics[width=0.7\textwidth]{figures/chapter-3/unique-ts.pdf}
 \caption{Number of unique T-site ring indices when classified by the rings passing through them using the various ring counting conventions. There are 1460 T-sites across all the frameworks in the IZA Database. As we move from less restrictive to more restrictive (left to right) ring counting conventions, the number of unique ring indices decreases. \label{fig:unique-ts}}
-\end{figure}
 \end{figure}
 
 To further compare the ring counting conventions, we show a distribution of the number of T-sites containing each size ring between 3- and 18-MR in \cref{fig:tsite-frequency} (right). This plot highlights that more T-sites contain larger sized rings when using the basic definition of a shortcut, and at smaller rings sizes (\textless6-MR) all the ring counting conventions return the same results.  To further emphasize these results, we have provided a cumulative distribution of the same data normalized to the maximum 'rings' value in \cref{fig:tsite-frequency}. At 6-MRs is where we see the cumulative distribution functions deviate from each other. The largest deviation takes place at 12-MRs, and the cumulative distributions start to level out at larger ring sizes. 
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/chapter-3/dist-cumudist.pdf}
 \caption{Frequency of T-sites accross all IZA frameworks containing ring sizes between 3- and 18-MR (left), and cumulative distribution of T-sites containing each ring size normalized to the final 'rings' value (right). \label{fig:tsite-frequency}}
-\end{figure}
 \end{figure}
 
 To complete the comparison of ring counting conventions, we have developed a method to determine their similarity. We do this by comparing the ring index for a T-site using each convention, where the similarity of the ring indices is scored with \cref{eq:similarity}. In this equation, sr is the number of similar rings that are found in both counting conventions, and mr is the maximum number of rings found by either convention. For example: the ring index of AFI using the classic shortcut definition and the shortest path definition are 4\(\cdot\)6\(_{\text{13}} \cdot\)12\(\cdot\)14\(_{\text{7}}\) and 4\(\cdot\)6\(_{\text{13}} \cdot\). The number of similar rings found by both conventions is 14, and the maximum number of rings found by either convention is 22. This would lead to a similarity score of 0.636. We do this for every T-site between two conventions and average the similarity score to get the results in \cref{fig:similarity}. Down the diagonal each method is compared to itself and clearly has a similarity of 1. The remainder of the table follows intuition, in that the  most restrictive ring counting convention (vertex symbol rings) compared to the least restrictive convention (rings) has the lowest similarity score. The two most similar ring counting methods are our modified shortcut definition and the shortest path rings. 
@@ -357,22 +333,18 @@ To complete the comparison of ring counting conventions, we have developed a met
 s = \mathrm{ \frac{sr}{mr} }
 \end{equation}
 
-\begin{figure}
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/chapter-3/similarity-heat-map.pdf}
+\includegraphics[width=0.9\textwidth]{figures/chapter-3/similarity-heat-map.pdf}
 \caption{Heat map showing the similarity score for four ring counting methods. Similarity score of 1 means identical set of rings returned, while a similarity of 0 would mean no matching rings are returned. \label{fig:similarity}}
-\end{figure}
 \end{figure}
 
 The conventional definition of a vertex symbol, which lists pairs of rings along opposite edges of the tetrahedron from smallest to largest, only partially captures  the stereochemistry around a T-site. As an example, \cref{fig:stereo} illustrates the rings associated  with T3, T9, and T1 or MOR, MON, and EON, respectively, all of which share the same 4\(\cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)8\(_{\text{2}} \cdot\)5\(\cdot\)8\(_{\text{2}}\) vertex symbol. While MOR T3 and EON T9 are similar, MON T1 differs in the location of the 5\(_{\text{2}}\)- and 4-MR edges, as highlighted in the lower panel of \cref{fig:stereo}. To remove this ambiguity, an alternative approach is to list the rings of the vertex symbol by starting with the largest one and systematically adding the remaining rings following the edges of the tetrahedron such that each ring listed is connected to one of the oxygen atoms of the next ring listed. This provides a physical meaning to the order of the vertex symbol rings which accounts for differences in the connectivity of those rings around the T-site. Within this algorithm MOR T3 and EON T9 would be labeled as: 8\(_{\text{2}} \cdot\)8\(_{\text{2}} \cdot\)5\(_{\text{2}} \cdot\)5\(\cdot\)4\(\cdot\)5, and MON T1 as: 8\(_{\text{2}} \cdot\)8\(_{\text{2}} \cdot\)4\(\cdot\)5\(\cdot\)5\(_{\text{2}} \cdot\)5. The difference is subtle but highlights the distinct structural difference between the two types of T-sites that is not otherwise captured by a vertex symbol.  We computed the ordered vertex symbols for  all 1460 T-sites in the IZA Database.  The 649 unique vertex symbols in the database increase to 666 unique ordered vertex symbols. Thus, the consideration of stereochemistry only modestly increases the space of unique  tetrahedral sites.  \cref{tab:ov}  lists some common T-site vertex symbols and associated ordered vertex symbols. Complete results are presented in the Supplementary Information.
 
-\begin{figure}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/chapter-3/stereo.pdf}
 \caption{Cutout of the MOR, EON, and MON frameworks that only shows the rings associated with the vertex symbol of T3, T9, and T1 respectively. The 4-MR (green) and 2\texttimes{} 5-MR (teal) that are in swapped positions are highlighted for emphasis. The 4-MR for MON, and the 2\timex 5-MRs for MOR and EON are into the plane, and not easily shown. \label{fig:stereo}}
-\end{figure}
 \end{figure}
 
 % The structural differences shown in \cref{fig:stereo} that are not able to be captured by the vertex symbol leads us to believe that the vertex symbol is not a complete descriptor, and there is room to define a new descriptor that takes into consideration ring orientation. While a vertex symbol includes the shortest rings connecting the four oxygen atoms adjacent to a T-site, and listing them by size and opposite edges, there is still ambiguity in the exact connectivity of those rings. This has led us to create a new method for listing the rings in the vertex symbol that considers the structural connection of the rings described in \cref{section:ov}. 
@@ -435,7 +407,7 @@ Complete ring finding results are available for download via the Supplementary I
 \section{Acknowledgments}
 \label{sec:org5946b2f}
 
-We acknowledge financial support provided by the National Science Foundation under Cooperative Agreement No. EEC-1647722, which is an Engineering Research Center for the Innovative and Strategic Transformation of Alkane Resources. JTC thanks the Arthur J. Schmitt Foundation for financial aid in the form of a PhD fellowship. We thank Dr. Christian Baerlocher for the numerous discussions about the topology of zeolites, and methodologies used by the IZA Structure Database. We thank Dr. German Sastre for providing a copy of zeoTsites to compare results, and for the helpful conversions about use cases and zeolite topology. This research was supported in part by the Notre Dame center for Research Computing through access to high performance computing clusters. 
+We acknowledge financial support provided by the National Science Foundation under Cooperative Agreement No. EEC-1647722, which is an Engineering Research Center for the Innovative and Strategic Transformation of Alkane Resources. JTC thanks the Arthur J. Schmitt Foundation for financial aid in the form of a PhD fellowship. We thank Dr.\ Christian Baerlocher for the numerous discussions about the topology of zeolites, and methodologies used by the IZA Structure Database. We thank Dr.\ German Sastre for providing a copy of zeoTsites to compare results, and for the helpful conversions about use cases and zeolite topology. This research was supported in part by the Notre Dame center for Research Computing through access to high performance computing clusters. 
 \backmatter
 
 \bibliographystyle{elsarticle-num}
